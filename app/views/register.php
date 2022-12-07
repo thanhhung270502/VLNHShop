@@ -44,7 +44,7 @@
             });
         });
     </script>
-    <title>Sign Up</title>
+    <title>Register</title>
 
 </head>
 <body>
