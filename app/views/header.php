@@ -1,7 +1,7 @@
 <!-- Navbar -->
 <div class="position-relative z-index-30 m-0 p-0">
     <!-- Navbar -->
-    <nav class="navbar navbar-light navbar-expand-lg position-absolute z-index-30 w-100" style="height: 70px;">
+    <nav class="navbar navbar-light navbar-expand-lg z-index-30 w-100 bg-dark" style="height: 70px;">
         <div class="w-100 pb-lg-0 pt-lg-0 pt-4 pb-3">
             <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
                 <!-- Logo -->
@@ -131,7 +131,7 @@
 <!-- Navbar -->
 
 <!-- Offcanvas for Cart -->
-<div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvasCart" style="visibility: visible;" aria-modal="true" role="dialog">
+<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" style="visibility: visible;" aria-modal="true" role="dialog">
     <div class="offcanvas-header d-flex align-items-center">
         <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
@@ -186,8 +186,8 @@
                     <p class="m-0 fw-bolder">Subtotal</p>
                     <p class="m-0 fw-bolder">$233.33</p>
                 </div>
-                <a href="./checkout.html" class="btn btn-orange btn-orange-chunky mt-5 mb-2 d-block text-center">Checkout</a>
-                <a href="./cart.html" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
+                <a href="./checkout.php" class="btn btn-orange text-white fw-bold mt-5 mb-2 d-block text-center">Checkout</a>
+                <a href="./cart.php" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
             </div>
         </div>
     </div>
