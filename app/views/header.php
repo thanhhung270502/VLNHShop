@@ -12,7 +12,7 @@
                         <!-- End of Logo -->
 
                         <!-- Start of Text -->
-                        <span class="fs-5">Alpine</span>
+                        <span class="fs-5">VLNH</span>
                         <!-- End of Text -->
                     </div>
                     <!-- End of Navigation Brand -->
@@ -73,72 +73,6 @@
                         </li>
                         <!-- Menswear Menu -->
 
-                        <!-- Womenswear Menu -->
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder dropdown-toggle py-lg-4 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Womenswear
-                            </a>
-                            <!-- Womenswear Dropdown menu -->
-                            <div class="container-fluid dropdown-menu ">
-                                <div class="row d-flex" style="height: 300px;">
-                                    <!-- Dropdown Content -->
-                                    <div class="col align-self-center">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    WATERPROOF LAYERS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    BRANDS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Dropdown Content -->
-
-                                    <!-- Dropdown Image -->
-                                    <div class="col">
-                                        <div class="bg-image bg-pos-center-center h-100" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');"></div>
-                                    </div>
-                                    <!-- Dropdown Image -->
-                                </div>
-                            </div>
-                            <!-- Menswear Dropdown menu -->
-                        </li>
-                        <!-- Womenswear Menu -->
-
-                        <!-- Kidswear -->
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder py-lg-4 text-white" href="#">
-                                Kidswear
-                            </a>
-                        </li>
-                        <!-- Kidswear -->
-
-                        <!-- Kidswear -->
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder py-lg-4 text-white" href="#">
-                                Sale Items
-                            </a>
-                        </li>
-                        <!-- Kidswear -->
-
                     </ul>
                     <!-- End Button for MainNav -->
                 </div>
@@ -150,7 +84,7 @@
                     <!-- Navbar Search-->
                     <li class="ms-1 d-inline-block">
                         <button class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-pr-search>
-                            <i class="ri-search-2-line ri-lg align-middle"></i>
+                            <i class="ri-search-2-line ri-lg align-middle text-white"></i>
                         </button>
                     </li>
                     <!-- /Navbar Search-->
@@ -158,15 +92,15 @@
                     <!-- Navbar Wishlist-->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <a class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" href="#">
-                            <i class="ri-heart-line ri-lg align-middle"></i>
+                            <i class="ri-heart-line ri-lg align-middle text-white"></i>
                         </a>
                     </li>
                     <!-- /Navbar Wishlist-->
 
                     <!-- Navbar Cart-->
                     <li class="ms-1 d-inline-block position-relative">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="./cart.php">
-                            <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10"></i>
+                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="./cart.php">
+                            <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-white"></i>
                         </a>
                     </li>
                     <!-- /Navbar Cart-->
@@ -174,10 +108,18 @@
                     <!-- Navbar Login-->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
-                            <i class="ri-user-line ri-lg align-middle"></i>
+                            <i class="ri-user-line ri-lg align-middle text-white"></i>
                         </a>
                     </li>
                     <!-- /Navbar Login-->
+
+                    <!-- Navbar Sign In -->
+                    <li class="ms-1 d-none d-lg-inline-block">
+                        <a class="text-white text-decoration-none fw-bold" href="./login.php">
+                            Sign In
+                        </a>
+                    </li>
+                    <!-- /Navbar Sign In -->
 
                 </ul>
                 <!-- Navigation Icons -->
@@ -187,3 +129,67 @@
     <!-- Navbar -->
 </div>
 <!-- Navbar -->
+
+<!-- Offcanvas for Cart -->
+<div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvasCart" style="visibility: visible;" aria-modal="true" role="dialog">
+    <div class="offcanvas-header d-flex align-items-center">
+        <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
+        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+    <div class="offcanvas-body">
+        <div class="d-flex flex-column justify-content-between w-100 h-100">
+            <div>
+
+                <!-- Cart Product-->
+                <div class="row mx-0 pb-4 mb-4 border-bottom">
+                    <div class="col-3">
+                        <picture class="d-block bg-light">
+                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                        </picture>
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h6 class="justify-content-between d-flex align-items-start mb-2">
+                                Mens StormBreaker Jacket
+                                <i class="ri-close-line"></i>
+                            </h6>
+                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
+                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
+                        </div>
+                        <p class="fw-bolder text-end m-0">$85.00</p>
+                    </div>
+                </div>
+
+                <!-- Cart Product-->
+                <div class="row mx-0 pb-4 mb-4 border-bottom">
+                    <div class="col-3">
+                        <picture class="d-block bg-light">
+                            <img class="img-fluid" src="../assets/images/products/product-2.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
+                        </picture>
+                    </div>
+                    <div class="col-9">
+                        <div>
+                            <h6 class="justify-content-between d-flex align-items-start mb-2">
+                                Mens Torrent Terrain Jacket
+                                <i class="ri-close-line"></i>
+                            </h6>
+                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
+                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
+                        </div>
+                        <p class="fw-bolder text-end m-0">$99.00</p>
+                    </div>
+                </div>
+
+            </div>
+            <div class="border-top pt-3">
+                <div class="d-flex justify-content-between align-items-center">
+                    <p class="m-0 fw-bolder">Subtotal</p>
+                    <p class="m-0 fw-bolder">$233.33</p>
+                </div>
+                <a href="./checkout.html" class="btn btn-orange btn-orange-chunky mt-5 mb-2 d-block text-center">Checkout</a>
+                <a href="./cart.html" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- /Offcanvas for Cart -->

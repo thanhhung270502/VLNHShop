@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>VLNH</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
@@ -29,15 +29,12 @@
             <div class="container d-flex flex-column justify-content-center align-items-center position-relative z-index-10 text-white h-100">
 
                 <!-- Hero Text -->
-                <h1 class="display-1 fw-bold px-2 px-md-5 text-center mx-auto col-lg-8 mt-md-0" data-aos="fade-up" data-aos-delay="1000">Hero Text</h1>
+                <h1 class="display-5 fw-bold px-2 px-md-5 text-center mx-auto col-lg-8 mt-md-0" data-aos="fade-up" data-aos-delay="1000">VHLN sẽ đồng hành với bạn trên những con đường phía trước.</h1>
                 <!-- /Hero Text -->
 
                 <!-- Hero Buttons -->
-                <div class="d-md-flex justify-content-center mt-4 mb-3 my-md-5" style="width: 38%;">
-                    <a href="#" class="btn btn-skew-left btn-success text-white mx-1 w-100 w-md-auto mb-2 mb-md-0"><span>Shop
-                            Menswear <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
-                    <a href="#" class="btn btn-skew-left btn-success text-white mx-1 w-100 w-md-auto mb-2 mb-md-0" style="width: 300px;"><span>Shop
-                            Womenswear <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
+                <div class="d-md-flex justify-content-center mt-4 mb-3 my-md-5" style="width: 50%;">
+                    <a href="#" class="btn btn-lg btn-skew-left btn-orange text-white mx-1 w-50 w-md-auto mb-2 mb-md-0"><span>Sản phẩm của chúng tôi <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
                 </div>
                 <!-- /Hero Buttons -->
 
@@ -111,8 +108,8 @@
                 <div class="row g-5">
                     <div class="col-12 col-md-7">
                         <div class="m-0">
-                            <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">Hiking Essentials</p>
-                            <h2 class="display-5 fw-bold mb-6">Our Latest Must-Have Products</h2>
+                            <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">VLHN SHOP</p>
+                            <h2 class="display-4 fw-bold mb-6">Những sản phẩm mới nhất của chúng tôi</h2>
                             <div class="px-8 position-relative">
 
                                 <!-- Start Linked Carousel -->
