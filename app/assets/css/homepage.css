@@ -1,0 +1,19 @@
+.bg-overlay {
+    background: linear-gradient(rgba(0,0,0,.7), rgba(0,0,0,.7)), url(../images/slideshows/slideshow-3.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+    color: #fff;
+    height: 450px;
+    padding-top: 50px;
+}
+.btn-skew-left {
+    transform: skew(10deg);
+}
+.bg-img-contain{
+    background-repeat: no-repeat;
+    background-size: 100%;
+    /* height: 100%; */
+    /* width: 80%; */
+    background-position: 10% 10%;
+}   
