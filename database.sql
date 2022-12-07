@@ -33,7 +33,7 @@ CREATE TABLE `user` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `name` varchar(255) NOT NULL,
   `username` varchar(255) NOT NULL,
-  `password` varchar(255),
+  `password` varchar(255) NOT NULL,
   `phone` varchar(255),
   `address` varchar(255),
   `role` int(1) DEFAULT 1,
@@ -61,4 +61,20 @@ CREATE TABLE `cart_item` (
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
   FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`)
+  FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `order` (
+  `id` int(10) PRIMARY KEY,
+  `user_id` int(10),
+  `total_money` int(10) DEFAULT 0,
+  FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `order_item` (
+  `id` int(10) PRIMARY KEY,
+  `order_id` int(10) NOT NULL,
+  `product_id` int(10) NOT NULL,
+  `quantity` int(10) DEFAULT 0,
+  FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
