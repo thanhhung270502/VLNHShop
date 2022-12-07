@@ -99,7 +99,7 @@
 
                     <!-- Navbar Cart-->
                     <li class="ms-1 d-inline-block position-relative">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="./cart.php">
+                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="#">
                             <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-white"></i>
                         </a>
                     </li>
@@ -131,7 +131,7 @@
 <!-- Navbar -->
 
 <!-- Offcanvas for Cart -->
-<div class="offcanvas offcanvas-end show" tabindex="-1" id="offcanvasCart" style="visibility: visible;" aria-modal="true" role="dialog">
+<div class="offcanvas offcanvas-end" id="offcanvasCart" style="visibility: visible;" aria-modal="true" >
     <div class="offcanvas-header d-flex align-items-center">
         <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
