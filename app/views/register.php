@@ -21,7 +21,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $post_name = ['username-signup', 'password-signup', 'confirm-password', 'fullname', 'phone', 'address'];
     $i = 0;
     foreach ($user as $key => &$value) {
-        $value = $_POST[$post_name[$i]];
+        $user[$key] = $_POST[$post_name[$i]];
         ++$i;
     }
     RegisterSubmit($user, $error);

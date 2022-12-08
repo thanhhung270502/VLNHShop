@@ -21,9 +21,9 @@ function CheckAccountExists($username, $password) {
 
 function InsertUser($user) {
     $connObj = new Connection();
-    $sql = sprintf('INSERT INTO user (username, password, name, phone, address, image) VALUE
-                   (%s, %s, %s, %s, %s, %s)', $user['username'], $user['password'], $user['name'],
-                   $user['phone'], $user['address'], $user['image']);
+    $sql = sprintf('INSERT INTO user (username, password, name, phone, address, role) VALUE
+                   (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\', 0)', $user['username'], $user['password'], $user['name'],
+                   $user['phone'], $user['address']);
     $connObj->conn->query($sql);
 }
 

@@ -16,12 +16,11 @@ function RegisterSubmit($user, &$error) {
         $error['confirm'] = 'Xác nhận mật khẩu không khớp';
     } else if (empty($user['name'])) {
         $error['name'] = 'Tên không được để trống';
-    } else if (!empty($user['phone'])) {
-        if (!preg_match('/^[0-9]{11}$/', $user['phone'])) {
-            $error['phone'] = 'Số điện thoại không hợp lệ';
-        }
+    } else if (!empty($user['phone']) and !preg_match('/^[0-9]{10}$/', $user['phone'])) {
+        $error['phone'] = 'Số điện thoại không hợp lệ';
     } else {
-        $i = 0;
+        InsertUser($user);
+        header('Location: login.php');
     }
 }
 
