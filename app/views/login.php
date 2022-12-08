@@ -1,6 +1,27 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
 
+$user = [
+    'username' => '',
+    'password' => '',
+];
+$error = [
+    'username' => '',
+    'password' => '',
+    'not_exist' => ''
+];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $post_name = ['username-login', 'password-login'];
+    $i = 0;
+    foreach ($user as $key => &$value) {
+        $value = $_POST[$post_name[$i]];
+        ++$i;
+    }
+    LoginSubmit($user,$error);
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 
@@ -64,24 +85,44 @@
                                             <h4 class="mt-1 mb-5 pb-1">Chào mừng bạn đến với VLNH Shop</h4>
                                         </div>
 
-                                        <form>
+                                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                                             <p>Đăng nhập vào tài khoản của bạn</p>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="text" id="usrname-login" class="form-control"
-                                                       placeholder="" />
-                                                <label class="form-label" for="usrname-login">Tên đăng nhập</label>
+                                            <div class="mb-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="form-outline">
+                                                        <input type="text"
+                                                               id="username-login"
+                                                               name="username-login"
+                                                               class="form-control"
+                                                               value="<?php echo $user['username']?>"/>
+                                                        <label class="form-label" for="username-login">Tên đăng nhập</label>
+                                                    </div>
+                                                    <span class="text-danger ms-1 d-inline-block">*</span>
+                                                </div>
+                                                <p class="text-danger mt-1"><?php echo $error['username']?></p>
                                             </div>
 
-                                            <div class="form-outline mb-4">
-                                                <input type="password" id="password-login" class="form-control" />
-                                                <label class="form-label" for="password-login">Mật khẩu</label>
+                                            <div class="mb-4">
+                                                <div class="d-flex align-items-center">
+                                                    <div class="form-outline">
+                                                        <input type="password"
+                                                               id="password-login"
+                                                               name="password-login"
+                                                               class="form-control"
+                                                               value="<?php echo $user['password']?>"/>
+                                                        <label class="form-label" for="password-login">Mật khẩu</label>
+                                                    </div>
+                                                    <span class="text-danger ms-1">*</span>
+                                                </div>
+                                                <p class="text-danger mt-1"><?php echo $error['password']?></p>
                                             </div>
 
                                             <div class="text-center pt-1 mb-5 pb-1">
-                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
                                                     Đăng nhập
                                                 </button>
+                                                <p class="text-danger mt-1"><?php echo $error['not_exist']?></p>
                                             </div>
 
                                             <div class="d-flex align-items-center justify-content-center pb-4">

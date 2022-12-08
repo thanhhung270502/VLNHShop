@@ -1,84 +1,83 @@
 <?php
+require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
 
+$user = [
+    'username' => '',
+    'password' => '',
+    'confirm' => '',
+    'name' => '',
+    'phone' => '',
+    'address' => ''
+];
+$error = [
+    'username' => '',
+    'password' => '',
+    'confirm' => '',
+    'name' => '',
+    'phone' => ''
+];
+
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $post_name = ['username-signup', 'password-signup', 'confirm-password', 'fullname', 'phone', 'address'];
+    $i = 0;
+    foreach ($user as $key => &$value) {
+        $value = $_POST[$post_name[$i]];
+        ++$i;
+    }
+    RegisterSubmit($user, $error);
+}
 ?>
+
 <!doctype html>
 <html lang="en">
 <!-- Head -->
-<head>
-    <!-- Page Meta Tags-->
-    <meta charset="utf-8">
-    <meta http-equiv="x-ua-compatible" content="ie=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- Page Title -->
-    <!-- Font Awesome -->
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-        rel="stylesheet"
-    />
-    <!-- Google Fonts -->
-    <link
-        href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        rel="stylesheet"
-    />
-    <!-- MDB -->
-    <link
-        href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
-        rel="stylesheet"
-    />
-    <!-- My Styles -->
-    <link
-        href="../assets/css/style.css"
-        rel="stylesheet"
-    />
-    <!-- MDB -->
-    <script
-        type="text/javascript"
-        src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
-    ></script>
-    <script>
-        document.addEventListener('DOMContentLoaded', function () {
-            document.querySelectorAll('.form-outline').forEach((formOutline) => {
-                new mdb.Input(formOutline).init();
-            });
-
+    <head>
+        <!-- Page Meta Tags-->
+        <meta charset="utf-8">
+        <meta http-equiv="x-ua-compatible" content="ie=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!-- Page Title -->
+        <!-- Font Awesome -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
+            rel="stylesheet"
+        />
+        <!-- Google Fonts -->
+        <link
+            href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+            rel="stylesheet"
+        />
+        <!-- MDB -->
+        <link
+            href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.css"
+            rel="stylesheet"
+        />
+        <!-- My Styles -->
+        <link
+            href="../assets/css/style.css"
+            rel="stylesheet"
+        />
+        <!-- MDB -->
+        <script
+            type="text/javascript"
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+        ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+        <script>
+            document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
-                    new mdb.Input(formOutline).update();
+                    new mdb.Input(formOutline).init();
                 });
+
+                    document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                        new mdb.Input(formOutline).update();
+                    });
             });
         </script>
         <title>Register</title>
 
     </head>
     <body>
-        <?php
-        require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
-
-        $user = array(
-            'username' => '',
-            'password' => '',
-            'confirm' => '',
-            'name' => '',
-            'phone' => '',
-            'address' => ''
-        );
-        $error = array(
-            'username' => '',
-            'password' => '',
-            'confirm' => '',
-            'name' => '',
-            'phone' => ''
-        );
-
-        if ($_SERVER["REQUEST_METHOD"] == "POST") {
-            $user['username'] = $_POST['username-signup'];
-            $user['password'] = $_POST['password-signup'];
-            $user['confirm'] = $_POST['confirm-password'];
-            $user['name'] = $_POST['fullname'];
-            $user['phone'] = $_POST['phone'];
-            $user['address'] = $_POST['address'];
-            RegisterSubmit($user, $error);
-        }
-        ?>
         <div class="h-100 gradient-form">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
