@@ -151,7 +151,7 @@
                         <div>
                             <h6 class="justify-content-between d-flex align-items-start mb-2">
                                 Mens StormBreaker Jacket
-                                <i class="ri-close-line"></i>
+                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
                             </h6>
                             <small class="d-block text-muted fw-bolder">Size: Medium</small>
                             <small class="d-block text-muted fw-bolder">Qty: 1</small>
@@ -171,7 +171,7 @@
                         <div>
                             <h6 class="justify-content-between d-flex align-items-start mb-2">
                                 Mens Torrent Terrain Jacket
-                                <i class="ri-close-line"></i>
+                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
                             </h6>
                             <small class="d-block text-muted fw-bolder">Size: Medium</small>
                             <small class="d-block text-muted fw-bolder">Qty: 1</small>
