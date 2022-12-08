@@ -50,6 +50,35 @@
 
     </head>
     <body>
+        <?php
+        require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
+
+        $user = array(
+            'username' => '',
+            'password' => '',
+            'confirm' => '',
+            'name' => '',
+            'phone' => '',
+            'address' => ''
+        );
+        $error = array(
+            'username' => '',
+            'password' => '',
+            'confirm' => '',
+            'name' => '',
+            'phone' => ''
+        );
+
+        if ($_SERVER["REQUEST_METHOD"] == "POST") {
+            $user['username'] = $_POST['username-signup'];
+            $user['password'] = $_POST['password-signup'];
+            $user['confirm'] = $_POST['confirm-password'];
+            $user['name'] = $_POST['fullname'];
+            $user['phone'] = $_POST['phone'];
+            $user['address'] = $_POST['address'];
+            RegisterSubmit($user, $error);
+        }
+        ?>
         <div class="h-100 gradient-form">
             <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
@@ -63,7 +92,7 @@
                                             <h4 class="mt-1 mb-5 pb-1">Chào mừng bạn đến với VLNH Shop</h4>
                                         </div>
 
-                                        <form action="" method="post">
+                                        <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
                                             <p>Đăng ký và trở thành một thành viên của VLNH Shop</p>
 
                                             <div class="mb-4">
@@ -71,13 +100,14 @@
                                                     <div class="form-outline">
                                                         <input type="text"
                                                                id="username-signup"
+                                                               name="username-signup"
                                                                class="form-control"
-                                                               value="<?php //echo $user?>"/>
+                                                               value="<?php echo $user['username']?>"/>
                                                         <label class="form-label" for="username-signup">Tên đăng nhập</label>
                                                     </div>
                                                     <span class="text-danger ms-1 d-inline-block">*</span>
                                                 </div>
-                                                <p class="text-danger mt-1"><?php //echo $user_err?></p>
+                                                <p class="text-danger mt-1"><?php echo $error['username']?></p>
                                             </div>
 
                                             <div class="mb-4">
@@ -85,13 +115,14 @@
                                                     <div class="form-outline">
                                                         <input type="password"
                                                                id="password-signup"
+                                                               name="password-signup"
                                                                class="form-control"
-                                                               value="<?php //echo $pass?>"/>
+                                                               value="<?php echo $user['password']?>"/>
                                                         <label class="form-label" for="password-signup">Mật khẩu</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
-                                                <p class="text-danger mt-1"><?php //echo $pass_err?></p>
+                                                <p class="text-danger mt-1"><?php echo $error['password']?></p>
                                             </div>
 
                                             <div class="mb-4">
@@ -99,13 +130,14 @@
                                                     <div class="form-outline">
                                                         <input type="password"
                                                                id="confirm-password"
+                                                               name="confirm-password"
                                                                class="form-control"
-                                                               value="<?php //echo $confirm_pass?>"/>
+                                                               value="<?php echo $user['confirm']?>"/>
                                                         <label class="form-label" for="confirm-password">Xác nhận mật khẩu</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
-                                                <p class="text-danger mt-1"><?php //echo $confirm_pass_err?></p>
+                                                <p class="text-danger mt-1"><?php echo $error['confirm']?></p>
                                             </div>
 
                                             <div class="mb-4">
@@ -113,13 +145,14 @@
                                                     <div class="form-outline">
                                                         <input type="text"
                                                                id="fullname"
+                                                               name="fullname"
                                                                class="form-control"
-                                                               value="<?php //echo $name?>"/>
+                                                               value="<?php echo $user['name']?>"/>
                                                         <label class="form-label" for="fullname">Họ và tên</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
-                                                <p class="text-danger mt-1"><?php //echo $name_err?></p>
+                                                <p class="text-danger mt-1"><?php echo $error['name']?></p>
                                             </div>
 
                                             <div class="mb-4">
@@ -127,13 +160,14 @@
                                                     <div class="form-outline">
                                                         <input type="text"
                                                                id="phone"
+                                                               name="phone"
                                                                class="form-control"
-                                                               value="<?php //echo $phone?>"/>
+                                                               value="<?php echo $user['phone']?>"/>
                                                         <label class="form-label" for="phone">Số điện thoại</label>
                                                     </div>
                                                     <span class="text-white ms-1">*</span>
                                                 </div>
-                                                <p class="text-danger mt-1"><?php //echo $phone_err?></p>
+                                                <p class="text-danger mt-1"><?php echo $error['phone']?></p>
                                             </div>
 
                                             <div class="mb-4">
@@ -141,8 +175,9 @@
                                                     <div class="form-outline">
                                                         <input type="text"
                                                                id="address"
+                                                               name="address"
                                                                class="form-control"
-                                                               value="<?php //echo $address?>"/>
+                                                               value="<?php echo $user['address']?>"/>
                                                         <label class="form-label" for="address">Địa chỉ</label>
                                                     </div>
                                                     <span class="text-white ms-1">*</span>
@@ -150,7 +185,7 @@
                                             </div>
 
                                             <div class="text-center pt-1 mb-5 pb-1 d-flex align-items-center">
-                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="button">
+                                                <button class="btn btn-primary btn-block fa-lg gradient-custom-2 mb-3" type="submit">
                                                     Đăng ký
                                                 </button>
                                                 <span class="text-white ms-1">*</span>
