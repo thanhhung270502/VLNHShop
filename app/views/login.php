@@ -1,3 +1,6 @@
+<?php
+
+?>
 <!doctype html>
 <html lang="en">
 
@@ -65,7 +68,7 @@
                                             <p>Đăng nhập vào tài khoản của bạn</p>
 
                                             <div class="form-outline mb-4">
-                                                <input type="email" id="usrname-login" class="form-control"
+                                                <input type="text" id="usrname-login" class="form-control"
                                                        placeholder="" />
                                                 <label class="form-label" for="usrname-login">Tên đăng nhập</label>
                                             </div>

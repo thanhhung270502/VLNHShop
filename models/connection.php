@@ -1,14 +1,15 @@
 <?php
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $database = "shop";
-
-    // Create connection
-    $conn = mysqli_connect($servername, $username, $password, $database);
-    if ($conn->connect_error) {
-        die("Connection failed: " . $conn->connect_error);
+    class Connection {
+        public $conn;
+        function __construct()
+        {
+            $this->conn = mysqli_connect('localhost', 'root', '', 'shop', 3307);
+            if ($this->conn->connect_error) {
+                die("Connection failed: " . $this->conn->connect_error);
+            }
+        }
+        function __destruct()
+        {
+            $this->conn->close();
+        }
     }
-
-    // echo "Connection sucess";
-?>
