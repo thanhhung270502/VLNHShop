@@ -40,7 +40,7 @@ function LoginSubmit($user, &$error) {
                 $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
                 break;
             case 0:
-                header('Location: category.php');
+                //header('Location: category.php');
                 break;
             case 1:
                 header('Location: index.php');

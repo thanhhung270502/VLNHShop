@@ -12,16 +12,12 @@ function CheckUsernameExist($username) {
 
 function CheckAccountExists($username, $password) {
     $connObj = new Connection();
-    $sql = sprintf('SELECT username, role FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
+    $sql = sprintf('SELECT role FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
     $result = $connObj->conn->query($sql)->fetch_assoc();
-    $row = [
-        'username' => $result['username'],
-        'role' => $result['role'],
-    ];
-    if ($row['username'] == '') {
+    if ($result == null) {
         return -1;
     } else {
-        return $row['role'];
+        return $result['role'];
     }
 }
 
