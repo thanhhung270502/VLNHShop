@@ -10,14 +10,15 @@ function CheckUsernameExist($username) {
     else return True;
 }
 
-function CheckAccountExists($username, $password) {
+function CheckAccountExists($username, $password, &$user_data) {
     $connObj = new Connection();
-    $sql = sprintf('SELECT role FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
-    $result = $connObj->conn->query($sql)->fetch_assoc();
-    if ($result == null) {
-        return -1;
+    $sql = sprintf('SELECT * FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
+    $user = $connObj->conn->query($sql)->fetch_assoc();
+    if ($user == null) {
+        return false;
     } else {
-        return $result['role'];
+        $user_data = $user;
+        return true;
     }
 }
 

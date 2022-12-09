@@ -64,7 +64,7 @@ require_once __DIR__.'/../../controllers/user.php';
                             <label class="form-label" for="datatable-search-input">Tìm kiếm</label>
                         </div>
                         <div id="datatable">
-                            <table id="user-table" class="table align-middle mb-0 bg-white">
+                            <table class="table align-middle mb-0 bg-white">
                                 <thead class="bg-light">
                                 <tr>
                                     <th>Tên</th>
@@ -74,10 +74,9 @@ require_once __DIR__.'/../../controllers/user.php';
                                     <th>Hành động</th>
                                 </tr>
                                 </thead>
-                                <tbody>
+                                <tbody id="user-table">
                                 <?php
-                                $userdb = [];
-                                ShowAllUsers($userdb);
+                                ShowAllUsers();
                                 ?>
                                 <script>
                                     function searchTable() {

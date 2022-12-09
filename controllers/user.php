@@ -34,23 +34,22 @@ function LoginSubmit($user, &$error) {
     } else if (empty($user['password'])) {
         $error['password'] = 'Mật khẩu không được bỏ trống';
     } else {
-        $role = CheckAccountExists($user['username'], $user['password']);
-        switch ($role) {
-            case -1:
-                $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
-                break;
-            case 0:
-                //header('Location: category.php');
-                break;
-            case 1:
+        $user_data = [];
+        $user_exist = CheckAccountExists($user['username'], $user['password'], $user_data);
+        if ($user_exist) {
+            setcookie("user_id", $user_data['id'], time() + (86400 * 30), "/");
+            if ($user_data['role'] == 0) {
+                header('Location: category.php');
+            } else {
                 header('Location: index.php');
-                break;
+            }
+        } else {
+            $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
         }
-
     }
 }
 
-function ShowAllUsers (&$usersdb) {
+function ShowAllUsers () {
     $result = SelectAllUsers();
     while ($user = $result->fetch_assoc()) {
         $row = sprintf('<tr>
@@ -80,6 +79,5 @@ function ShowAllUsers (&$usersdb) {
                             </tr>',
             $user['name'], $user['username'], $user['phone'], $user['address'], $user['role'] == 0 ? 'Admin' : 'Member');
         echo $row;
-        array_push($usersdb, $row);
     }
 }
