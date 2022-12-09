@@ -9,6 +9,9 @@
                     <!-- Start of Navigation brand -->
                     <div class="d-flex align-items-center">
                         <!-- Start of Logo -->
+                        <div class="f-w-6 d-flex align-items-center me-2 lh-1">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 194"><path fill="currentColor" class="svg-logo-white" d="M47.45,60l1.36,27.58,53.41-51.66,50.87,50,3.84-26L194,100.65V31.94A31.94,31.94,0,0,0,162.06,0H31.94A31.94,31.94,0,0,0,0,31.94v82.57Z"></path><path fill="currentColor" class="svg-logo-dark" d="M178.8,113.19l1,34.41L116.3,85.92l-14.12,15.9L88.07,85.92,24.58,147.53l.93-34.41L0,134.86v27.2A31.94,31.94,0,0,0,31.94,194H162.06A31.94,31.94,0,0,0,194,162.06V125.83Z"></path></svg>
+                        </div>
                         <!-- End of Logo -->
 
                         <!-- Start of Text -->
@@ -19,64 +22,18 @@
                 </a>
                 <!-- Logo -->
 
-                <!-- Main Navigation -->
-                <div class="ms-5 flex-shrink-0 collapse navbar-collapse w-auto flex-grow-1">
-                    <!-- Begin Button for MainNav -->
-                    <ul class="navbar-nav py-lg-2 mx-auto">
-                        <!-- Menswear Menu -->
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder dropdown-toggle py-lg-4 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menswear
-                            </a>
-                            <!-- Menswear Dropdown menu -->
-                            <div class="container-fluid dropdown-menu ">
-                                <div class="row d-flex" style="height: 300px;">
-                                    <!-- Dropdown Content -->
-                                    <div class="col align-self-center">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    WATERPROOF LAYERS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    BRANDS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Dropdown Content -->
-
-                                    <!-- Dropdown Image -->
-                                    <div class="col">
-                                        <div class="bg-image bg-pos-center-center h-100" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');"></div>
-                                    </div>
-                                    <!-- Dropdown Image -->
-                                </div>
-                            </div>
-                            <!-- Menswear Dropdown menu -->
-                        </li>
-                        <!-- Menswear Menu -->
-
-                    </ul>
-                    <!-- End Button for MainNav -->
+                <!-- Search -->
+                <div class="ms-5 w-auto d-flex align-items-center">
+                    <form class="d-flex" role="search">
+                        <input class="form-control bg-light px-4" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
+                        border-bottom-left-radius: 1rem;">
+                        
+                        <button class="btn btn-link px-3 text-decoration-none d-flex align-items-center bg-light text-dark" data-pr-search style="border-radius: 0 1rem 1rem 0;">
+                            <i class="ri-search-2-line align-middle"></i>
+                        </button>
+                    </form>
                 </div>
-                <!-- Main Navigation -->
+                <!-- /Search -->
 
                 <!-- Navigation Icons -->
                 <ul class="list-unstyled mb-0 d-flex align-items-center">
