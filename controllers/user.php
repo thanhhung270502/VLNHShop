@@ -10,8 +10,8 @@ function RegisterSubmit($user, &$error) {
         $error['username'] = 'Tên đăng nhập đã tồn tại';
     } else if (empty($user['password'])) {
         $error['password'] = 'Mật khẩu không được bỏ trống';
-    } else if (strlen($user['password']) < 8 or strlen($user['password']) > 255) {
-        $error['password'] = 'Mật khẩu trong khoảng 8 - 255 ký tự';
+    } else if (strlen($user['password']) < 6 or strlen($user['password']) > 255) {
+        $error['password'] = 'Mật khẩu trong khoảng 6 - 255 ký tự';
     } else if ($user['password'] != $user['confirm']) {
         $error['confirm'] = 'Xác nhận mật khẩu không khớp';
     } else if (empty($user['name'])) {
@@ -33,9 +33,19 @@ function LoginSubmit($user, &$error) {
         $error['username'] = 'Tên đăng nhập không được bỏ trống';
     } else if (empty($user['password'])) {
         $error['password'] = 'Mật khẩu không được bỏ trống';
-    } else if (!CheckAccountExists($user['username'], $user['password'])) {
-        $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
     } else {
-        header('Location: index.php');
+        $role = CheckAccountExists($user['username'], $user['password']);
+        switch ($role) {
+            case -1:
+                $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
+                break;
+            case 0:
+                header('Location: category.php');
+                break;
+            case 1:
+                header('Location: index.php');
+                break;
+        }
+
     }
 }

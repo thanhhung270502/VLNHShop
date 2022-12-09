@@ -12,11 +12,17 @@ function CheckUsernameExist($username) {
 
 function CheckAccountExists($username, $password) {
     $connObj = new Connection();
-    $sql = sprintf('SELECT * FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
-    if ($connObj->conn->query($sql)->fetch_assoc() == null) {
-        return False;
+    $sql = sprintf('SELECT username, role FROM user WHERE username=\'%s\' AND password=\'%s\'', $username, $password);
+    $result = $connObj->conn->query($sql)->fetch_assoc();
+    $row = [
+        'username' => $result['username'],
+        'role' => $result['role'],
+    ];
+    if ($row['username'] == '') {
+        return -1;
+    } else {
+        return $row['role'];
     }
-    else return True;
 }
 
 function InsertUser($user) {
