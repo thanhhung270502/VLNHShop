@@ -1,24 +1,21 @@
 <?php
-    include 'connection.php';
+    include_once('../../models/connection.php');
 
-    function create_cart() {
-
+    // lấy id người dùng
+    $user_id = 1;
+    
+    $cart_info = $conn->query("SELECT * FROM cart WHERE user_id=$user_id");
+    $cart_id = 0;
+    
+    if($cart_info->num_rows > 0) {
+        while($row = $cart_info->fetch_assoc()) {
+            $cart_id = $row['id'];
+        }
     }
+    
+    $items_result = $conn->query("select product_id, quantity, img, name, color, price from cart_item c join product p on p.id=c.product_id where c.cart_id=$cart_id");
 
-    function add_item() {
-        // check if quantity < quantity_remain
-    }
+    // function checkout() {
 
-    function remove_item() {
-        $item_id = $_GET['id'];
-        // $user_id = $_SESSION['id'];
-        $delete_query = "delete from cart_item where id='$item_id'";
-        $delete_query_result =$conn->query($delete_query);
-
-        header('location: ../views/cart.php');
-    }
-
-    function checkout() {
-
-    }
+    // }
 ?>
