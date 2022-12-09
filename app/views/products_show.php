@@ -20,7 +20,12 @@
     $id = $_GET['id'];
     $sql = "SELECT * FROM product_images p WHERE p.product_id = $id";
     $images = $conn->query($sql);
-    $num = 0
+    
+    $sql = "SELECT * FROM product WHERE id = $id";
+    $product_data = $conn->query($sql);
+
+    $sql = "SELECT p.quantity_remain, s.name FROM product_sizes p JOIN size s ON s.id = p.size_id WHERE p.product_id = 2";
+    $sizes = $conn->query($sql);
   ?>
 
   <div class="container">
@@ -82,52 +87,62 @@
                 (50)
             </div>
         </div>
-        <div class="product__content">
-          <div class="product__name">Coastline Plus Waterproof Stormbreaker</div>
-          <div class="product__price border-bottom">
-            <div class="product__price_new">$21.6</div>
+        <form action="../../controllers/cart/cart_item_create.php" method="GET">
+          <?php
+            echo '<input type="text" value="' . $id . '" name="id" style="display: none;">';
+          ?>
+          <div class="product__content">
+            <?php
+              if ($product_data->num_rows > 0) {
+                while($row = $product_data->fetch_assoc()) {
+                  echo '
+                    <div class="product__name">'.$row["name"].'</div>
+                    <div class="product__price border-bottom">
+                      <div class="product__price_new">$'.$row["price"].'</div>
+                    </div>
+                    <div class="py-3">
+                      <div class="product__colors pb-2">Color:</div>
+                      <div class="btn__color">'.$row["color"].'</div>
+                    </div>
+                  ';
+                }
+              }
+            ?>
+            <div class="pb-3">
+              <div class="product__sizes">
+                <div class="product__sizes_title pb-3">Size:</div>
+                <select class="form-select form__select" aria-label="Default select example" name="size">
+                  <option selected>Choose size...</option>
+                  <?php
+                    if ($images->num_rows > 0) {
+                      while($row = $images->fetch_assoc()) {
+                        echo '
+                          <option value="">'.$row["color"].'</option>
+                        ';
+                      }
+                    }
+                  ?>
+                  <option value="M">M</option>
+                  <option value="L">L</option>
+                  <option value="XL">XL</option>
+                  <option value="XXL">XXL</option>
+                </select>
+              </div>
+            </div>
+            <div class='pb-3'>
+              <div class="pb-3">Số lượng</div>
+              <div class='d-flex'>
+                <input type="text" value="-" class="btn_quantity"></input>
+                <input type="text" value="1" class="btn_quantity" name="quantity"></input>
+                <input type="text" value="+" class="btn_quantity"></input>
+              </div>
+            </div>
+            <div class="d-flex pb-3">
+              <input type="submit" value="Thêm vào giỏ hàng" class="btn__add_to_cart me-3">
+              <!-- <input type="submit" value="Mua ngay" class="btn__buy_now"> -->
+            </div>
           </div>
-          <!-- <div class="py-3 border-bottom">
-            <div class="product__description_title">
-              Description:
-            </div>
-            <div class="product__description">
-              Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ipsum, exercitationem voluptas distinctio eaque temporibus libero eligendi accusamus inventore reprehenderit facilis ratione nobis? Inventore placeat iusto numquam harum. Necessitatibus, ducimus consequuntur.
-            </div>
-          </div> -->
-          <div class="py-3">
-            <div class="product__colors pb-2">COLOR:</div>
-            <div class="btn__color">Brown</div>
-          </div>
-          <div class="pb-3">
-            <div class="product__sizes">
-              <div class="product__sizes_title pb-3">Size:</div>
-              <select class="form-select form__select" aria-label="Default select example">
-                <option selected>Choose size...</option>
-                <option value="1">M</option>
-                <option value="2">L</option>
-                <option value="3">XL</option>
-                <option value="4">XXL</option>
-              </select>
-            </div>
-          </div>
-          <div class='pb-3'>
-            <div class="pb-3">Số lượng</div>
-            <div class='d-flex'>
-              <input type="button" value="-" class="btn_quantity"></input>
-              <input type="text" value="1" class="btn_quantity"></input>
-              <input type="button" value="+" class="btn_quantity"></input>
-            </div>
-          </div>
-          <div class="d-flex pb-3">
-            <div class="btn__add_to_cart me-3">
-              Add To Cart
-            </div>
-            <div class="btn__buy_now">
-              Buy Now
-            </div>
-          </div>
-        </div>
+        </form>
       </div>
     </div>
   </div>
@@ -138,6 +153,7 @@
           <div class="product__footer__nav_item">Mô Tả Chi Tiết</div>
           <div class="product__footer__nav_item">Vận chuyển</div>
           <div class="product__footer__nav_item">Hoàn trả</div>
+          <div class="product__footer__nav_item">Đánh giá</div>
         </div>
         <div class="product__footer_content pt-4">
           <div class="d-flex justify-content-center">
@@ -199,7 +215,38 @@
               </div>
             </div>
             <div class="col-lg-8 product__footer_item">
-            <div class="title pb-4">
+              <div class="title pb-4">
+                We are now offering contact-free delivery so that you can still receive your parcels safely without requiring a signature. Please see below for the available delivery methods, costs and timescales.
+              </div>
+              <div class="optional">
+                <div class="py-3 border-top">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <div class="name">
+                        Return via post
+                      </div>
+                      <div class="content">
+                        To return your items for free through the postal system, please complete the returns form that comes with your order. You'll find a label at the bottom of the form. Simply peel the label and head to your nearest post office.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="py-3 border-top">
+                  <div class="d-flex align-items-center justify-content-between">
+                    <div>
+                      <div class="name">
+                        Return in person
+                      </div>
+                      <div class="content">
+                        To return your items for free in person, simply stop into any one of our locations and speak to a member of our in-store team.
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-8 product__footer_item">
+              <div class="title pb-4">
                 We are now offering contact-free delivery so that you can still receive your parcels safely without requiring a signature. Please see below for the available delivery methods, costs and timescales.
               </div>
               <div class="optional">

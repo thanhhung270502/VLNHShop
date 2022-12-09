@@ -167,3 +167,7 @@
 .product__footer_item .name {
     font-weight: bold;
 }
+
+.modal-dialog {
+    max-width: none !important; 
+}
