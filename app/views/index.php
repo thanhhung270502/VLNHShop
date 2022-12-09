@@ -93,10 +93,10 @@
             <div class="w-100 vh-100 bg-img-contain bg-pos-center-center hotspot-container py-5 py-md-7 py-lg-10" style="background-image: url(https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
                 <div class="container h-100 py-lg-8 position-relative z-index-10 d-flex align-items-center" data-aos="fade-left">
                     <div class="py-8 d-flex justify-content-end align-items-start align-items-lg-end flex-column col-lg-4 text-lg-end">
-                        <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">Extreme Performance</p>
-                        <h2 class="display-5 fw-bold mb-3">The North Face</h2>
-                        <p class="lead d-none d-lg-block">Be ready all year round with our selection of North Face outdoor jackets — perfect for any time of the year and year round. Choose from a variety of colour shades and styles to warm you up in cold conditions.</p>
-                        <a class="text-decoration-none fw-bolder" href="#">Shop The North Face &rarr;</a>
+                        <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">Chất lượng đỉnh cao</p>
+                        <h2 class="display-5 fw-bold mb-3">YAME</h2>
+                        <p class="lead d-none d-lg-block">Các sản phẩm thời trang tại YaMe rất đa dạng, có thể phục vụ nhiều nhu cầu trang phục ở nhiều lứa tuổi khác nhau. Dù bạn thuộc Gu thời trang nào, YaMe tự tin có thể mang đến sản phẩm thời trang phù hợp với phong cách.</p>
+                        <a class="text-decoration-none fw-bolder" href="#">Mua hàng từ YAME &rarr;</a>
                     </div>
                 </div>
             </div>
