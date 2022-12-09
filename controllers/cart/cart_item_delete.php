@@ -6,5 +6,6 @@
     $delete_query = "delete from cart_item where product_id='$item_id'";
     $delete_query_result =$conn->query($delete_query);
 
-    header("location:../../app/views/cart.php");
+    // header("location:../../app/views/cart.php");
+    header('Location: ' . $_SERVER['HTTP_REFERER']);
 ?>

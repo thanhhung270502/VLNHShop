@@ -2,7 +2,20 @@
     include_once('../../models/connection.php');
 
     // lấy id người dùng
-    $user_id = 2;
+
+    // // tạo cookie test cart
+    // $cookie_name = "user_id";
+    // $cookie_value = "3";
+    // setcookie($cookie_name, $cookie_value, time() + (86400 * 30), "/");
+
+    $user_id = 0;
+    if (isset($_COOKIE["user_id"])) {
+        $user_id = $_COOKIE["user_id"];
+        // $create_cart = $conn->query("INSERT INTO cart(user_id) VALUES ($user_id)");
+    }
+    else {
+    
+    }
     
     $cart_info = $conn->query("SELECT * FROM cart WHERE user_id=$user_id");
     $cart_id = 0;
