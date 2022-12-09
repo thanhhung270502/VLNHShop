@@ -29,3 +29,8 @@ function InsertUser($user) {
     $connObj->conn->query($sql);
 }
 
+function SelectAllUsers() {
+    $connObj = new Connection();
+    $sql = 'SELECT * FROM user';
+    return $connObj->conn->query($sql);
+}

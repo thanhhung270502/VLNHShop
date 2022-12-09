@@ -49,3 +49,37 @@ function LoginSubmit($user, &$error) {
 
     }
 }
+
+function ShowAllUsers (&$usersdb) {
+    $result = SelectAllUsers();
+    while ($user = $result->fetch_assoc()) {
+        $row = sprintf('<tr>
+                                  <td>
+                                      <div class="d-flex align-items-center">
+                                          <div class="ms-3">
+                                              <p class="fw-bold mb-1">%s</p>
+                                              <p class="badge badge-success rounded-pill mb-0">%s</p>
+                                          </div>
+                                      </div>
+                                  </td>
+                                  <td>
+                                      %s
+                                  </td>
+                                  <td>
+                                      %s
+                                  </td>
+                                  <td>%s</td>
+                                  <td>
+                                      <button type="button" class="btn text-info btn btn-link btn-sm btn-rounded">
+                                      Chỉnh sửa
+                                      </button>
+                                      <button type="button" class="btn text-danger btn-link btn-sm btn-rounded">
+                                      Xóa
+                                      </button>
+                                  </td>
+                            </tr>',
+            $user['name'], $user['username'], $user['phone'], $user['address'], $user['role'] == 0 ? 'Admin' : 'Member');
+        echo $row;
+        array_push($usersdb, $row);
+    }
+}
