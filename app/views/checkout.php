@@ -25,12 +25,12 @@
 
         <!-- Checkout Title -->
         <h1 class="mb-4 display-5 fw-bold text-center">
-            Checkout Securely
+            Kiểm tra quá trình thanh toán
         </h1>
 
         <p class="text-center mx-auto">
-            Please fill in the details below to complete your order. Already registered?
-            <a class="text-dark" href="#">Login here.</a>
+            Hãy điền thông tin vào đơn sau. Đã đăng ký?
+            <a class="text-dark" href="login.php">Đăng nhập ở đây!</a>
         </p>
         <!-- /Checkout Title -->
 
@@ -40,7 +40,7 @@
             <div class="col-12 col-lg-6 col-xl-7">
                 <!-- Get Contact Information -->
                 <div class="checkout-panel">
-                    <h5 class="title-checkout pb-4 border-bottom">Contact Information</h5>
+                    <h5 class="title-checkout pb-4 border-bottom">Thông tin liên hệ</h5>
                     <div class="row">
 
                         <!-- Email-->
@@ -53,8 +53,7 @@
                             <!-- Mailing List Signup-->
                             <div class="form-group form-check m-0 mt-3">
                                 <input type="checkbox" class="form-check-input" id="add-mailinglist" checked="">
-                                <label class="form-check-label" for="add-mailinglist">Keep me updated with your latest
-                                    news and offers</label>
+                                <label class="form-check-label" for="add-mailinglist">Luôn cập nhật những thông tin mới nhất từ chúng tôi</label>
                             </div>
                         </div>
 
@@ -65,12 +64,12 @@
 
                 <!-- Shipping Address -->
                 <div class="checkout-panel" data-form-type="shipping">
-                    <h5 class="title-checkout border-top border-bottom py-4">Shipping Address</h5>
+                    <h5 class="title-checkout border-top border-bottom py-4">Địa chỉ giao hàng</h5>
                     <div class="row">
                         <!-- First Name-->
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="firstName" class="form-label">First name</label>
+                                <label for="firstName" class="form-label">Tên</label>
                                 <input type="text" class="form-control" id="firstName" placeholder="" value=""
                                     required="">
                             </div>
@@ -79,7 +78,7 @@
                         <!-- Last Name-->
                         <div class="col-sm-6">
                             <div class="form-group">
-                                <label for="lastName" class="form-label">Last name</label>
+                                <label for="lastName" class="form-label">Họ</label>
                                 <input type="text" class="form-control" id="lastName" placeholder="" value=""
                                     required="">
                             </div>
@@ -88,41 +87,20 @@
                         <!-- Address-->
                         <div class="col-12">
                             <div class="form-group">
-                                <label for="address" class="form-label">Address</label>
+                                <label for="address" class="form-label">Địa chỉ</label>
                                 <input type="text" class="form-control" id="address"
-                                    placeholder="123 Some Street Somewhere" required="">
+                                    placeholder="268, Lý Thường Kiệt, Quận 10, Thành phố Hồ Chí Minh" required="">
                             </div>
                         </div>
 
                         <!-- Country-->
                         <div class="col-md-12">
                             <div class="form-group">
-                                <label for="country" class="form-label">Country</label>
+                                <label for="country" class="form-label">Tỉnh</label>
                                 <select class="form-select" id="country" required="">
-                                    <option value="">Please Select...</option>
-                                    <option>United States</option>
+                                    <option value="">Hãy chọn...</option>
+                                    <option>Thành phố Hồ Chí Minh</option>
                                 </select>
-                            </div>
-                        </div>
-
-                        <!-- State-->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="state" class="form-label">State</label>
-                                <select class="form-select" id="state" required="">
-                                    <option value="">Please Select...</option>
-                                    <option>California</option>
-                                </select>
-                            </div>
-                        </div>
-
-                        <!-- Post Code-->
-                        <div class="col-md-6">
-                            <div class="form-group">
-                                <label for="zip" class="form-label">Zip/Post Code</label>
-                                <input type="text" class="form-control" id="zip" placeholder="" required=""
-                                    data-form-type="address,zip" data-kwimpalastatus="alive"
-                                    data-kwimpalaid="1670523824996-6">
                             </div>
                         </div>
                     </div>
@@ -131,7 +109,7 @@
 
                 <!-- Shipping Method -->
                 <div class="checkout-panel">
-                    <h5 class="title-checkout border-bottom border-top py-4">Shipping Method</h5>
+                    <h5 class="title-checkout border-bottom border-top py-4">Phương thức vận chuyển</h5>
 
                     <!-- Shipping Option-->
                     <div class="form-check form-group form-check-custom form-radio-custom mb-3">
@@ -140,8 +118,8 @@
                         <label class="form-check-label" for="checkoutShippingMethodOne">
                             <span class="d-flex justify-content-between align-items-start w-100">
                                 <span>
-                                    <span class="mb-0 fw-bolder d-block">Click &amp; Collect Shipping</span>
-                                    <small class="">Collect from our London store</small>
+                                    <span class="mb-0 fw-bolder d-block">Nhận tại cửa hàng của chúng tôi</span>
+                                    <small class="">Nhận tại chi nhánh số 1 tại Thủ Đức</small>
                                 </span>
                                 <span class="small fw-bolder text-uppercase">Free</span>
                             </span>
@@ -155,8 +133,8 @@
                         <label class="form-check-label" for="checkoutShippingMethodTwo">
                             <span class="d-flex justify-content-between align-items-start">
                                 <span>
-                                    <span class="mb-0 fw-bolder d-block">UPS Next Day</span>
-                                    <small class="">For all orders placed before 1pm Monday to Thursday</small>
+                                    <span class="mb-0 fw-bolder d-block">Vận chuyển siêu tốc</span>
+                                    <small class="">Vận chuyển hàng trong 24 giờ</small>
                                 </span>
                                 <span class="small fw-bolder text-uppercase">$19.99</span>
                             </span>
@@ -170,8 +148,8 @@
                         <label class="form-check-label" for="checkoutShippingMethodThree">
                             <span class="d-flex justify-content-between align-items-start">
                                 <span>
-                                    <span class="mb-0 fw-bolder d-block">DHL Priority Service</span>
-                                    <small class="">24 - 36 hour delivery</small>
+                                    <span class="mb-0 fw-bolder d-block">Vận chuyển tiêu chuẩn</span>
+                                    <small class="">Vận chuyển trong 36 - 48 giờ</small>
                                 </span>
                                 <span class="small fw-bolder text-uppercase">$9.99</span>
                             </span>
@@ -182,7 +160,7 @@
 
                 <!-- Payment -->
                 <div class="checkout-panel" data-dashlane-rid="6f1e2c758b1b82b3" data-form-type="payment">
-                    <h5 class="title-checkout border-top border-bottom py-4">Payment Information</h5>
+                    <h5 class="title-checkout border-top border-bottom py-4">Thông tin thanh toán</h5>
 
                     <div class="row">
                         <!-- Payment Option-->
@@ -194,9 +172,8 @@
                                 <label class="form-check-label" for="checkoutPaymentStripe">
                                     <span class="d-flex justify-content-between align-items-start">
                                         <span>
-                                            <span class="mb-0 fw-bolder d-block">Credit Card (Stripe)</span>
+                                            <span class="mb-0 fw-bolder d-block">Thẻ tín dụng</span>
                                         </span>
-                                        <i class="ri-bank-card-line"></i>
                                     </span>
                                 </label>
                             </div>
@@ -213,12 +190,26 @@
                                         <span>
                                             <span class="mb-0 fw-bolder d-block">PayPal</span>
                                         </span>
-                                        <i class="ri-paypal-line"></i>
                                     </span>
                                 </label>
                             </div>
                         </div>
 
+                        <!-- Payment Option-->
+                        <div class="col-12">
+                            <div class="form-check form-group form-check-custom form-radio-custom mb-3">
+                                <input class="form-check-input" type="radio" name="checkoutPaymentMethod"
+                                    id="checkoutPaymentMomo" data-dashlane-rid="bc56ab365afa18c8"
+                                    data-form-type="payment,type" data-kwimpalastatus="dead">
+                                <label class="form-check-label" for="checkoutPaymentMomo">
+                                    <span class="d-flex justify-content-between align-items-start">
+                                        <span>
+                                            <span class="mb-0 fw-bolder d-block">Momo</span>
+                                        </span>
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
                     </div>
 
                     <!-- Payment Details-->
@@ -226,17 +217,17 @@
                         <div class="row pt-3">
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="cc-name" class="form-label">Name on card</label>
+                                    <label for="cc-name" class="form-label">Chủ thẻ</label>
                                     <input type="text" class="form-control" id="cc-name" placeholder="" required=""
                                         data-dashlane-rid="f6c038e757f8c296" data-form-type="name,credit_card,payment"
                                         data-kwimpalastatus="alive" data-kwimpalaid="1670526377289-10">
-                                    <small class="text-muted">Full name as displayed on card</small>
+                                    <small class="text-muted">Họ và tên được khắc trên thẻ</small>
                                 </div>
                             </div>
 
                             <div class="col-md-12">
                                 <div class="form-group">
-                                    <label for="cc-number" class="form-label">Credit card number</label>
+                                    <label for="cc-number" class="form-label">Số thẻ</label>
                                     <input type="text" class="form-control" id="cc-number" placeholder="" required=""
                                         data-dashlane-rid="97dcdecbe44e1f9d" data-form-type="payment,number,credit_card"
                                         data-kwimpalastatus="alive" data-kwimpalaid="1670526377289-11">
@@ -245,7 +236,7 @@
 
                             <div class="col-md-6">
                                 <div class="form-group">
-                                    <label for="cc-expiration" class="form-label">Expiration</label>
+                                    <label for="cc-expiration" class="form-label">Hạn</label>
                                     <input type="text" class="form-control" id="cc-expiration" placeholder=""
                                         required="" data-dashlane-rid="1faf5e54474b4bc5"
                                         data-form-type="date,expiration,credit_card,payment" data-kwimpalastatus="alive"
@@ -257,14 +248,13 @@
                                 <div class="form-group">
                                     <div class="d-flex">
                                         <label for="cc-cvv"
-                                            class="form-label d-flex w-100 justify-content-between align-items-center">Security
-                                            Code</label>
+                                            class="form-label d-flex w-100 justify-content-between align-items-center">Mã bảo vệ</label>
                                         <button type="button" class="btn btn-link p-0 fw-bolder fs-xs text-nowrap"
                                             data-bs-toggle="tooltip" data-bs-placement="top" title=""
                                             data-bs-original-title="A CVV is a number on your credit card or debit card that's in addition to your credit card number and expiration date"
                                             data-dashlane-rid="4994ab64affc0f7c" data-form-type="other"
                                             data-dashlane-label="true">
-                                            What's this?
+                                            Đây là gì?
                                         </button>
                                     </div>
                                     <input type="text" class="form-control" id="cc-cvv" placeholder="" required=""
@@ -342,19 +332,19 @@
                     </div>
                     <div class="py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center mb-2">
-                            <p class="m-0 fw-bolder fs-6">Subtotal</p>
+                            <p class="m-0 fw-bolder fs-6">Tạm tính</p>
                             <p class="m-0 fs-6 fw-bolder">$422.99</p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center ">
-                            <p class="m-0 fw-bolder fs-6">Shipping</p>
+                            <p class="m-0 fw-bolder fs-6">Phí giao hàng</p>
                             <p class="m-0 fs-6 fw-bolder">$8.95</p>
                         </div>
                     </div>
                     <div class="py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center">
                             <div>
-                                <p class="m-0 fw-bold fs-5">Grand Total</p>
-                                <span class="text-muted small">Inc $45.89 sales tax</span>
+                                <p class="m-0 fw-bold fs-5">Tổng cộng</p>
+                                <span class="text-muted small">Đã bao gồm 10% thuế GTGT</span>
                             </div>
                             <p class="m-0 fs-5 fw-bold">$422.99</p>
                         </div>
@@ -363,11 +353,11 @@
                     <div class="form-group form-check my-4">
                         <input type="checkbox" class="form-check-input" id="accept-terms" checked=""
                             data-dashlane-rid="3c9caa1d7baabb3a" data-form-type="consent,terms">
-                        <label class="form-check-label fw-bolder" for="accept-terms">I agree to Alpine's <a
-                                href="#">terms &amp; conditions</a></label>
+                        <label class="form-check-label fw-bolder" for="accept-terms">Tôi đã đồng ý <a
+                                href="#">điều khoản &amp; dịch vụ</a></label>
                     </div>
                     <a href="#" class="btn btn-dark w-100" role="button" data-dashlane-rid="af75b47f85be43cd"
-                        data-form-type="other" data-dashlane-label="true">Complete Order</a>
+                        data-form-type="other" data-dashlane-label="true">Hoàn thành đặt hàng</a>
                 </div>
             </div>
             <!-- /Checkout preview - Right -->

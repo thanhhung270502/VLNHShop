@@ -5,13 +5,11 @@
         <div class="w-100 pb-lg-0 pt-lg-0 pt-4 pb-3">
             <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
                 <!-- Logo -->
-                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./">
+                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./" style="width: 5%;">
                     <!-- Start of Navigation brand -->
                     <div class="d-flex align-items-center">
                         <!-- Start of Logo -->
-                        <div class="f-w-6 d-flex align-items-center me-2 lh-1">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 194 194"><path fill="currentColor" class="svg-logo-white" d="M47.45,60l1.36,27.58,53.41-51.66,50.87,50,3.84-26L194,100.65V31.94A31.94,31.94,0,0,0,162.06,0H31.94A31.94,31.94,0,0,0,0,31.94v82.57Z"></path><path fill="currentColor" class="svg-logo-dark" d="M178.8,113.19l1,34.41L116.3,85.92l-14.12,15.9L88.07,85.92,24.58,147.53l.93-34.41L0,134.86v27.2A31.94,31.94,0,0,0,31.94,194H162.06A31.94,31.94,0,0,0,194,162.06V125.83Z"></path></svg>
-                        </div>
+                        <img src="../assets/images/logos/hvln-black.webp" class="bg-light me-2" style="width: 60%;">
                         <!-- End of Logo -->
 
                         <!-- Start of Text -->
@@ -23,9 +21,9 @@
                 <!-- Logo -->
 
                 <!-- Search -->
-                <div class="ms-5 w-auto d-flex align-items-center">
-                    <form class="d-flex" role="search">
-                        <input class="form-control bg-light px-4" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
+                <div class="ms-5 w-auto d-flex align-items-center justify-content-center">
+                    <form class="d-flex ms-5" role="search">
+                        <input class="form-control bg-light px-4 ms-5" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
                         border-bottom-left-radius: 1rem;">
                         
                         <button class="btn btn-link px-3 text-decoration-none d-flex align-items-center bg-light text-dark" data-pr-search style="border-radius: 0 1rem 1rem 0;">
@@ -37,14 +35,6 @@
 
                 <!-- Navigation Icons -->
                 <ul class="list-unstyled mb-0 d-flex align-items-center">
-
-                    <!-- Navbar Search-->
-                    <li class="ms-1 d-inline-block">
-                        <button class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-pr-search>
-                            <i class="ri-search-2-line ri-lg align-middle text-white"></i>
-                        </button>
-                    </li>
-                    <!-- /Navbar Search-->
 
                     <!-- Navbar Wishlist-->
                     <li class="ms-1 d-none d-lg-inline-block">
