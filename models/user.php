@@ -1,7 +1,7 @@
 <?php
 require_once 'connection.php';
 
-function CheckUsername($username) {
+function CheckUsernameExist($username) {
     $connObj = new Connection();
     $sql = sprintf('SELECT * FROM user WHERE username=\'%s\'', $username);
     if ($connObj->conn->query($sql)->fetch_assoc() == null) {

@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
+require_once __DIR__.'/../../controllers/user.php';
 
 $user = [
     'username' => '',
@@ -14,14 +14,15 @@ $error = [
     'password' => '',
     'confirm' => '',
     'name' => '',
-    'phone' => ''
+    'phone' => '',
+    'address' => ''
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $post_name = ['username-signup', 'password-signup', 'confirm-password', 'fullname', 'phone', 'address'];
     $i = 0;
     foreach ($user as $key => &$value) {
-        $user[$key] = $_POST[$post_name[$i]];
+        $value = $_POST[$post_name[$i]];
         ++$i;
     }
     RegisterSubmit($user, $error);
@@ -68,10 +69,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
                     new mdb.Input(formOutline).init();
                 });
-
-                    document.querySelectorAll('.form-outline').forEach((formOutline) => {
-                        new mdb.Input(formOutline).update();
-                    });
+                document.querySelectorAll('.form-outline').forEach((formOutline) => {
+                    new mdb.Input(formOutline).update();
+                });
             });
         </script>
         <title>Register</title>
@@ -181,6 +181,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                     </div>
                                                     <span class="text-white ms-1">*</span>
                                                 </div>
+                                                <p class="text-danger mt-1"><?php echo $error['address']?></p>
                                             </div>
 
                                             <div class="text-center pt-1 mb-5 pb-1 d-flex align-items-center">

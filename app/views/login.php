@@ -1,5 +1,5 @@
 <?php
-require_once $_SERVER['DOCUMENT_ROOT'].'/VLNHShop/controllers/user.php';
+require_once __DIR__.'/../../controllers/user.php';
 
 $user = [
     'username' => '',
@@ -62,7 +62,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
                     new mdb.Input(formOutline).init();
                 });
-
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
                     new mdb.Input(formOutline).update();
                 });
@@ -72,7 +71,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     </head>
     <body>
-        <section class="h-100 gradient-form" style="background-color: #eee;">
+        <div class="h-100 gradient-form" style="background-color: #eee;">
             <div class="container py-5 h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-xl-10">
@@ -147,7 +146,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                     </div>
                 </div>
             </div>
-        </section>
+        </div>
     </body>
 
 </html>
