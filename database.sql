@@ -73,14 +73,14 @@ INSERT INTO `user` VALUES (4, 'Brier Danson', 'bdanson3@netscape.com', 'xMhXQGxY
 INSERT INTO `user` VALUES (5, 'Dilly Blofeld', 'dblofeld4@ca.gov', 'jVFHr4OW', '8904683776', '741 Harbort Lane', 1, './app/assets/images/instagram/instagram-1.jpg');
 
 CREATE TABLE `cart` (
-  `id` int(10) PRIMARY KEY,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
   `total_money` int(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `cart_item` (
-  `id` int(10) PRIMARY KEY,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `cart_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
@@ -89,16 +89,55 @@ CREATE TABLE `cart_item` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `order` (
-  `id` int(10) PRIMARY KEY,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
   `total_money` int(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 CREATE TABLE `order_item` (
-  `id` int(10) PRIMARY KEY,
+  `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `order_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `size` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `name` varchar(10) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+CREATE TABLE `product_sizes` (
+  `id` int PRIMARY KEY AUTO_INCREMENT,
+  `product_id` int NOT NULL,
+  `size_id` int NOT NULL,
+  `quantity_remain` int NOT NULL DEFAULT 0,
+  FOREIGN KEY (`product_id`) REFERENCES `product`(`id`),
+  FOREIGN KEY (`size_id`) REFERENCES `size`(`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+INSERT INTO `size` (name) VALUES
+('S'), 
+('M'), 
+('L'), 
+('XL'), 
+('XXL'), 
+('XXXL');
+
+INSERT INTO `product_sizes` (product_id, size_id, quantity_remain) VALUES
+(1, 2, 10), 
+(1, 3, 10), 
+(1, 4, 10),
+(2, 2, 10), 
+(2, 3, 10), 
+(2, 4, 10),
+(3, 2, 10), 
+(3, 3, 10), 
+(3, 4, 10),
+(4, 2, 10), 
+(4, 3, 10), 
+(4, 4, 10),
+(5, 2, 10), 
+(5, 3, 10), 
+(5, 4, 10);
