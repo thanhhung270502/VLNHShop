@@ -131,122 +131,54 @@
 <!-- Navbar -->
 
 <!-- Offcanvas for Cart -->
-<div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasCart" style="visibility: visible;" aria-modal="true" role="dialog">
-    <div class="offcanvas-header d-flex align-items-center">
-        <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
-    </div>
-    <div class="offcanvas-body">
-        <div class="d-flex flex-column justify-content-between w-100 h-100">
-            <div>
+<button type="button" class="cart-icon" data-bs-toggle="modal" data-bs-target="#exampleModal">
+            Gio~
+          </button>
 
-                <!-- Cart Product-->
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens StormBreaker Jacket
-                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$85.00</p>
-                    </div>
+          <!-- Modal -->
+          <div class="modal fade cart_modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog modal-dialog-scrollable">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <h5 class="modal-title" id="exampleModalLabel">Your Cart</h5>
+                  <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                 </div>
-
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens StormBreaker Jacket
-                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$85.00</p>
-                    </div>
+                <div class="modal-body">
+                        <li class="border-bottom"><a class="dropdown-item dropdown-padding">
+                          <div class="d-flex">
+                            <div class="col-2">
+                                <img src="../" alt="abc" class="img-fluid">
+                            </div>
+                            <div class="col-8 cart-item__infor">
+                              <div class="cart-item__name">
+                                ABC
+                              </div>
+                              <div class="cart-item__size">
+                                Size:
+                                L
+                              </div>
+                              <div class="cart-item__quantity">
+                                Qty:
+                                1
+                              </div>
+                            </div>
+                              <div class="col-2 cart-item__price">
+                                456
+                              </div>
+                          </div>
+                        </a></li>
                 </div>
-
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
+                <div class="modal-footer">
+                  <div class="d-flex justify-content-between modal_total w-100">
+                    <div>
+                      Subtotal
                     </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens StormBreaker Jacket
-                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$85.00</p>
+                    <div>
+                     5.0
                     </div>
+                  </div>
                 </div>
-
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens StormBreaker Jacket
-                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$85.00</p>
-                    </div>
-                </div>
-
-                <!-- Cart Product-->
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-2.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens Torrent Terrain Jacket
-                                <a class="text-decoration-none text-dark" href="#"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$99.00</p>
-                    </div>
-                </div>
-
+              </div>
             </div>
-            <div class="border-top pt-3">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fw-bolder">Subtotal</p>
-                    <p class="m-0 fw-bolder">$233.33</p>
-                </div>
-                <a href="./checkout.php" class="btn btn-orange text-white fw-bold mt-5 mb-2 d-block text-center">Checkout</a>
-                <a href="./cart.php" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
-            </div>
-        </div>
-    </div>
-</div>
+          </div>
 <!-- /Offcanvas for Cart -->
