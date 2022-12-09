@@ -21,38 +21,3 @@
     background-color: rgb(220, 99, 0);
 }
 
-
-.cart_modal {
-    --bs-modal-width: 400px;
-}
-.modal-dialog {
-    margin: 0;
-    margin-left: auto;
-    height: 100vh;
-}
-
-    .modal-content {
-        border-radius: 0;
-        height: 100vh;
-    }
-
-    .cart-item__infor {
-        padding-left: 12px;
-        font-size: 14px;
-        color: var(--light-gray);
-    }
-
-    .cart-item__avatar {
-        width: 65px;
-    }
-
-    .cart-item__name {
-        font-weight: bold;
-        font-size: 1rem;
-        color: var(--night-light);
-        padding-bottom: 5px;
-        white-space: nowrap;
-        overflow: hidden;
-        text-overflow: ellipsis;
-    }
-

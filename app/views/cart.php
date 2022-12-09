@@ -11,6 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- <link href="../assets/css/home.css" rel="stylesheet"> -->
     <link href="../assets/css/cart.css" rel="stylesheet">
+    <link href="../assets/css/modal.css" rel="stylesheet">
 </head>
 
 <body>
@@ -42,7 +43,6 @@
 
                         <?php 
                             include('../../controllers/cart/cart_index.php');
-                            $user_id = 1;
                             $total_money = 0;
 
                             if ($items_result->num_rows > 0) {

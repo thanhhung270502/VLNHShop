@@ -2,7 +2,7 @@
     include_once('../../models/connection.php');
 
     // lấy id người dùng
-    $user_id = 1;
+    $user_id = 2;
     
     $cart_info = $conn->query("SELECT * FROM cart WHERE user_id=$user_id");
     $cart_id = 0;
