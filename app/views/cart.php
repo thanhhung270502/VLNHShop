@@ -16,77 +16,82 @@
 <body>
 
     <?php
-        include("header.php")
+        include("header.php");
     ?>
 
     <section class="mt-5 container">
         <!-- Cart Title -->
-        <h1 class="mb-6 display-5 fw-bold text-center">Your Cart</h1>
+        <h1 class="mb-6 display-5 fw-bold text-center">Giỏ hàng</h1>
         <!-- /Cart Title -->
 
         <!-- Cart Content -->
         <div class="row mt-5">
 
-            <!-- Cart Item -->
+            <!-- Cart Items -->
             <div class="col-7">
                 <div class="table-responsive">
                     <table class="table">
                         <thead>
                             <tr>
-                                <th class="d-none d-sm-table-cell" style="width: 15%"></th>
-                                <th class="ps-sm-3">Details</th>
-                                <th>Qty</th>
-                                <th style="height: 100%;"></th>
+                                <th class="d-none d-sm-table-cell" style="width: 15%">Ảnh</th>
+                                <th class="ps-sm-3">Chi tiết</th>
+                                <th>Số lượng</th>
+                                <th style="height: 100%;">Giá</th>
                             </tr>
                         </thead>
 
-                        <!-- Loop here -->
+                        <?php 
+                            include('../../controllers/cart/cart_index.php');
+                            $user_id = 1;
+                            $total_money = 0;
+
+                            if ($items_result->num_rows > 0) {
+                                while($cart_item = $items_result->fetch_assoc()) {
+                                    $item_id = $cart_item['product_id'];
+                                    $img_link = '../../'.$cart_item['img'];
+                                    $sub_total_money = $cart_item['quantity'] * $cart_item['price'];
+                                    $total_money += $sub_total_money;
+                        ?>
                         <tbody>
                             <tr>
-                                <!-- image -->
-                                <td class="d-none d-sm-table-cell">
+                                <td class="d-sm-table-cell">
                                     <picture class="d-block bg-light p-3 f-w-20">
-                                        <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="">
+                                        <img class="img-fluid" src="<?php echo $img_link; ?>" alt="">
                                     </picture>
                                 </td>
-                                <!-- image -->
-
-                                <!-- Details -->
                                 <td>
                                     <div class="ps-sm-3">
                                         <h6 class="mb-2 fw-bolder">
-                                            Mens StormBreaker Jacket
+                                            <?php echo $cart_item['name']; ?> 
                                         </h6>
-                                        <small class="d-block text-muted">Blue / Medium</small>
+                                        <small class="d-block text-muted"><?php echo $cart_item['color']; ?>/ L</small>
                                     </div>
                                 </td>
-                                <!-- Details -->
-
-                                <!-- Qty -->
                                 <td>
                                     <div class="px-3">
-                                        <span class="small text-muted mt-1">1 @ $1129.99</span>
+                                        <span class="small text-muted mt-1"><?php echo $cart_item['quantity']; ?> @ <?php echo $cart_item['price']; ?></span>
                                     </div>
                                 </td>
-                                <!-- /Qty -->
-
-                                <!-- Actions -->
                                 <td class="position-relative">
                                     <div class="d-flex flex-column align-items-stretch justify-content-between">
-                                        <a class="text-decoration-none text-dark" href="#"><i class="ri-close-circle-line ri-lg"></i></a>
-                                        <p class="fw-bolder mt-3 m-sm-0" style="position: absolute; top: 70%; left: -50%">$1129.99</p>
+                                        <a 
+                                            href="../../controllers/cart/cart_item_delete.php?id=<?php echo $item_id; ?>"
+                                            class="text-decoration-none text-dark"    
+                                        ><i class="ri-close-circle-line ri-lg"></i></a>    
+                                    <!-- <button class="delete-button bg-white border-0"><i class="ri-close-circle-line ri-lg"></i></button> -->
+                                        <p class="fw-bolder mt-3 m-sm-0" style="position: absolute; top: 70%; left: -53%">$<?php echo $sub_total_money; ?></p>
                                     </div>
                                 </td>
-                                <!-- /Actions -->
-
                             </tr>
                         </tbody>
-                        <!-- /Loop here -->
-
+                        <?php
+                                }
+                            }
+                        ?>
                     </table>
                 </div>
             </div>
-            <!-- /Cart Item -->
+            <!-- /Cart Items -->
 
             <div class="col-5">
                 <div class="bg-dark p-4 p-md-5 text-white">
@@ -94,7 +99,7 @@
                     <div class="py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center mb-2 flex-column flex-sm-row">
                             <p class="m-0 fw-bolder fs-6">Subtotal</p>
-                            <p class="m-0 fs-6 fw-bolder">$422.99</p>
+                            <p class="m-0 fs-6 fw-bolder">$<?php echo $total_money; ?></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row mt-3 m-sm-0">
                             <p class="m-0 fw-bolder fs-6">Shipping</p>
@@ -105,9 +110,9 @@
                         <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row">
                             <div>
                                 <p class="m-0 fs-5 fw-bold">Grand Total</p>
-                                <span class="text-white opacity-75 small">Inc $45.89 sales tax</span>
+                                <span class="text-white opacity-75 small">Include 10% tax</span>
                             </div>
-                            <p class="mt-3 m-sm-0 fs-5 fw-bold">$422.99</p>
+                            <p class="mt-3 m-sm-0 fs-5 fw-bold">$<?php echo $total_money * 1.1; ?></p>
                         </div>
                     </div>
 
