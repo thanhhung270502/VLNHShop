@@ -9,9 +9,7 @@ require_once __DIR__.'/../../controllers/user.php';
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>Manage User</title>
-        <link rel="stylesheet" href="../assets/css/libs.bundle.css" />
-        <!-- Main CSS -->
-        <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
+
         <link
                 href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
                 rel="stylesheet"
@@ -63,44 +61,44 @@ require_once __DIR__.'/../../controllers/user.php';
                             <input type="search" class="form-control" id="datatable-search-input" onkeyup="searchTable()">
                             <label class="form-label" for="datatable-search-input">Tìm kiếm</label>
                         </div>
-                        <div id="datatable">
+                        <div id="datatable" class="table-responsive-lg">
                             <table class="table align-middle mb-0 bg-white">
                                 <thead class="bg-light">
-                                <tr>
-                                    <th>Tên</th>
-                                    <th>Số điện thoại</th>
-                                    <th>Địa chỉ</th>
-                                    <th>Vai trò</th>
-                                    <th>Hành động</th>
-                                </tr>
+                                    <tr class="text-center">
+                                        <th>Tên</th>
+                                        <th>Số điện thoại</th>
+                                        <th>Địa chỉ</th>
+                                        <th>Vai trò</th>
+                                        <th>Hành động</th>
+                                    </tr>
                                 </thead>
                                 <tbody id="user-table">
-                                <?php
-                                ShowAllUsers();
-                                ?>
-                                <script>
-                                    function searchTable() {
-                                        let input, filter, found, table, tr, td, i, j;
-                                        input = document.getElementById("datatable-search-input");
-                                        filter = input.value.toUpperCase();
-                                        table = document.getElementById("user-table");
-                                        tr = table.getElementsByTagName("tr");
-                                        for (i = 0; i < tr.length; i++) {
-                                            td = tr[i].getElementsByTagName("td");
-                                            for (j = 0; j < td.length; j++) {
-                                                if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
-                                                    found = true;
+                                    <?php
+                                    ShowAllUsers();
+                                    ?>
+                                    <script>
+                                        function searchTable() {
+                                            let input, filter, found, table, tr, td, i, j;
+                                            input = document.getElementById("datatable-search-input");
+                                            filter = input.value.toUpperCase();
+                                            table = document.getElementById("user-table");
+                                            tr = table.getElementsByTagName("tr");
+                                            for (i = 0; i < tr.length; i++) {
+                                                td = tr[i].getElementsByTagName("td");
+                                                for (j = 0; j < td.length; j++) {
+                                                    if (td[j].innerHTML.toUpperCase().indexOf(filter) > -1) {
+                                                        found = true;
+                                                    }
+                                                }
+                                                if (found) {
+                                                    tr[i].style.display = "";
+                                                    found = false;
+                                                } else {
+                                                    tr[i].style.display = "none";
                                                 }
                                             }
-                                            if (found) {
-                                                tr[i].style.display = "";
-                                                found = false;
-                                            } else {
-                                                tr[i].style.display = "none";
-                                            }
                                         }
-                                    }
-                                </script>
+                                    </script>
                                 </tbody>
                             </table>
                         </div>

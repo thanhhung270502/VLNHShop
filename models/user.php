@@ -1,5 +1,5 @@
 <?php
-require_once 'connection.php';
+require_once 'connection_user.php';
 
 function CheckUsernameExist($username) {
     $connObj = new Connection();
@@ -34,4 +34,29 @@ function SelectAllUsers() {
     $connObj = new Connection();
     $sql = 'SELECT * FROM user';
     return $connObj->conn->query($sql);
+}
+
+function SelectUser($id) {
+    $connObj = new Connection();
+    $sql = sprintf('SELECT * FROM user WHERE id=\'%d\'', $id);
+    return $connObj->conn->query($sql)->fetch_assoc();
+}
+
+function UpdateUser($user, $id) {
+    $connObj = new Connection();
+    $edit_username = sprintf('UPDATE user SET username=\'%s\' WHERE id=\'%d\'', $user['username'], $id);
+    $edit_password = sprintf('UPDATE user SET password=\'%s\' WHERE id=\'%d\'', $user['password'], $id);
+    $edit_name = sprintf('UPDATE user SET name=\'%s\' WHERE id=\'%d\'', $user['username'], $id);
+    $edit_phone = sprintf('UPDATE user SET phone=\'%s\' WHERE id=\'%d\'', $user['phone'], $id);
+    $edit_address = sprintf('UPDATE user SET address=\'%s\' WHERE id=\'%d\'', $user['address'], $id);
+    $sql_arr = [$edit_username, $edit_password, $edit_name, $edit_phone, $edit_address];
+    foreach ($sql_arr as $sql) {
+        $connObj->conn->query($sql);
+    }
+}
+
+function DropUser($id) {
+    $connObj = new Connection();
+    $sql = sprintf('DELETE FROM user WHERE id=\'%d\'', $id);
+    $connObj->conn->query($sql);
 }
