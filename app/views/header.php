@@ -115,9 +115,26 @@
 
                     <!-- Navbar Sign In -->
                     <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="text-white text-decoration-none fw-bold" href="./login.php">
-                            Sign In
-                        </a>
+                        <?php
+                        require_once __DIR__.'/../../controllers/user.php';
+                            if (isset($_COOKIE['user-id'])) {
+                                echo sprintf('
+                                    <div class="dropdown">
+                                        <a class="btn text-white text-decoration-none fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        %s
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto;">
+                                            <li><a class="dropdown-item text-center py-1" href="./login.php">Đăng xuất</a></li>
+                                        </ul>
+                                    </div>
+                                ', GetName($_COOKIE['user-id']));
+                            } else {
+                                echo '
+                                <a class="text-white text-decoration-none fw-bold" href="./login.php">
+                                    Đăng nhập
+                                </a>';
+                            }
+                        ?>
                     </li>
                     <!-- /Navbar Sign In -->
 

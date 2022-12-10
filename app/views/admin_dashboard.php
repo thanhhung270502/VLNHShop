@@ -10,7 +10,7 @@ CheckAdminUser($_COOKIE['user-id']);
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Manage User</title>
+        <title>Admin Dashboard</title>
 
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -62,10 +62,10 @@ CheckAdminUser($_COOKIE['user-id']);
                         </div>
                         <div class="d-flex justify-content-center">
                             <a href="./manage_user.php" class="mx-2">
-                                <button type="button" class="btn btn-primary">Quản lý thành viên</button>
+                                <button type="button" class="btn btn-primary btn-rounded">Quản lý thành viên</button>
                             </a>
                             <a href="#" class="mx-2">
-                                <button type="button" class="btn btn-success">Quản lý sản phẩm</button>
+                                <button type="button" class="btn btn-success btn-rounded">Quản lý sản phẩm</button>
                             </a>
                         </div>
                     </div>

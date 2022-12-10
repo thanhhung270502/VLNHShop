@@ -3,13 +3,7 @@ require_once __DIR__.'/../../controllers/user.php';
 
 CheckAdminUser($_COOKIE['user-id']);
 
-if ($_SERVER['REQUEST_METHOD'] != 'GET') {
-    header('Location: admin_dashboard.php');
-}
-
 $user = [
-    'id' => '',
-    'cur-username' => '',
     'username' => '',
     'password' => '',
     'name' => '',
@@ -25,20 +19,14 @@ $error = [
     'address' => ''
 ];
 
-if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    if (isset($_GET['id'])) {
-        GetUserData($user, $_GET['id']);
-    } else {
-        header('Location: admin_dashboard.php');
-    }
-} else if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $post_name = ['id', 'cur-username', 'username-edit', 'password-edit', 'fullname', 'phone', 'address'];
+if ($_SERVER["REQUEST_METHOD"] == "POST") {
+    $post_name = ['username-create', 'password-create', 'fullname', 'phone', 'address', 'role'];
     $i = 0;
     foreach ($user as $key => &$value) {
         $value = $_POST[$post_name[$i]];
         ++$i;
     }
-    EditUserData($user, $error);
+    CreateUser($user, $error);
 }
 ?>
 
@@ -48,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <meta charset="UTF-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Edit User</title>
+        <title>Create User</title>
 
         <link
             href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
@@ -72,8 +60,8 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
         <!-- MDB -->
         <script
             type="text/javascript"
-            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"></script>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+            src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
+        ></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
@@ -95,35 +83,19 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                     <div class="col-xl-5">
                         <div class="card rounded-3 text-black p-5">
                             <div class="text-center">
-                                <h4 class="mt-1 mb-5 pb-1">Chỉnh sửa người dùng</h4>
+                                <h4 class="mt-1 mb-5 pb-1">Tạo người dùng</h4>
                             </div>
                             <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>" method="post">
-
-                                <div class="m-0">
-                                    <input type="text"
-                                           id="cur-username"
-                                           name="cur-username"
-                                           class="form-control"
-                                           value="<?php echo $user['username']?>" hidden/>
-                                </div>
-
-                                <div class="m-0">
-                                    <input type="text"
-                                           id="id"
-                                           name="id"
-                                           class="form-control"
-                                           value="<?php echo $user['id']?>" hidden/>
-                                </div>
 
                                 <div class="mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="form-outline">
                                             <input type="text"
-                                                   id="username-edit"
-                                                   name="username-edit"
+                                                   id="username-create"
+                                                   name="username-create"
                                                    class="form-control"
                                                    value="<?php echo $user['username']?>"/>
-                                            <label class="form-label" for="username-edit">Tên đăng nhập</label>
+                                            <label class="form-label" for="username-create">Tên đăng nhập</label>
                                         </div>
                                         <span class="text-danger ms-1 d-inline-block">*</span>
                                     </div>
@@ -133,12 +105,12 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                 <div class="mb-4">
                                     <div class="d-flex align-items-center">
                                         <div class="form-outline">
-                                            <input type="text"
-                                                   id="password-edit"
-                                                   name="password-edit"
+                                            <input type="password"
+                                                   id="password-create"
+                                                   name="password-create"
                                                    class="form-control"
                                                    value="<?php echo $user['password']?>"/>
-                                            <label class="form-label" for="password-edit">Mật khẩu</label>
+                                            <label class="form-label" for="password-create">Mật khẩu</label>
                                         </div>
                                         <span class="text-danger ms-1">*</span>
                                     </div>
@@ -197,7 +169,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                         </button>
                                     </a>
                                     <button class="btn btn-success btn-rounded fa-lg mx-3" type="submit">
-                                        Lưu thay đổi
+                                        Xác nhận
                                     </button>
                                     <span class="text-white ms-1">*</span>
                                 </div>

@@ -57,11 +57,16 @@ CheckAdminUser($_COOKIE['user-id']);
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
                     <div class="card rounded-3 text-black p-5">
-                        <div class="text-center d-flex position-relative justify-content-center">
-                            <a href="./admin_dashboard.php" class="position-absolute start-0">
-                                <button type="button" class="btn btn-dark">Trang chính</button>
+                        <div class="text-center d-flex position-relative justify-content-center align-items-center my-3">
+                            <a href="./admin_dashboard.php" class="position-absolute start-0 col-2 d-flex justify-content-start">
+                                <button type="button" class="btn btn-dark btn-rounded">Trang chính</button>
                             </a>
-                            <h4 class="mt-1 mb-5 pb-1">Quản lý thành viên</h4>
+                            <h4 class="m-0 col-8">Quản lý thành viên</h4>
+                        </div>
+                        <div class="text-center d-flex justify-content-center mb-4">
+                            <a href="./create_user.php">
+                                <button type="button" class="btn btn-success btn-rounded">Tạo người dùng</button>
+                            </a>
                         </div>
                         <div class="form-outline mb-4">
                             <input type="search" class="form-control" id="datatable-search-input" onkeyup="searchTable()">

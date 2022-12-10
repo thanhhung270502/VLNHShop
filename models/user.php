@@ -67,3 +67,17 @@ function RoleUser($id) {
     $result = $connObj->conn->query($sql)->fetch_assoc()['role'];
     return $result == null ? -1 : $result;
 }
+
+function CreateNewUser($user) {
+    $connObj = new Connection();
+    $sql = sprintf('INSERT INTO user (username, password, name, phone, address) VALUE
+                   (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')', $user['username'], $user['password'], $user['name'],
+        $user['phone'], $user['address']);
+    $connObj->conn->query($sql);
+}
+
+function SelectName($id) {
+    $connObj = new Connection();
+    $sql = sprintf('SELECT name FROM user WHERE id=\'%d\'', $id);
+    return $connObj->conn->query($sql)->fetch_assoc()['name'];
+}
