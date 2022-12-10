@@ -24,8 +24,8 @@ function CheckAccountExists($username, $password, &$user_data) {
 
 function InsertUser($user) {
     $connObj = new Connection();
-    $sql = sprintf('INSERT INTO user (username, password, name, phone, address, role) VALUE
-                   (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\', 0)', $user['username'], $user['password'], $user['name'],
+    $sql = sprintf('INSERT INTO user (username, password, name, phone, address) VALUE
+                   (\'%s\', \'%s\', \'%s\', \'%s\', \'%s\')', $user['username'], $user['password'], $user['name'],
                    $user['phone'], $user['address']);
     $connObj->conn->query($sql);
 }
@@ -59,4 +59,11 @@ function DropUser($id) {
     $connObj = new Connection();
     $sql = sprintf('DELETE FROM user WHERE id=\'%d\'', $id);
     $connObj->conn->query($sql);
+}
+
+function RoleUser($id) {
+    $connObj = new Connection();
+    $sql = sprintf('SELECT role FROM user WHERE id=\'%d\'', $id);
+    $result = $connObj->conn->query($sql)->fetch_assoc()['role'];
+    return $result == null ? -1 : $result;
 }

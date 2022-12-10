@@ -1,5 +1,7 @@
 <?php
 require_once __DIR__.'/../../controllers/user.php';
+
+CheckAdminUser($_COOKIE['user-id']);
 ?>
 
 <!DOCTYPE html>
@@ -34,6 +36,7 @@ require_once __DIR__.'/../../controllers/user.php';
                 type="text/javascript"
                 src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.0.1/mdb.min.js"
         ></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function () {
                 document.querySelectorAll('.form-outline').forEach((formOutline) => {
@@ -54,7 +57,10 @@ require_once __DIR__.'/../../controllers/user.php';
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-10">
                     <div class="card rounded-3 text-black p-5">
-                        <div class="text-center">
+                        <div class="text-center d-flex position-relative justify-content-center">
+                            <a href="./admin_dashboard.php" class="position-absolute start-0">
+                                <button type="button" class="btn btn-dark">Trang chính</button>
+                            </a>
                             <h4 class="mt-1 mb-5 pb-1">Quản lý thành viên</h4>
                         </div>
                         <div class="form-outline mb-4">

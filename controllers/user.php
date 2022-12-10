@@ -23,7 +23,7 @@ function RegisterSubmit($user, &$error) {
     } else if (strlen($user['address']) > 255) {
         $error['address'] = 'Địa chỉ dưới 256 ký tự';
     } else {
-        //InsertUser($user);
+        InsertUser($user);
         header('Location: login.php');
     }
 }
@@ -37,9 +37,9 @@ function LoginSubmit($user, &$error) {
         $user_data = [];
         $user_exist = CheckAccountExists($user['username'], $user['password'], $user_data);
         if ($user_exist) {
-            setcookie("user_id", $user_data['id'], time() + (86400 * 30), "/");
+            setcookie("user-id", $user_data['id'], time() + (86400 * 30), "/");
             if ($user_data['role'] == 0) {
-                header('Location: category.php');
+                header('Location: admin_dashboard.php');
             } else {
                 header('Location: index.php');
             }
@@ -97,7 +97,7 @@ function ShowAllUsers () {
                                               </div>
                                               <div class="modal-footer">
                                                     <button type="button" class="btn btn-secondary text-danger" data-mdb-dismiss="modal">Thoát</button>
-                                                    <a href="./manage_user.php">
+                                                    <a href="./delete_user.php?id=%d">
                                                         <button type="button" class="btn btn-danger">Xác nhận</button>
                                                     </a>                                                   
                                               </div>
@@ -112,7 +112,8 @@ function ShowAllUsers () {
             $user['id'],
             $user['id'],
             $user['id'],
-            $user['username']);
+            $user['username'],
+            $user['id']);
         echo $row;
     }
 }
@@ -149,4 +150,10 @@ function EditUserData($user, &$error) {
 
 function DeleteUser($id) {
     DropUser($id);
+}
+
+function CheckAdminUser($id) {
+    if (RoleUser($id) != 0) {
+        header('Location: index.php');
+    }
 }

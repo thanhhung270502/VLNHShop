@@ -1,6 +1,12 @@
 <?php
 require_once __DIR__.'/../../controllers/user.php';
 
+CheckAdminUser($_COOKIE['user-id']);
+
+if ($_SERVER['REQUEST_METHOD'] != 'GET') {
+    header('Location: admin_dashboard.php');
+}
+
 $user = [
     'id' => '',
     'cur-username' => '',
@@ -20,7 +26,11 @@ $error = [
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-    GetUserData($user, $_GET['id']);
+    if (isset($_GET['id'])) {
+        GetUserData($user, $_GET['id']);
+    } else {
+        header('Location: admin_dashboard.php');
+    }
 } else if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $post_name = ['id', 'cur-username', 'username-edit', 'password-edit', 'fullname', 'phone', 'address'];
     $i = 0;
