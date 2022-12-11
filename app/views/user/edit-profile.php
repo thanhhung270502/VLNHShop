@@ -78,7 +78,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     <?php
     include('../header.php');
     ?>
-    <div class="h-100 gradient-custom-2">
+    <div class="h-100 gradient-custom-3">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
                 <div class="col-xl-5">
