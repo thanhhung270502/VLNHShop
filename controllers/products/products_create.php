@@ -3,7 +3,7 @@
 ?>
 
 <?php
-    $name = $_GET["name"];
+    $name = $_GET["name"];  
     $price = (float)$_GET["price"];
     $color = $_GET["color"];
     $description = $_GET["description"];
@@ -15,8 +15,8 @@
     
     $conn->query($sql);
     $sql_user = "SELECT * FROM product WHERE `name` = 'shirt 1'";
-        $user = $conn->query($sql_user);
-        if ($user->num_rows > 0) {
+    $user = $conn->query($sql_user);
+    if ($user->num_rows > 0) {
         while($row = $user->fetch_assoc()) {
             $product_id = $row["id"];
             foreach ($sizes as $size) {

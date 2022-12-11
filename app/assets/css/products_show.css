@@ -1,11 +1,21 @@
 :root {
     --orange: #ee4d2d;
     --orange-light: #fff3f1;
+    --red: #df2020;
+    --blue: #0C97FF;
+    --green: #2df3aa;
+    --green-dark: #25b580;
+    --yellow: #ffc174;
+    --purple: #e574ff;
+    --pink: #fa7daf;
+    --beige: #c9ba9b;
+    --brown: #54333A;
 }
 
 .breadcrumb-item a{
     text-decoration: none;
     color: #aaa;
+    font-size: 0.9rem;
 }
 
 .product_sub_image {
@@ -16,11 +26,11 @@
 
 .product_collection_name {
     color: #aaa;
-    padding-bottom: 0.5rem;
+    font-size: 1.25rem;
 }
 
 .product__content .product__name {
-    font-size: 2rem;
+    font-size: 2.5rem;
     font-weight: bold;
     padding: 0.5rem 0 1rem;
 }
@@ -59,14 +69,19 @@
 }
 
 .btn__color {
-    background-color: var(--brown);
-    color: var(--white);
+    /* background-color: var(--brown);
+    color: var(--white); */
     width: fit-content;
-    padding: 6px 12px;
+    padding: 7px 20px;
+    border-radius: 39px;
+    font-weight: bold;
+    text-transform: uppercase;
+    cursor: pointer;
 }
 
 .form__select {
     border-radius: 0;
+    cursor: pointer;
 }
 .form__select:focus {
     box-shadow: none;

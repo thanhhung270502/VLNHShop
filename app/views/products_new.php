@@ -47,17 +47,17 @@
               <label class="input-group-text" for="inputGroupSelect01">Lựa chọn</label>
               <select class="form-select" id="inputGroupSelect01" name="color">
                 <option value="None" selected>Choose...</option>
-                <option value="Black">Đen</option>
-                <option value="White">Trắng</option>
-                <option value="Red">Đỏ</option>
-                <option value="Orange">Cam</option>
-                <option value="Yellow">Vàng</option>
-                <option value="Green">Xanh lá</option>
-                <option value="Blue">Xanh dương</option>
-                <option value="Purple">Tím</option>
-                <option value="Pink">Hồng</option>
-                <option value="Beige">Be</option>
-                <option value="Brown">Nâu</option>
+                <option value="black">Đen</option>
+                <option value="white">Trắng</option>
+                <option value="red">Đỏ</option>
+                <option value="orange">Cam</option>
+                <option value="yellow">Vàng</option>
+                <option value="green">Xanh lá</option>
+                <option value="blue">Xanh dương</option>
+                <option value="purple">Tím</option>
+                <option value="pink">Hồng</option>
+                <option value="beige">Be</option>
+                <option value="brown">Nâu</option>
               </select>
             </div>
           </div>

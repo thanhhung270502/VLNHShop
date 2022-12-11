@@ -15,32 +15,24 @@
 </head>
 <body>
   <?php 
-    include('../../models/connection.php');
+    include('../../controllers/products/products_show.php');
     include('header.php');
-    $id = $_GET['id'];
-    $sql = "SELECT * FROM product_images p WHERE p.product_id = $id";
-    $images = $conn->query($sql);
-    
-    $sql = "SELECT * FROM product WHERE id = $id";
-    $product_data = $conn->query($sql);
-
-    $sql = "SELECT p.quantity_remain, s.name FROM product_sizes p JOIN size s ON s.id = p.size_id WHERE p.product_id = 2";
-    $sizes = $conn->query($sql);
   ?>
 
   <div class="container">
-    <div class="pt-3 pb-2">
+    <div class="pt-5 pb-2">
       <nav aria-label="breadcrumb">
         <ol class="breadcrumb">
           <li class="breadcrumb-item">
-            <a href="#">Home</a>
+            <a href="./index.php">Trang chủ</a>
           </li>
           <li class="breadcrumb-item">
-            <a href="#">Library</a>
+            <a href="./products_index.php">Các sản phẩm</a>
           </li>
-          <li class="breadcrumb-item active" aria-current="page">
-            Data
-          </li>
+          <?php
+            echo '<li class="breadcrumb-item active" aria-current="page">'.$product["name"].'</li>'
+          ?>
+
         </ol>
       </nav>
     </div>
@@ -74,18 +66,13 @@
         ?>
       </div>
       <div class="col-lg-6">
-        <div class="d-flex">
-            <div class="col-6">
-                <div class="product_collection_name">BILLABONG</div>
-            </div>
-            <div class="col-6 text-end">
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                <FontAwesomeIcon icon={faStar} />
-                (50)
-            </div>
+        <div class="d-flex align-items-center justify-content-between">
+          <div class="product_collection_name">NVLH</div>
+          <?php
+            echo '
+              <a href="./products_edit_quantity.php?id='.$id.'" class="btn btn-secondary">Edit quantity</a>
+            ';
+          ?>
         </div>
         <form action="../../controllers/cart/cart_item_create.php" method="GET">
           <?php
@@ -93,48 +80,48 @@
           ?>
           <div class="product__content">
             <?php
-              if ($product_data->num_rows > 0) {
-                while($row = $product_data->fetch_assoc()) {
-                  echo '
-                    <div class="product__name">'.$row["name"].'</div>
-                    <div class="product__price border-bottom">
-                      <div class="product__price_new">$'.$row["price"].'</div>
-                    </div>
-                    <div class="py-3">
-                      <div class="product__colors pb-2">Color:</div>
-                      <div class="btn__color">'.$row["color"].'</div>
-                    </div>
+              echo '
+                <div class="product__name">'.$product["name"].'</div>
+                <div class="product__price border-bottom">
+                  <div class="product__price_new">$'.$product["price"].'</div>
+                </div>
+                <div class="py-3">
+                  <div class="product__colors pb-2">Màu sắc:</div>
                   ';
-                }
+                  
+              if ($product["color"] == "white") {
+                echo '<div class="btn__color" style="background-color: var(--'.$product["color"].'); color: black; border: 1px solid var(--black);">'.$product["color"].'</div>';
               }
+              else {
+                echo '<div class="btn__color" style="background-color: var(--'.$product["color"].'); color: white; border: 1px solid var(--'.$product["color"].');">'.$product["color"].'</div>';
+              }
+              echo '
+                </div>
+              ';
             ?>
             <div class="pb-3">
               <div class="product__sizes">
-                <div class="product__sizes_title pb-3">Size:</div>
+                <div class="product__sizes_title pb-3" style="font-weight: bold;">Size:</div>
                 <select class="form-select form__select" aria-label="Default select example" name="size">
-                  <option selected>Choose size...</option>
+                  <!-- <option value="None" selected>Choose size...</option> -->
                   <?php
-                    if ($images->num_rows > 0) {
-                      while($row = $images->fetch_assoc()) {
+                    if ($sizes->num_rows > 0) {
+                      while($size = $sizes->fetch_assoc()) {
                         echo '
-                          <option value="">'.$row["color"].'</option>
+                          <option value="'.$size["name" ].'">'.$size["name" ].'</option>
                         ';
                       }
                     }
                   ?>
-                  <option value="M">M</option>
-                  <option value="L">L</option>
-                  <option value="XL">XL</option>
-                  <option value="XXL">XXL</option>
                 </select>
               </div>
             </div>
             <div class='pb-3'>
-              <div class="pb-3">Số lượng</div>
+              <div class="pb-3" style="font-weight: bold;">Số lượng</div>
               <div class='d-flex'>
-                <input type="text" value="-" class="btn_quantity"></input>
+                <input type="text" value="-" class="btn_quantity" style="cursor: pointer;"></input>
                 <input type="text" value="1" class="btn_quantity" name="quantity"></input>
-                <input type="text" value="+" class="btn_quantity"></input>
+                <input type="text" value="+" class="btn_quantity" style="cursor: pointer;"></input>
               </div>
             </div>
             <div class="d-flex pb-3">
