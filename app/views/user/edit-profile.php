@@ -170,11 +170,6 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                             </div>
 
                             <div class="text-center pt-1 mb-5 pb-1 d-flex align-items-center justify-content-center">
-                                <a href="manage_user.php">
-                                    <button class="btn btn-primary btn-rounded fa-lg mx-3" type="button">
-                                        Quay lại
-                                    </button>
-                                </a>
                                 <button class="btn btn-success btn-rounded fa-lg mx-3" type="submit">
                                     Lưu thay đổi
                                 </button>
