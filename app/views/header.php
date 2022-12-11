@@ -5,11 +5,11 @@
         <div class="w-100 pb-lg-0 pt-lg-0">
             <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
                 <!-- Logo -->
-                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./" style="width: 5%;">
+                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./" style="width: 30%;">
                     <!-- Start of Navigation brand -->
                     <div class="d-flex align-items-center">
                         <!-- Start of Logo -->
-                        <img src="../assets/images/logos/hvln-black.webp" class="bg-light me-2" style="width: 60%;" alt="Logo VLNH">
+                        <img src="../assets/images/logos/hvln-black.webp" class="bg-light me-2" style="max-height: 55px;" alt="Logo VLNH">
                         <!-- End of Logo -->
 
                         <!-- Start of Text -->
@@ -21,9 +21,9 @@
                 <!-- Logo -->
 
                 <!-- Search -->
-                <div class="ms-5 w-auto d-none d-lg-block d-flex align-items-center justify-content-center">
-                    <form class="d-flex ms-5" role="search">
-                        <input class="form-control bg-light px-4 ms-5" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
+                <div class=" w-auto d-none d-lg-block d-flex align-items-center justify-content-center">
+                    <form class="d-flex " role="search">
+                        <input class="form-control bg-light px-4 " type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
                         border-bottom-left-radius: 1rem;">
                         
                         <button class="btn btn-link px-3 text-decoration-none d-flex align-items-center bg-light text-dark" data-pr-search style="border-radius: 0 1rem 1rem 0;">
@@ -34,13 +34,13 @@
                 <!-- /Search -->
 
                 <!-- Navigation Icons -->
-                <ul class="list-unstyled mb-0 d-flex align-items-center">
+                <ul class="list-unstyled mb-0 d-flex align-items-center justify-content-end" style="width: 30%;">
 
                     <!-- Navigation Toggle Icon -->
-                    <li class="d-inline-block d-lg-none">
-                        <button class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#NavToggleOffcanvas" aria-controls="NavToggleOffcanvas">
-                            <i class="ri-menu-line"></i>
-                        </button>
+                    <li class="d-lg-none">
+                        <a class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center fw-bold fs-5 text-white" data-bs-toggle="offcanvas" href="#NavToggleOffcanvas" role="button" aria-controls="NavToggleOffcanvas">
+                            Menu
+                        </a>
                     </li>
                     <!-- Navigation Toggle Icon -->
 
@@ -75,9 +75,7 @@
                                     </a>
                                 ', GetName($_COOKIE['user_id']));
                         } else {
-                            echo '<a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
-                                    <i class="ri-user-line ri-lg align-middle text-white"></i>
-                                 </a>';
+                            echo '';
                         }
                         ?>
                     </li>
