@@ -9,14 +9,7 @@
                     <!-- Start of Navigation brand -->
                     <div class="d-flex align-items-center">
                         <!-- Start of Logo -->
-                        <?php
-                        if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
-                            $image_path = '../../assets/images/logos/hvln-black.webp';
-                        } else {
-                            $image_path = '../assets/images/logos/hvln-black.webp';
-                        }
-                        echo sprintf('<img src="%s" class="bg-light me-2" style="width: 60%s;" alt="Logo VLNH">', $image_path, '%');
-                        ?>
+                        <img src="../assets/images/logos/hvln-black.webp" class="bg-light me-2" style="width: 60%;" alt="Logo VLNH">
                         <!-- End of Logo -->
 
                         <!-- Start of Text -->
