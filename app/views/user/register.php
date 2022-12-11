@@ -19,11 +19,9 @@ $error = [
 ];
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
-    $post_name = ['username-signup', 'password-signup', 'confirm-password', 'fullname', 'phone', 'address'];
-    $i = 0;
-    foreach ($user as $key => &$value) {
-        $value = $_POST[$post_name[$i]];
-        ++$i;
+    $fields = ['username', 'password', 'confirm', 'name', 'phone', 'address'];
+    foreach ($fields as $field) {
+        $user[$field] = $_POST[$field];
     }
     RegisterSubmit($user, $error);
 }
@@ -98,11 +96,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <div class="d-flex align-items-center">
                                                     <div class="form-outline">
                                                         <input type="text"
-                                                               id="username-signup"
-                                                               name="username-signup"
+                                                               id="username"
+                                                               name="username"
                                                                class="form-control"
                                                                value="<?php echo $user['username']?>"/>
-                                                        <label class="form-label" for="username-signup">Tên đăng nhập</label>
+                                                        <label class="form-label" for="username">Tên đăng nhập</label>
                                                     </div>
                                                     <span class="text-danger ms-1 d-inline-block">*</span>
                                                 </div>
@@ -113,11 +111,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <div class="d-flex align-items-center">
                                                     <div class="form-outline">
                                                         <input type="password"
-                                                               id="password-signup"
-                                                               name="password-signup"
+                                                               id="password"
+                                                               name="password"
                                                                class="form-control"
                                                                value="<?php echo $user['password']?>"/>
-                                                        <label class="form-label" for="password-signup">Mật khẩu</label>
+                                                        <label class="form-label" for="password">Mật khẩu</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
@@ -128,11 +126,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <div class="d-flex align-items-center">
                                                     <div class="form-outline">
                                                         <input type="password"
-                                                               id="confirm-password"
-                                                               name="confirm-password"
+                                                               id="confirm"
+                                                               name="confirm"
                                                                class="form-control"
                                                                value="<?php echo $user['confirm']?>"/>
-                                                        <label class="form-label" for="confirm-password">Xác nhận mật khẩu</label>
+                                                        <label class="form-label" for="confirm">Xác nhận mật khẩu</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
@@ -143,11 +141,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                                 <div class="d-flex align-items-center">
                                                     <div class="form-outline">
                                                         <input type="text"
-                                                               id="fullname"
-                                                               name="fullname"
+                                                               id="name"
+                                                               name="name"
                                                                class="form-control"
                                                                value="<?php echo $user['name']?>"/>
-                                                        <label class="form-label" for="fullname">Họ và tên</label>
+                                                        <label class="form-label" for="name">Họ và tên</label>
                                                     </div>
                                                     <span class="text-danger ms-1">*</span>
                                                 </div>
@@ -202,8 +200,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
                                 </div>
                                 <div class="col-lg-6 d-flex align-items-center gradient-custom-2">
                                     <div class="text-white px-3 py-4 p-md-5 mx-md-4">
-                                        <h4 class="mb-4">Chúng tôi sẽ đem đến cho bạn những điều độc đáo</h4>
-                                        <p class="small mb-0">
+                                        <h4 class="mb-4" style="text-align: justify;">Chúng tôi sẽ đem đến cho bạn những điều độc đáo</h4>
+                                        <p class="small mb-0" style="text-align: justify;">
                                             Khi gia nhập VLNH Shop, bạn sẽ có được cơ hội trải nghiệm những mẫu thiết kế mới nhất,
                                             thanh thoát và hợp với gu thời trang của bạn. Những sản phẩm mà chúng tôi đem lại sẽ giúp
                                             bạn trở nên tự tin hơn và sành điệu hơn

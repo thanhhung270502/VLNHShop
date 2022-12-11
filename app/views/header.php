@@ -127,6 +127,7 @@
                                 }
                                 if (preg_match('(/VLNHShop/app/views/user/edit-profile.php)', $_SERVER['REQUEST_URI'])) {
                                     $profile_path = '/VLNHShop/app/views/user/edit-profile.php?id=';
+                                    $login_path = 'login.php';
                                 }
                                 echo sprintf('
                                     <div class="dropdown">

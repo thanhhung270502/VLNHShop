@@ -102,11 +102,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                     <div class="d-flex align-items-center">
                                         <div class="form-outline">
                                             <input type="text"
-                                                   id="username-edit"
-                                                   name="username-edit"
+                                                   id="username"
+                                                   name="username"
                                                    class="form-control"
                                                    value="<?php echo $user['username']?>" disabled/>
-                                            <label class="form-label" for="username-edit">Tên đăng nhập</label>
+                                            <label class="form-label" for="username">Tên đăng nhập</label>
                                         </div>
                                         <span class="text-white ms-1">*</span>
                                     </div>
@@ -116,11 +116,11 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
                                     <div class="d-flex align-items-center">
                                         <div class="form-outline">
                                             <input type="text"
-                                                   id="password-edit"
-                                                   name="password-edit"
+                                                   id="password"
+                                                   name="password"
                                                    class="form-control"
                                                    value="<?php echo $user['password']?>"/>
-                                            <label class="form-label" for="password-edit">Mật khẩu</label>
+                                            <label class="form-label" for="password">Mật khẩu</label>
                                         </div>
                                         <span class="text-danger ms-1">*</span>
                                     </div>
