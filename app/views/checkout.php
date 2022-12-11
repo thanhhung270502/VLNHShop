@@ -39,6 +39,7 @@
         include("../../models/checkout.php");
 
         $user_id = $_COOKIE['user_id'];
+        echo $user_id;
         $user_result = $conn->query("SELECT * from user where id=$user_id");
         $user = $user_result->fetch_assoc();
     ?>

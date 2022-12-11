@@ -19,11 +19,11 @@ CREATE TABLE `product_images` (
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into product (id, price, name, color, description, quantity_remain, img) values (1, '13.51', 'Áo Thun Cổ Tròn Thần Cổ Đại Valknut Ver5', 'Black', null, 92, './app/assets/images/products/product-1.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (2, '122.87', 'shirt 2', 'White', null, 39, './app/assets/images/products/product-2.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (3, '108.72', 'shirt 3', 'Black', null, 100, './app/assets/images/products/product-3.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (4, '184.70', 'shirt 4', 'White', null, 33, './app/assets/images/products/product-4.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (5, '47.91', 'shirt 5', 'Black', null, 86, './app/assets/images/products/product-5.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (1, '13.51', 'Áo Thun Cổ Tròn Thần Cổ Đại Valknut Ver5', 'black', null, 92, './app/assets/images/products/product-1.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (2, '122.87', 'shirt 2', 'white', null, 39, './app/assets/images/products/product-2.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (3, '108.72', 'shirt 3', 'black', null, 100, './app/assets/images/products/product-3.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (4, '184.70', 'shirt 4', 'white', null, 33, './app/assets/images/products/product-4.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (5, '47.91', 'shirt 5', 'black', null, 86, './app/assets/images/products/product-5.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (6, '3.62', 'shirt 6', 'Goldenrod', null, 77, './app/assets/images/products/product-6.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (7, '14.30', 'shirt 7', 'Green', null, 52, './app/assets/images/products/product-7.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (8, '58.26', 'shirt 8', 'Goldenrod', null, 70, './app/assets/images/products/product-8.jpg');

@@ -1,10 +1,18 @@
 :root {
-    --red: #fe2c55;
     --black: #000;
     --black-blue: #0b1517;
     --white: #ffffff;
     --brown: #5a373f;
+    --red: #df2020;
     --orange: #ee4d2d;
+    --blue: #0C97FF;
+    --green: #2df3aa;
+    --green-dark: #25b580;
+    --yellow: #ffc174;
+    --purple: #e574ff;
+    --pink: #fa7daf;
+    --beige: #c9ba9b;
+    --brown: #54333A;
 }
 
 .form-container {
@@ -26,6 +34,7 @@
 .cart_modal {
     --bs-modal-width: 400px;
 }
+
 .modal-dialog {
     margin: 0;
     margin-left: auto;
@@ -55,4 +64,27 @@
     white-space: nowrap;
     overflow: hidden;
     text-overflow: ellipsis;
+}
+@media (min-width: 1200px) {
+    .responsive-btn-text {
+    font-size: 30px!important;
+    }
+}
+
+@media (max-width: 1199.98px) {
+    .responsive-btn-text {
+    font-size: 20px!important;
+    }
+    .navbar{
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px){
+    .res-hero-btn{
+        width: 60%!important;
+    }
+    .responsive-btn-text {
+        font-size: 20px!important;
+    }
 }

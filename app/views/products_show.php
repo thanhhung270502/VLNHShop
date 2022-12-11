@@ -10,8 +10,9 @@
   <!-- Main CSS -->
   <link rel="stylesheet" href="../assets/css/theme.bundle.css" />
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
-  <link rel="stylesheet" href="../assets/css/general.css">
   <link rel="stylesheet" href="../assets/css/products_show.css">
+  <link rel="stylesheet" href="../assets/css/general.css">
+  <link rel="stylesheet" href="../assets/css/homepage.css">
 </head>
 <body>
   <?php 
@@ -140,7 +141,6 @@
           <div class="product__footer__nav_item">Mô Tả Chi Tiết</div>
           <div class="product__footer__nav_item">Vận chuyển</div>
           <div class="product__footer__nav_item">Hoàn trả</div>
-          <div class="product__footer__nav_item">Đánh giá</div>
         </div>
         <div class="product__footer_content pt-4">
           <div class="d-flex justify-content-center">
@@ -151,21 +151,21 @@
             </div>
             <div class="col-lg-8 product__footer_item">
               <div class="title pb-4">
-              We believe you will completely happy with your item, however if you aren't, there's no need to worry. We've listed below the ways you can return your item to us.
+                Chúng tôi tin rằng bạn sẽ hoàn toàn hài lòng với món đồ của mình, tuy nhiên nếu bạn không hài lòng thì cũng không cần phải lo lắng. Chúng tôi đã liệt kê bên dưới những cách bạn có thể trả lại mặt hàng của mình cho chúng tôi.
               </div>
               <div class="optional">
                 <div class="py-3 border-top">
                   <div class="d-flex align-items-center justify-content-between">
                     <div>
                       <div class="name">
-                        Standard Delivery
+                        Nhận tại cửa hàng của chúng tôi
                       </div>
                       <div class="content">
-                        Delivery within 5 days of placing your order.
+                        Nhận tại cửa hàng của chúng tôi
                       </div>
                     </div>
                     <div class="price">
-                      $2.99
+                      FREE
                     </div>
                   </div>
                 </div>
@@ -173,14 +173,14 @@
                   <div class="d-flex align-items-center justify-content-between">
                     <div>
                       <div class="name">
-                        Priority Delivery
+                        Vận chuyển siêu tốc 
                       </div>
                       <div class="content">
-                        Delivery within 2 days of placing your order.
+                        Vận chuyển hàng trong 24 giờ
                       </div>
                     </div>
                     <div class="price">
-                      $3.99
+                      $19.99
                     </div>
                   </div>
                 </div>
@@ -188,14 +188,14 @@
                   <div class="d-flex align-items-center justify-content-between">
                     <div>
                       <div class="name">
-                        Next Day Delivery
+                        Vận chuyển hàng trong 24 giờ
                       </div>
                       <div class="content">
-                        Delivery within 24 hours of placing your order.
+                        Vận chuyển trong 36 - 48 giờ
                       </div>
                     </div>
                     <div class="price">
-                      $6.99
+                      $9.99
                     </div>
                   </div>
                 </div>
@@ -203,48 +203,17 @@
             </div>
             <div class="col-lg-8 product__footer_item">
               <div class="title pb-4">
-                We are now offering contact-free delivery so that you can still receive your parcels safely without requiring a signature. Please see below for the available delivery methods, costs and timescales.
+                Chúng tôi hiện đang cung cấp dịch vụ giao hàng không tiếp xúc để bạn vẫn có thể nhận bưu kiện của mình một cách an toàn mà không cần chữ ký. Vui lòng xem bên dưới để biết các phương thức, chi phí và thời gian giao hàng có sẵn.
               </div>
               <div class="optional">
                 <div class="py-3 border-top">
                   <div class="d-flex align-items-center justify-content-between">
                     <div>
                       <div class="name">
-                        Return via post
+                        Trả lại qua đường bưu điện
                       </div>
                       <div class="content">
-                        To return your items for free through the postal system, please complete the returns form that comes with your order. You'll find a label at the bottom of the form. Simply peel the label and head to your nearest post office.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-                <div class="py-3 border-top">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div>
-                      <div class="name">
-                        Return in person
-                      </div>
-                      <div class="content">
-                        To return your items for free in person, simply stop into any one of our locations and speak to a member of our in-store team.
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-            <div class="col-lg-8 product__footer_item">
-              <div class="title pb-4">
-                We are now offering contact-free delivery so that you can still receive your parcels safely without requiring a signature. Please see below for the available delivery methods, costs and timescales.
-              </div>
-              <div class="optional">
-                <div class="py-3 border-top">
-                  <div class="d-flex align-items-center justify-content-between">
-                    <div>
-                      <div class="name">
-                        Return via post
-                      </div>
-                      <div class="content">
-                        To return your items for free through the postal system, please complete the returns form that comes with your order. You'll find a label at the bottom of the form. Simply peel the label and head to your nearest post office.
+                        Để trả lại các mặt hàng của bạn miễn phí thông qua hệ thống bưu chính, vui lòng điền vào biểu mẫu trả lại đi kèm với đơn đặt hàng của bạn. Bạn sẽ tìm thấy một nhãn ở cuối biểu mẫu. Đơn giản chỉ cần bóc nhãn và đi đến bưu điện gần nhất của bạn.
                       </div>
                     </div>
                   </div>

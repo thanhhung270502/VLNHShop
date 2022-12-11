@@ -37,7 +37,7 @@ function LoginSubmit($user, &$error) {
         $user_data = [];
         $user_exist = CheckAccountExists($user['username'], $user['password'], $user_data);
         if ($user_exist) {
-            setcookie("user-id", $user_data['id'], time() + (86400 * 30), "/");
+            setcookie("user_id", $user_data['id'], time() + (86400 * 30), "/");
             if ($user_data['role'] == 0) {
                 header('Location: ../admin/admin-dashboard.php');
             } else {

@@ -56,7 +56,7 @@
                     <li class="ms-1 d-none d-lg-inline-block">
                         <?php
                         require_once __DIR__.'/../../../controllers/user.php';
-                        if (isset($_COOKIE['user-id'])) {
+                        if (isset($_COOKIE['user_id'])) {
                             if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
                                 $profile_path = '../user/edit-profile.php?id=';
                                 $login_path = '../user/login.php';
@@ -78,7 +78,7 @@
                                             <li><a class="dropdown-item py-1" href="%s">Đăng xuất</a></li>
                                         </ul>
                                     </div>
-                                ', GetName($_COOKIE['user-id']), $profile_path, $_COOKIE['user-id'], $login_path);
+                                ', GetName($_COOKIE['user_id']), $profile_path, $_COOKIE['user_id'], $login_path);
                         } else {
                             echo '
                                 <a class="text-white text-decoration-none fw-bold" href="user/login.php">
