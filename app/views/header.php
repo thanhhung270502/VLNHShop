@@ -66,16 +66,26 @@
 
                     <!-- Navbar Login-->
                     <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
-                            <i class="ri-user-line ri-lg align-middle text-white"></i>
-                        </a>
+                        <?php
+                        require_once __DIR__.'/../../controllers/user.php';
+                        if (isset($_COOKIE['user-id'])) {
+                            echo sprintf('
+                                    <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=%d">
+                                        <i class="ri-user-line ri-lg align-middle text-white"></i>
+                                    </a>
+                                ', GetName($_COOKIE['user-id']));
+                        } else {
+                            echo '<a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
+                                    <i class="ri-user-line ri-lg align-middle text-white"></i>
+                                 </a>';
+                        }
+                        ?>
                     </li>
                     <!-- /Navbar Login-->
 
                     <!-- Navbar Sign In -->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <?php
-                        require_once __DIR__.'/../../controllers/user.php';
                             if (isset($_COOKIE['user-id'])) {
                                 echo sprintf('
                                     <div class="dropdown">
@@ -83,11 +93,10 @@
                                         %s
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto;">
-                                            <li><a class="dropdown-item py-1" href="user/edit-profile.php?id=%d">Hồ sơ</a></li>
                                             <li><a class="dropdown-item py-1" href="user/login.php">Đăng xuất</a></li>
                                         </ul>
                                     </div>
-                                ', GetName($_COOKIE['user-id']), $_COOKIE['user-id']);
+                                ', GetName($_COOKIE['user-id']));
                             } else {
                                 echo '
                                 <a class="text-white text-decoration-none fw-bold" href="user/login.php">
@@ -249,16 +258,25 @@
 
             <!-- Navbar Login-->
             <li class="mt-1 d-inline-block position-relative">
-                <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
-                    <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Tài khoản</span>
-                </a>
+                <?php
+                if (isset($_COOKIE['user-id'])) {
+                    echo sprintf('
+                                    <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=">
+                                        <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">%s</span>
+                                    </a>', GetName($_COOKIE['user-id']));
+                } else {
+                    echo '<a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
+                              <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Tài khoản</span>
+                          </a>';
+                }
+                ?>
             </li>
             <!-- /Navbar Login-->
 
             <!-- Navbar Sign In -->
             <li class="mt-1">
-                <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="./login.php">
-                    <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng nhập</span>
+                <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/login.php">
+                    <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng xuất</span>
                 </a>
             </li>
             <!-- /Navbar Sign In -->
