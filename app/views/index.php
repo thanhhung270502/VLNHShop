@@ -34,8 +34,8 @@
                 <!-- /Hero Text -->
 
                 <!-- Hero Buttons -->
-                <div class="d-md-flex justify-content-center mt-4 mb-3 my-md-5" style="width: 50%;">
-                    <a href="products_index.php" class="btn btn-lg btn-skew-left btn-orange text-white mx-1 w-50 w-md-auto mb-2 mb-md-0 fw-bold"><span>Sản phẩm của chúng tôi <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
+                <div class="d-md-flex justify-content-center mt-4 mb-3 my-md-5 text-center res-hero-btn" style="width: 50%;">
+                    <a href="products_index.php" class="btn btn-lg btn-skew-left btn-orange text-white mx-1 w-md-auto mb-2 mb-md-0 fw-bold"><span class="responsive-btn-text">Sản phẩm của chúng tôi <i class="ri-arrow-right-line align-middle fw-bold"></i></span></a>
                 </div>
                 <!-- /Hero Buttons -->
 
