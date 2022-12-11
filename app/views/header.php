@@ -70,28 +70,17 @@
                         <?php
                         require_once __DIR__.'/../../controllers/user.php';
                             if (isset($_COOKIE['user-id'])) {
-                                if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
-                                    $profile_path = '../user/edit-profile.php?id=';
-                                    $login_path = '../user/login.php';
-                                } else {
-                                    $profile_path = 'user/edit-profile.php?id=';
-                                    $login_path = 'user/login.php';
-                                }
-                                if (preg_match('(/VLNHShop/app/views/user/edit-profile.php)', $_SERVER['REQUEST_URI'])) {
-                                    $profile_path = '/VLNHShop/app/views/user/edit-profile.php?id=';
-                                    $login_path = 'login.php';
-                                }
                                 echo sprintf('
                                     <div class="dropdown">
                                         <a class="btn text-white text-decoration-none fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown">
                                         %s
                                         </a>
                                         <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto;">
-                                            <li><a class="dropdown-item py-1" href="%s%d">Hồ sơ</a></li>
-                                            <li><a class="dropdown-item py-1" href="%s">Đăng xuất</a></li>
+                                            <li><a class="dropdown-item py-1" href="user/edit-profile.php?id=%d">Hồ sơ</a></li>
+                                            <li><a class="dropdown-item py-1" href="user/login.php">Đăng xuất</a></li>
                                         </ul>
                                     </div>
-                                ', GetName($_COOKIE['user-id']), $profile_path, $_COOKIE['user-id'], $login_path);
+                                ', GetName($_COOKIE['user-id']), $_COOKIE['user-id']);
                             } else {
                                 echo '
                                 <a class="text-white text-decoration-none fw-bold" href="user/login.php">
