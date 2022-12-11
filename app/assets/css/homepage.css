@@ -21,3 +21,26 @@
     background-color: rgb(220, 99, 0);
 }
 
+@media (min-width: 1200px) {
+    .responsive-btn-text {
+    font-size: 30px!important;
+    }
+}
+/* If the screen size is smaller than 1200px, set the font-size to 80px */
+@media (max-width: 1199.98px) {
+    .responsive-btn-text {
+    font-size: 20px!important;
+    }
+    .navbar{
+        padding: 0;
+    }
+}
+
+@media (max-width: 400px){
+    .res-hero-btn{
+        width: 60%!important;
+    }
+    .responsive-btn-text {
+        font-size: 20px!important;
+    }
+}
