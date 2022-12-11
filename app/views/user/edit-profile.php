@@ -76,7 +76,7 @@ if ($_SERVER["REQUEST_METHOD"] == "GET") {
     </head>
     <body>
     <?php
-    include('../header.php');
+    include('../admin/header_admin.php');
     ?>
     <div class="h-100 gradient-custom-3">
         <div class="container py-5 h-100">

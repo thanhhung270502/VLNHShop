@@ -50,7 +50,7 @@ CheckAdminUser($_COOKIE['user-id']);
     </head>
     <body>
     <?php
-    include('../header.php');
+    include('header_admin.php');
     ?>
     <div class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
@@ -74,7 +74,6 @@ CheckAdminUser($_COOKIE['user-id']);
         </div>
     </div>
     <?php
-    include('../header.php');
     include('../footer.php');
     ?>
 

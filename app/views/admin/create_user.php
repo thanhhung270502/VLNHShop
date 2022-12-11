@@ -75,7 +75,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     </head>
     <body>
         <?php
-        include('../header.php');
+        include('header_admin.php');
         ?>
         <div class="h-100 gradient-custom-2">
             <div class="container py-5 h-100">
