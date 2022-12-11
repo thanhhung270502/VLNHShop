@@ -137,7 +137,7 @@ function EditUserData($user, &$error, $path) {
         $error['address'] = 'Địa chỉ dưới 256 ký tự';
     } else {
         UpdateUser($user, $user['id']);
-        if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
+        if (preg_match('(/VLNHShop/app/views/admin)', $path)) {
             header('Location: manage_user.php');
         } else {
             header('Location: ../index.php');
