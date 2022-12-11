@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../../controllers/user.php';
 
-setcookie("user-id", "", time() - 3600);
+setcookie("user-id", "", time() - 3600, "/");
 
 $user = [
     'username' => '',
