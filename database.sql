@@ -19,7 +19,7 @@ CREATE TABLE `product_images` (
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into product (id, price, name, color, description, quantity_remain, img) values (1, '13.51', 'shirt 1', 'Brown', null, 92, './app/assets/images/products/product-1.jpg');
+insert into product (id, price, name, color, description, quantity_remain, img) values (1, '13.51', 'Áo Thun Cổ Tròn Thần Cổ Đại Valknut Ver5', 'Black', null, 92, './app/assets/images/products/product-1.jpg');
 insert into product (id, price, name, color, description, quantity_remain, img) values (2, '122.87', 'shirt 2', 'White', null, 39, './app/assets/images/products/product-2.jpg');
 insert into product (id, price, name, color, description, quantity_remain, img) values (3, '108.72', 'shirt 3', 'Black', null, 100, './app/assets/images/products/product-3.jpg');
 insert into product (id, price, name, color, description, quantity_remain, img) values (4, '184.70', 'shirt 4', 'White', null, 33, './app/assets/images/products/product-4.jpg');
