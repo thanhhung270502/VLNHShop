@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../../controllers/user.php';
+require_once __DIR__ . '/../../../controllers/user.php';
 
 $user = [
     'username' => '',
@@ -55,7 +55,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         />
         <!-- My Styles -->
         <link
-            href="../assets/css/style.css"
+            href="../../assets/css/style.css"
             rel="stylesheet"
         />
         <!-- MDB -->

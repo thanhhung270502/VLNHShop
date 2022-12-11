@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../../controllers/user.php';
+require_once __DIR__ . '/../../../controllers/user.php';
 
 CheckAdminUser($_COOKIE['user-id']);
 ?>
@@ -28,7 +28,7 @@ CheckAdminUser($_COOKIE['user-id']);
         />
         <!-- My Styles -->
         <link
-                href="../assets/css/style.css"
+                href="../../assets/css/style.css"
                 rel="stylesheet"
         />
         <!-- MDB -->
@@ -50,7 +50,7 @@ CheckAdminUser($_COOKIE['user-id']);
     </head>
     <body>
     <?php
-    include('header.php');
+    include('../header.php');
     ?>
     <div class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
@@ -58,13 +58,13 @@ CheckAdminUser($_COOKIE['user-id']);
                 <div class="col-xl-10">
                     <div class="card rounded-3 text-black p-5">
                         <div class="text-center d-flex position-relative justify-content-center align-items-center my-3">
-                            <a href="./admin_dashboard.php" class="position-absolute start-0 col-2 d-flex justify-content-start">
+                            <a href="admin-dashboard.php" class="position-absolute start-0 col-2 d-flex justify-content-start">
                                 <button type="button" class="btn btn-dark btn-rounded">Trang chính</button>
                             </a>
                             <h4 class="m-0 col-8">Quản lý thành viên</h4>
                         </div>
                         <div class="text-center d-flex justify-content-center mb-4">
-                            <a href="./create_user.php">
+                            <a href="create_user.php">
                                 <button type="button" class="btn btn-success btn-rounded">Tạo người dùng</button>
                             </a>
                         </div>
@@ -119,12 +119,12 @@ CheckAdminUser($_COOKIE['user-id']);
         </div>
     </div>
     <?php
-    include('footer.php');
+    include('../footer.php');
     ?>
 
-    <script src="../assets/js/vendor.bundle.js"></script>
+    <script src="../../assets/js/vendor.bundle.js"></script>
 
     <!-- Theme JS -->
-    <script src="../assets/js/theme.bundle.js"></script>
+    <script src="../../assets/js/theme.bundle.js"></script>
     </body>
 </html>

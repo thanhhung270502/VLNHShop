@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__.'/../../controllers/user.php';
+require_once __DIR__ . '/../../../controllers/user.php';
 
 CheckAdminUser($_COOKIE['user-id']);
 ?>
@@ -28,7 +28,7 @@ CheckAdminUser($_COOKIE['user-id']);
         />
         <!-- My Styles -->
         <link
-            href="../assets/css/style.css"
+            href="../../assets/css/style.css"
             rel="stylesheet"
         />
         <!-- MDB -->
@@ -50,7 +50,7 @@ CheckAdminUser($_COOKIE['user-id']);
     </head>
     <body>
     <?php
-    include('header.php');
+    include('../header.php');
     ?>
     <div class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
@@ -61,7 +61,7 @@ CheckAdminUser($_COOKIE['user-id']);
                             <h4 class="mt-1 mb-5 pb-1">Trang quản trị viên</h4>
                         </div>
                         <div class="d-flex justify-content-center">
-                            <a href="./manage_user.php" class="mx-2">
+                            <a href="manage_user.php" class="mx-2">
                                 <button type="button" class="btn btn-primary btn-rounded">Quản lý thành viên</button>
                             </a>
                             <a href="#" class="mx-2">
@@ -74,12 +74,13 @@ CheckAdminUser($_COOKIE['user-id']);
         </div>
     </div>
     <?php
-    include('footer.php');
+    include('../header.php');
+    include('../footer.php');
     ?>
 
-    <script src="../assets/js/vendor.bundle.js"></script>
+    <script src="../../assets/js/vendor.bundle.js"></script>
 
     <!-- Theme JS -->
-    <script src="../assets/js/theme.bundle.js"></script>
+    <script src="../../assets/js/theme.bundle.js"></script>
     </body>
 </html>

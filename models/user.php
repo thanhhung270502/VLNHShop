@@ -44,12 +44,10 @@ function SelectUser($id) {
 
 function UpdateUser($user, $id) {
     $connObj = new Connection();
-    $edit_username = sprintf('UPDATE user SET username=\'%s\' WHERE id=\'%d\'', $user['username'], $id);
-    $edit_password = sprintf('UPDATE user SET password=\'%s\' WHERE id=\'%d\'', $user['password'], $id);
-    $edit_name = sprintf('UPDATE user SET name=\'%s\' WHERE id=\'%d\'', $user['username'], $id);
+    $edit_name = sprintf('UPDATE user SET name=\'%s\' WHERE id=\'%d\'', $user['name'], $id);
     $edit_phone = sprintf('UPDATE user SET phone=\'%s\' WHERE id=\'%d\'', $user['phone'], $id);
     $edit_address = sprintf('UPDATE user SET address=\'%s\' WHERE id=\'%d\'', $user['address'], $id);
-    $sql_arr = [$edit_username, $edit_password, $edit_name, $edit_phone, $edit_address];
+    $sql_arr = [$edit_name, $edit_phone, $edit_address];
     foreach ($sql_arr as $sql) {
         $connObj->conn->query($sql);
     }

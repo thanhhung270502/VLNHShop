@@ -39,9 +39,9 @@ function LoginSubmit($user, &$error) {
         if ($user_exist) {
             setcookie("user-id", $user_data['id'], time() + (86400 * 30), "/");
             if ($user_data['role'] == 0) {
-                header('Location: admin_dashboard.php');
+                header('Location: ../admin/admin-dashboard.php');
             } else {
-                header('Location: index.php');
+                header('Location: ../index.php');
             }
         } else {
             $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
@@ -120,21 +120,14 @@ function ShowAllUsers () {
 
 function GetUserData(&$user, $id) {
     $user_data = SelectUser($id);
-    $user = $user_data;
+    $fields = ['id', 'username', 'password', 'name', 'phone', 'address'];
+    foreach ($fields as $field) {
+        $user[$field] = $user_data[$field];
+    }
 }
 
-function EditUserData($user, &$error) {
-    if (empty($user['username'])) {
-        $error['username'] = 'Tên đăng nhập không được bỏ trống';
-    } else if (strlen($user['username']) > 255) {
-        $error['username'] = 'Tên đăng nhập dưới 256 ký tự';
-    } else if ($user['username'] != $user['cur-username'] and CheckUsernameExist($user['username'])) {
-            $error['username'] = 'Tên đăng nhập đã tồn tại';
-    } else if (empty($user['password'])) {
-        $error['password'] = 'Mật khẩu không được bỏ trống';
-    } else if (strlen($user['password']) < 6 or strlen($user['password']) > 255) {
-        $error['password'] = 'Mật khẩu trong khoảng 6 - 255 ký tự';
-    }  else if (empty($user['name'])) {
+function EditUserData($user, &$error, $path) {
+    if (empty($user['name'])) {
         $error['name'] = 'Tên không được để trống';
     } else if (strlen($user['name']) > 255) {
         $error['name'] = 'Họ và tên dưới 256 ký tự';
@@ -144,7 +137,11 @@ function EditUserData($user, &$error) {
         $error['address'] = 'Địa chỉ dưới 256 ký tự';
     } else {
         UpdateUser($user, $user['id']);
-        header('Location: manage_user.php');
+        if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
+            header('Location: manage_user.php');
+        } else {
+            header('Location: ../index.php');
+        }
     }
 }
 
@@ -154,7 +151,7 @@ function DeleteUser($id) {
 
 function CheckAdminUser($id) {
     if (RoleUser($id) != 0) {
-        header('Location: index.php');
+        header('Location: ../index.php');
     }
 }
 
