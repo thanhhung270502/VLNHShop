@@ -23,7 +23,7 @@ function RegisterSubmit($user, &$error) {
     } else if (strlen($user['address']) > 255) {
         $error['address'] = 'Địa chỉ dưới 256 ký tự';
     } else {
-        //InsertUser($user);
+        InsertUser($user);
         header('Location: login.php');
     }
 }
@@ -37,11 +37,11 @@ function LoginSubmit($user, &$error) {
         $user_data = [];
         $user_exist = CheckAccountExists($user['username'], $user['password'], $user_data);
         if ($user_exist) {
-            setcookie("user_id", $user_data['id'], time() + (86400 * 30), "/");
+            setcookie("user-id", $user_data['id'], time() + (86400 * 30), "/");
             if ($user_data['role'] == 0) {
-                header('Location: category.php');
+                header('Location: ../admin/admin-dashboard.php');
             } else {
-                header('Location: index.php');
+                header('Location: ../index.php');
             }
         } else {
             $error['not_exist'] = 'Tên tài khoản hoặc mật khẩu không đúng';
@@ -54,30 +54,132 @@ function ShowAllUsers () {
     while ($user = $result->fetch_assoc()) {
         $row = sprintf('<tr>
                                   <td>
-                                      <div class="d-flex align-items-center">
+                                      <div class="d-flex">
                                           <div class="ms-3">
                                               <p class="fw-bold mb-1">%s</p>
                                               <p class="badge badge-success rounded-pill mb-0">%s</p>
                                           </div>
                                       </div>
                                   </td>
-                                  <td>
+                                  <td class="text-center">
                                       %s
                                   </td>
                                   <td>
                                       %s
                                   </td>
-                                  <td>%s</td>
+                                  <td class="text-center">%s</td>
                                   <td>
-                                      <button type="button" class="btn text-info btn btn-link btn-sm btn-rounded">
-                                      Chỉnh sửa
-                                      </button>
-                                      <button type="button" class="btn text-danger btn-link btn-sm btn-rounded">
-                                      Xóa
-                                      </button>
+                                      <div class="d-flex justify-content-center align-items-center">
+                                          <a href="./edit_user.php?id=%d">
+                                              <button type="button" class="btn bg-primary text-white btn btn-link btn-sm btn-rounded m-1">
+                                              Sửa
+                                              </button>
+                                          </a>
+                                          <button 
+                                                type="button"
+                                                class="btn bg-danger text-white btn-link btn-sm btn-rounded m-1"
+                                                data-mdb-toggle="modal"
+                                                data-mdb-target="#delete%d">
+                                          Xóa
+                                          </button>
+                                      </div>
                                   </td>
-                            </tr>',
-            $user['name'], $user['username'], $user['phone'], $user['address'], $user['role'] == 0 ? 'Admin' : 'Member');
+                            </tr>
+                            <div class="modal fade" id="delete%d" tabindex="-1">
+                                  <div class="modal-dialog">
+                                        <div class="modal-content">
+                                              <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Xóa thành viên</h5>
+                                                    <button type="button" class="btn-close" data-mdb-dismiss="modal" aria-label="Close"></button>
+                                              </div>
+                                              <div class="modal-body">
+                                              Bạn có muốn xóa thành viên <span class="badge badge-success rounded-pill mb-0">%s</span> ?
+                                              </div>
+                                              <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary text-danger" data-mdb-dismiss="modal">Thoát</button>
+                                                    <a href="./delete_user.php?id=%d">
+                                                        <button type="button" class="btn btn-danger">Xác nhận</button>
+                                                    </a>                                                   
+                                              </div>
+                                        </div>
+                                  </div>
+                            </div>',
+            $user['name'],
+            $user['username'],
+            $user['phone'],
+            $user['address'],
+            $user['role'] == 0 ? 'Admin' : 'Member',
+            $user['id'],
+            $user['id'],
+            $user['id'],
+            $user['username'],
+            $user['id']);
         echo $row;
     }
+}
+
+function GetUserData(&$user, $id) {
+    $user_data = SelectUser($id);
+    $fields = ['id', 'username', 'password', 'name', 'phone', 'address'];
+    foreach ($fields as $field) {
+        $user[$field] = $user_data[$field];
+    }
+}
+
+function EditUserData($user, &$error, $path) {
+    if (empty($user['name'])) {
+        $error['name'] = 'Tên không được để trống';
+    } else if (strlen($user['name']) > 255) {
+        $error['name'] = 'Họ và tên dưới 256 ký tự';
+    } else if (!empty($user['phone']) and !preg_match('/^[0-9]{10}$/', $user['phone'])) {
+        $error['phone'] = 'Số điện thoại không hợp lệ';
+    } else if (strlen($user['address']) > 255) {
+        $error['address'] = 'Địa chỉ dưới 256 ký tự';
+    } else {
+        UpdateUser($user, $user['id']);
+        if (preg_match('(/VLNHShop/app/views/admin)', $path)) {
+            header('Location: manage_user.php');
+        } else {
+            header('Location: ../index.php');
+        }
+    }
+}
+
+function DeleteUser($id) {
+    DropUser($id);
+}
+
+function CheckAdminUser($id) {
+    if (RoleUser($id) != 0) {
+        header('Location: ../index.php');
+    }
+}
+
+function CreateUser($user, &$error) {
+    if (empty($user['username'])) {
+        $error['username'] = 'Tên đăng nhập không được bỏ trống';
+    } else if (strlen($user['username']) > 255) {
+        $error['username'] = 'Tên đăng nhập dưới 256 ký tự';
+    } else if (CheckUsernameExist($user['username'])) {
+        $error['username'] = 'Tên đăng nhập đã tồn tại';
+    } else if (empty($user['password'])) {
+        $error['password'] = 'Mật khẩu không được bỏ trống';
+    } else if (strlen($user['password']) < 6 or strlen($user['password']) > 255) {
+        $error['password'] = 'Mật khẩu trong khoảng 6 - 255 ký tự';
+    }  else if (empty($user['name'])) {
+        $error['name'] = 'Tên không được để trống';
+    } else if (strlen($user['name']) > 255) {
+        $error['name'] = 'Họ và tên dưới 256 ký tự';
+    } else if (!empty($user['phone']) and !preg_match('/^[0-9]{10}$/', $user['phone'])) {
+        $error['phone'] = 'Số điện thoại không hợp lệ';
+    } else if (strlen($user['address']) > 255) {
+        $error['address'] = 'Địa chỉ dưới 256 ký tự';
+    } else {
+        CreateNewUser($user);
+        header('Location: manage_user.php');
+    }
+}
+
+function GetName($id) {
+    return SelectName($id);
 }

@@ -1,5 +1,5 @@
 <!-- Footer -->
-<footer class="bg-dark mt-10">
+<footer class="bg-dark">
     <!-- Menus & NewsLetter -->
     <div class="border border-dark border-top">
         <div class="container">

@@ -1,5 +1,5 @@
 <?php
-    include_once('connection.php');
+    include_once('connection_user.php');
     $result = $conn->query("SELECT * FROM product");
     // $products = [];
 
