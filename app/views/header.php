@@ -125,6 +125,9 @@
                                     $profile_path = 'user/edit-profile.php?id=';
                                     $login_path = 'user/login.php';
                                 }
+                                if (preg_match('(/VLNHShop/app/views/user/edit-profile.php)', $_SERVER['REQUEST_URI'])) {
+                                    $profile_path = '/VLNHShop/app/views/user/edit-profile.php?id=';
+                                }
                                 echo sprintf('
                                     <div class="dropdown">
                                         <a class="btn text-white text-decoration-none fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown">
