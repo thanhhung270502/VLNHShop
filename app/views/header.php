@@ -1,195 +1,196 @@
 <!-- Navbar -->
 <div class="position-relative z-index-30 m-0 p-0">
-    <!-- Navbar -->
-    <nav class="navbar navbar-light navbar-expand-lg z-index-30 w-100 bg-dark" style="height: 70px;">
-        <div class="w-100 pb-lg-0 pt-lg-0 pt-4 pb-3">
-            <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
-                <!-- Logo -->
-                <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./">
-                    <!-- Start of Navigation brand -->
-                    <div class="d-flex align-items-center">
-                        <!-- Start of Logo -->
-                        <!-- End of Logo -->
+  <!-- Navbar -->
+  <nav class="navbar navbar-light navbar-expand-lg z-index-30 w-100 bg-dark" style="height: 70px;">
+    <div class="w-100 pb-lg-0 pt-lg-0">
+      <div class="container-fluid d-flex justify-content-between align-items-center flex-wrap">
+        <!-- Logo -->
+        <a class="navbar-brand fw-bold fs-3 m-0 p-0 flex-shrink-0 text-white" href="./" style="width: 5%;">
+          <!-- Start of Navigation brand -->
+          <div class="d-flex align-items-center">
+            <!-- Start of Logo -->
+            <img src="../assets/images/logos/hvln-black.webp" class="bg-light me-2" style="width: 60%;" alt="Logo VLNH">
+            <!-- End of Logo -->
 
-                        <!-- Start of Text -->
-                        <span class="fs-5">VLNH</span>
-                        <!-- End of Text -->
-                    </div>
-                    <!-- End of Navigation Brand -->
-                </a>
-                <!-- Logo -->
+            <!-- Start of Text -->
+            <span class="fs-5">VLNH</span>
+            <!-- End of Text -->
+          </div>
+          <!-- End of Navigation Brand -->
+        </a>
+        <!-- Logo -->
 
-                <!-- Main Navigation -->
-                <div class="ms-5 flex-shrink-0 collapse navbar-collapse w-auto flex-grow-1">
-                    <!-- Begin Button for MainNav -->
-                    <ul class="navbar-nav py-lg-2 mx-auto">
-                        <!-- Menswear Menu -->
-                        <li class="nav-item me-lg-4 dropdown position-static">
-                            <a class="nav-link fw-bolder dropdown-toggle py-lg-4 text-white" href="#" role="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                Menswear
-                            </a>
-                            <!-- Menswear Dropdown menu -->
-                            <div class="container-fluid dropdown-menu ">
-                                <div class="row d-flex" style="height: 300px;">
-                                    <!-- Dropdown Content -->
-                                    <div class="col align-self-center">
-                                        <div class="row">
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    WATERPROOF LAYERS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Jacket</a></li>
-                                                </ul>
-                                            </div>
-                                            <div class="col-6">
-                                                <h6 class="dropdown-header">
-                                                    BRANDS
-                                                </h6>
-                                                <ul class="list-unstyled">
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                    <li class="dropdown-list-item>"><a class="dropdown-item" href="#">Sample Brand</a></li>
-                                                </ul>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <!-- Dropdown Content -->
+        <!-- Search -->
+        <div class="ms-5 w-auto d-none d-lg-block d-flex align-items-center justify-content-center">
+          <form class="d-flex ms-5" role="search">
+            <input class="form-control bg-light px-4 ms-5" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
+                        border-bottom-left-radius: 1rem;">
 
-                                    <!-- Dropdown Image -->
-                                    <div class="col">
-                                        <div class="bg-image bg-pos-center-center h-100" style="background-image: url('https://mdbcdn.b-cdn.net/img/Photos/Others/images/76.webp');"></div>
-                                    </div>
-                                    <!-- Dropdown Image -->
-                                </div>
-                            </div>
-                            <!-- Menswear Dropdown menu -->
-                        </li>
-                        <!-- Menswear Menu -->
-
-                    </ul>
-                    <!-- End Button for MainNav -->
-                </div>
-                <!-- Main Navigation -->
-
-                <!-- Navigation Icons -->
-                <ul class="list-unstyled mb-0 d-flex align-items-center">
-
-                    <!-- Navbar Search-->
-                    <li class="ms-1 d-inline-block">
-                        <button class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-pr-search>
-                            <i class="ri-search-2-line ri-lg align-middle text-white"></i>
-                        </button>
-                    </li>
-                    <!-- /Navbar Search-->
-
-                    <!-- Navbar Wishlist-->
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" href="#">
-                            <i class="ri-heart-line ri-lg align-middle text-white"></i>
-                        </a>
-                    </li>
-                    <!-- /Navbar Wishlist-->
-
-                    <!-- Navbar Cart-->
-                    <li class="ms-1 d-inline-block position-relative">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="#">
-                            <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-white"></i>
-                        </a>
-                    </li>
-                    <!-- /Navbar Cart-->
-
-                    <!-- Navbar Login-->
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
-                            <i class="ri-user-line ri-lg align-middle text-white"></i>
-                        </a>
-                    </li>
-                    <!-- /Navbar Login-->
-
-                    <!-- Navbar Sign In -->
-                    <li class="ms-1 d-none d-lg-inline-block">
-                        <a class="text-white text-decoration-none fw-bold" href="./login.php">
-                            Sign In
-                        </a>
-                    </li>
-                    <!-- /Navbar Sign In -->
-
-                </ul>
-                <!-- Navigation Icons -->
-            </div>
+            <button class="btn btn-link px-3 text-decoration-none d-flex align-items-center bg-light text-dark" data-pr-search style="border-radius: 0 1rem 1rem 0;">
+              <i class="ri-search-2-line align-middle"></i>
+            </button>
+          </form>
         </div>
-    </nav>
-    <!-- Navbar -->
+        <!-- /Search -->
+
+        <!-- Navigation Icons -->
+        <ul class="list-unstyled mb-0 d-flex align-items-center">
+
+          <!-- Navigation Toggle Icon -->
+          <li class="d-inline-block d-lg-none">
+            <button class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" type="button" data-bs-toggle="offcanvas" data-bs-target="#NavToggleOffcanvas" aria-controls="NavToggleOffcanvas">
+              <i class="ri-menu-line"></i>
+            </button>
+          </li>
+          <!-- Navigation Toggle Icon -->
+
+          <!-- Navbar Wishlist-->
+          <li class="ms-1 d-none d-lg-inline-block">
+            <a class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" href="#">
+              <i class="ri-heart-line ri-lg align-middle text-white"></i>
+            </a>
+          </li>
+          <!-- /Navbar Wishlist-->
+
+          <!-- Navbar Cart-->
+          <li class="ms-1 d-none d-lg-inline-block">
+            <!-- <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="./cart.php">
+                        <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-white"></i>
+                        </a> -->
+            <button type="button" class="btn btn-link px-2 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#cartModal" aria-controls="cartModal">
+
+              <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-white"></i>
+            </button>
+          </li>
+          <!-- /Navbar Cart-->
+
+          <!-- Navbar Login-->
+          <li class="ms-1 d-none d-lg-inline-block">
+            <?php
+            require_once __DIR__ . '/../../controllers/user.php';
+            if (isset($_COOKIE['user-id'])) {
+              echo sprintf('
+                                    <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=%d">
+                                        <i class="ri-user-line ri-lg align-middle text-white"></i>
+                                    </a>
+                                ', GetName($_COOKIE['user-id']));
+            } else {
+              echo '<a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
+                                    <i class="ri-user-line ri-lg align-middle text-white"></i>
+                                 </a>';
+            }
+            ?>
+          </li>
+          <!-- /Navbar Login-->
+
+          <!-- Navbar Sign In -->
+          <li class="ms-1 d-none d-lg-inline-block">
+            <?php
+            if (isset($_COOKIE['user-id'])) {
+              echo sprintf('
+                                    <div class="dropdown">
+                                        <a class="btn text-white text-decoration-none fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown">
+                                        %s
+                                        </a>
+                                        <ul class="dropdown-menu dropdown-menu-dark" style="right: 0; left: auto;">
+                                            <li><a class="dropdown-item py-1" href="user/login.php">Đăng xuất</a></li>
+                                        </ul>
+                                    </div>
+                                ', GetName($_COOKIE['user-id']));
+            } else {
+              echo '
+                                <a class="text-white text-decoration-none fw-bold" href="user/login.php">
+                                    Đăng nhập
+                                </a>';
+            }
+            ?>
+          </li>
+          <!-- /Navbar Sign In -->
+
+        </ul>
+        <!-- Navigation Icons -->
+      </div>
+    </div>
+  </nav>
+  <!-- Navbar -->
 </div>
 <!-- Navbar -->
 
-<!-- Offcanvas for Cart -->
-<div class="offcanvas offcanvas-end" id="offcanvasCart" style="visibility: visible;" aria-modal="true">
-    <div class="offcanvas-header d-flex align-items-center">
-        <h5 class="offcanvas-title" id="offcanvasCartLabel">Your Cart</h5>
-        <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+<!-- Modal -->
+
+<!-- /Modal -->
+
+<!-- Offcanvas -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="NavToggleOffcanvas" aria-labelledby="NavToggleOffcanvasLabel">
+  <div class="offcanvas-header">
+    <h6 class="offcanvas-title" id="NavToggleOffcanvasLabel">Menu</h6>
+    <button type="button" class="btn-close" data-bs-dismiss="offcanvas" data-bs-target="#NavToggleOffcanvas" aria-label="Close"></button>
+  </div>
+  <div class="offcanvas-body">
+    <div class="container d-flex flex-column">
+      <!-- Search -->
+      <div class="d-flex align-items-center align-self-center">
+        <form class="d-flex" role="search">
+          <input class="form-control bg-light px-4" type="search" placeholder="Search" aria-label="Search" style="border-radius: 1rem 0 0 1rem;
+                border-bottom-left-radius: 1rem;">
+
+          <button class="btn btn-link px-3 text-decoration-none d-flex align-items-center bg-light text-dark" data-pr-search style="border-radius: 0 1rem 1rem 0;">
+            <i class="ri-search-2-line align-middle"></i>
+          </button>
+        </form>
+      </div>
+      <!-- /Search -->
+
+      <!-- Navigation Icons -->
+      <ul class="list-unstyled mb-0 align-items-start">
+
+        <!-- Navbar Wishlist-->
+        <li class="mt-3">
+          <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
+            <i class="ri-heart-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Wish List</span>
+          </a>
+        </li>
+        <!-- /Navbar Wishlist-->
+
+        <!-- Navbar Cart-->
+        <li class="mt-1">
+          <!-- <a class="btn btn-link px-0 text-decoration-none d-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#offcanvasCart" aria-controls="offcanvasCart" href="./cart.php">
+                <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-dark"></i>
+                </a> -->
+          <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#cartModal" aria-controls="cartModal">
+            <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-dark"></i><span class="fs-5 fw-bold ms-2">Shopping Cart</span>
+          </a>
+        </li>
+        <!-- /Navbar Cart-->
+
+        <!-- Navbar Login-->
+        <li class="mt-1 d-inline-block position-relative">
+          <?php
+          if (isset($_COOKIE['user-id'])) {
+            echo sprintf('
+                                    <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=">
+                                        <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">%s</span>
+                                    </a>', GetName($_COOKIE['user-id']));
+          } else {
+            echo '<a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
+                              <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Tài khoản</span>
+                          </a>';
+          }
+          ?>
+        </li>
+        <!-- /Navbar Login-->
+
+        <!-- Navbar Sign In -->
+        <li class="mt-1">
+          <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/login.php">
+            <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng xuất</span>
+          </a>
+        </li>
+        <!-- /Navbar Sign In -->
+
+      </ul>
+      <!-- Navigation Icons -->
     </div>
-    <div class="offcanvas-body">
-        <div class="d-flex flex-column justify-content-between w-100 h-100">
-            <div>
-
-                <!-- Cart Product-->
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-1.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens StormBreaker Jacket
-                                <a href="#" class="text-decoration-none text-dark"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$85.00</p>
-                    </div>
-                </div>
-
-                <!-- Cart Product-->
-                <div class="row mx-0 pb-4 mb-4 border-bottom">
-                    <div class="col-3">
-                        <picture class="d-block bg-light">
-                            <img class="img-fluid" src="../assets/images/products/product-2.jpg" alt="Bootstrap 5 Template by Pixel Rocket">
-                        </picture>
-                    </div>
-                    <div class="col-9">
-                        <div>
-                            <h6 class="justify-content-between d-flex align-items-start mb-2">
-                                Mens Torrent Terrain Jacket
-                                <a href="#" class="text-decoration-none text-dark"><i class="ri-close-line"></i></a>
-                            </h6>
-                            <small class="d-block text-muted fw-bolder">Size: Medium</small>
-                            <small class="d-block text-muted fw-bolder">Qty: 1</small>
-                        </div>
-                        <p class="fw-bolder text-end m-0">$99.00</p>
-                    </div>
-                </div>
-
-            </div>
-            <div class="border-top pt-3">
-                <div class="d-flex justify-content-between align-items-center">
-                    <p class="m-0 fw-bolder">Subtotal</p>
-                    <p class="m-0 fw-bolder">$233.33</p>
-                </div>
-                <a href="./checkout.php" class="btn btn-orange fw-bold text-white mt-5 mb-2 d-block text-center">Checkout</a>
-                <a href="./cart.php" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
-            </div>
-        </div>
-    </div>
+  </div>
 </div>
-<!-- /Offcanvas for Cart -->
+<!-- /Offcanvas -->

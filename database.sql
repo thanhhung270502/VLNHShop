@@ -65,7 +65,6 @@ CREATE TABLE `user` (
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 INSERT INTO `user` VALUES (0, 'admin', 'admin', '123456', '0123456789', '', 0, './app/assets/images/instagram/instagram-1.jpg');
-
 INSERT INTO `user` VALUES (1, 'Bennie Mousley', 'bmousley0', '5TFCxlsl2Zq', '1613211013', '70314 Carberry Alley', 1, './app/assets/images/instagram/instagram-1.jpg');
 INSERT INTO `user` VALUES (2, 'Tobie Klees', 'tklees1@japanpost.jp', 'tDm8oOyfngKH', '4637314160', '283 Pennsylvania Center', 1, './app/assets/images/instagram/instagram-1.jpg');
 INSERT INTO `user` VALUES (3, 'Romona Rust', 'rrust2@live.com', 'm2CA4Iia1', '4799176958', '12294 Transport Hill', 1, './app/assets/images/instagram/instagram-1.jpg');
@@ -75,7 +74,7 @@ INSERT INTO `user` VALUES (5, 'Dilly Blofeld', 'dblofeld4@ca.gov', 'jVFHr4OW', '
 CREATE TABLE `cart` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
-  `total_money` int(10) DEFAULT 0,
+  `total_money` float(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,6 +83,7 @@ CREATE TABLE `cart_item` (
   `cart_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
+  `size` varchar(3) NOT NULL,
   FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`),
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,7 +91,7 @@ CREATE TABLE `cart_item` (
 CREATE TABLE `order` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
-  `total_money` int(10) DEFAULT 0,
+  `total_money` float(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -100,6 +100,7 @@ CREATE TABLE `order_item` (
   `order_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
+  `size` varchar(3) NOT NULL,
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 

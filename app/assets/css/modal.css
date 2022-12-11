@@ -1,28 +1,3 @@
-:root {
-    --red: #fe2c55;
-    --black: #000;
-    --black-blue: #0b1517;
-    --white: #ffffff;
-    --brown: #5a373f;
-    --orange: #ee4d2d;
-}
-
-.form-container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    width: 100%;
-    background-color: #000; 
-    background-image: linear-gradient(315deg, #000 0%, #01BAEF 75%);
-}
-
-.form-inner {
-    background-color: var(--white);
-    margin: 5rem 0;
-    padding: 3rem 50px;
-    border-radius: 7px;
-}
-
 .cart_modal {
     --bs-modal-width: 400px;
 }
