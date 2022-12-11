@@ -66,7 +66,7 @@
                     <!-- Navbar Sign In -->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <a class="text-white text-decoration-none fw-bold" href="./login.php">
-                            Sign In
+                            Đăng nhập
                         </a>
                     </li>
                     <!-- /Navbar Sign In -->
@@ -85,7 +85,7 @@
   <div class="modal-dialog modal-dialog-scrollable">
     <div class="modal-content">
       <div class="modal-header d-flex align-items-center">
-        <h5 class="modal-title">Your Cart</h5>
+        <h5 class="modal-title">Giỏ hàng</h5>
         <button type="button" class="btn-close text-reset" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
 
@@ -96,9 +96,14 @@
         if ($items_result->num_rows > 0) {
             while($cart_item = $items_result->fetch_assoc()) {
                 $item_id = $cart_item['product_id'];
-                $img_link = '../../'.$cart_item['img'];
+            
                 $sub_total_money = $cart_item['quantity'] * $cart_item['price'];
                 $total_money += $sub_total_money;
+
+                // lấy ảnh trong bảng product_images
+                $img_query = "SELECT * FROM product_images WHERE product_id=$item_id";
+                $imgs = $conn->query($img_query);
+                $img_link = '../../'.$imgs->fetch_assoc()['src'];
     ?>
             <div class="border-bottom p-2">
                 <div class="row">
@@ -108,11 +113,17 @@
                         </picture>
                     </div>
                     <div class="col-6 cart-item__infor">
-                      <div class="cart-item__name fs-6">
+                      <div class="cart-item__name fs-6 fw-bold">
                         <!-- <%= cart_item.product.name %> --><?php echo $cart_item['name'];?>
                       </div>
                       <div class=" fs-6 cart-item__size fw-semibold text-secondary">
-                        Size: M
+                        Size: 
+                        <?php
+                            $size_id = $cart_item['size'];
+                            $size_name_result = $conn->query("SELECT * FROM size WHERE id='$size_id'");
+                            $size_name = $size_name_result->fetch_assoc()['name'];
+                            echo $size_name;
+                        ?>
                       </div>
                       <div class="fs-6 cart-item__quantity fw-semibold text-secondary">
                         Qty: <?php echo $cart_item['quantity']; ?>
@@ -121,7 +132,7 @@
                     
                     <div class="col-3 d-flex flex-column align-items-stretch justify-content-between">
                         <a 
-                            href="../../controllers/cart/cart_item_delete.php?id=<?php echo $item_id; ?>"
+                            href="../../controllers/cart/cart_item_delete.php?id=<?php echo $item_id; ?>&size=<?php echo $size_id; ?>"
                             class="text-decoration-none text-dark"    
                         ><i class="ri-close-circle-line ri-lg"></i></a>    
                                     <!-- <button class="delete-button bg-white border-0"><i class="ri-close-circle-line ri-lg"></i></button> -->
@@ -143,17 +154,20 @@
     <?php
             }
         }
+
+        //cập nhật tổng tiền
+        $conn->query("UPDATE cart SET total_money='$total_money'");
     ?>
     </div>
 
       <div class="m-3">
           <div class="border-top p-3">
               <div class="d-flex justify-content-between align-items-center">
-                  <p class="m-0 fw-bolder">Subtotal</p>
+                  <p class="m-0 fw-bolder">Tổng</p>
                   <p class="m-0 fw-bolder">$<?php echo $total_money; ?></p>
               </div>
-              <a href="./checkout.php" class="btn btn-orange text-white fw-bold mt-5 mb-2 d-block text-center">Checkout</a>
-              <a href="./cart.php" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">View Cart</a>
+              <a href="./checkout.php" class="btn btn-orange text-white fw-bold mt-5 mb-2 d-block text-center">Thanh toán</a>
+              <a href="./cart.php" class="btn btn-dark fw-bolder d-block text-center transition-all opacity-50-hover">Xem giỏ hàng</a>
           </div>
       </div>
     </div>

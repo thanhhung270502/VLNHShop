@@ -46,7 +46,7 @@
             </div>
             <div class="row border-light border-top">
                 <div class="col-6">
-                    <p class="small opacity-75 text-white mt-3">&copy; 2022 All Rights Reserved. Designed by HVLN</p>
+                    <p class="small opacity-75 text-white mt-3">&copy; 2022 All Rights Reserved. Designed by VLNH</p>
                 </div>
                 <div class="col-6">
                     <div class="container d-flex justify-content-end align-items-center mt-3    ">

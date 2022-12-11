@@ -11,7 +11,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- <link href="../assets/css/home.css" rel="stylesheet"> -->
     <link href="../assets/css/cart.css" rel="stylesheet">
-    <link href="../assets/css/modal.css" rel="stylesheet">
+    <link href="../assets/css/general.css" rel="stylesheet">
 </head>
 
 <body>
@@ -26,11 +26,11 @@
         <!-- /Cart Title -->
 
         <!-- Cart Content -->
-        <div class="row mt-5">
+        <div class="row my-5">
 
             <!-- Cart Items -->
             <div class="col-7">
-                <div class="table-responsive">
+                <!-- <div class="table-responsive"> -->
                     <table class="table">
                         <thead>
                             <tr>
@@ -47,8 +47,15 @@
 
                             if ($items_result->num_rows > 0) {
                                 while($cart_item = $items_result->fetch_assoc()) {
+                    
                                     $item_id = $cart_item['product_id'];
-                                    $img_link = '../../'.$cart_item['img'];
+
+                                    // lấy ảnh trong bảng product_images
+                                    $img_query = "SELECT * FROM product_images WHERE product_id=$item_id";
+                                    $imgs = $conn->query($img_query);
+                                    $img_link = '../../'.$imgs->fetch_assoc()['src'];
+
+                                    // $img_link = '../../'.$cart_item['img'];
                                     $sub_total_money = $cart_item['quantity'] * $cart_item['price'];
                                     $total_money += $sub_total_money;
                         ?>
@@ -64,7 +71,14 @@
                                         <h6 class="mb-2 fw-bolder">
                                             <?php echo $cart_item['name']; ?> 
                                         </h6>
-                                        <small class="d-block text-muted"><?php echo $cart_item['color']; ?>/ L</small>
+                                        <small class="d-block text-muted"><?php echo $cart_item['color']; ?> / 
+                                        <?php
+                                        $size_id = $cart_item['size'];
+                                        $size_name_result = $conn->query("SELECT * FROM size WHERE id='$size_id'");
+                                        $size_name = $size_name_result->fetch_assoc()['name'];
+                                        echo $size_name;
+                                    ?>
+                                        </small>
                                     </div>
                                 </td>
                                 <td>
@@ -72,14 +86,14 @@
                                         <span class="small text-muted mt-1"><?php echo $cart_item['quantity']; ?> @ <?php echo $cart_item['price']; ?></span>
                                     </div>
                                 </td>
-                                <td class="position-relative">
-                                    <div class="d-flex flex-column align-items-stretch justify-content-between">
+                                <td>
+                                    <div class="d-flex justify-content-between flex-column align-items-end h-100">
                                         <a 
-                                            href="../../controllers/cart/cart_item_delete.php?id=<?php echo $item_id; ?>"
-                                            class="text-decoration-none text-dark"    
+                                            href="../../controllers/cart/cart_item_delete.php?id=<?php echo $item_id; ?>&size=<?php echo $size_id; ?>"
+                                            class="text-decoration-none text-dark me-1 float-end"    
                                         ><i class="ri-close-circle-line ri-lg"></i></a>    
                                     <!-- <button class="delete-button bg-white border-0"><i class="ri-close-circle-line ri-lg"></i></button> -->
-                                        <p class="fw-bolder mt-3 m-sm-0" style="position: absolute; top: 70%; left: -53%">$<?php echo $sub_total_money; ?></p>
+                                        <p class="fw-bolder me-1 mt-4 float-end">$<?php echo $sub_total_money; ?></p>
                                     </div>
                                 </td>
                             </tr>
@@ -87,30 +101,33 @@
                         <?php
                                 }
                             }
+                            
+                            //cập nhật tổng tiền
+                            $conn->query("UPDATE cart SET total_money='$total_money'");
                         ?>
                     </table>
-                </div>
+                <!-- </div> -->
             </div>
             <!-- /Cart Items -->
 
             <div class="col-5">
                 <div class="bg-dark p-4 p-md-5 text-white">
-                    <h3 class="fs-3 fw-bold m-0 text-center">Order Summary</h3>
+                    <h3 class="fs-3 fw-bold m-0 text-center">Thông tin đơn hàng</h3>
                     <div class="py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center mb-2 flex-column flex-sm-row">
-                            <p class="m-0 fw-bolder fs-6">Subtotal</p>
+                            <p class="m-0 fw-bolder fs-6">Tổng giỏ hàng</p>
                             <p class="m-0 fs-6 fw-bolder">$<?php echo $total_money; ?></p>
                         </div>
                         <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row mt-3 m-sm-0">
-                            <p class="m-0 fw-bolder fs-6">Shipping</p>
-                            <span class="text-white opacity-75 small">Will be set at checkout</span>
+                            <p class="m-0 fw-bolder fs-6">Phí giao hàng</p>
+                            <span class="text-white opacity-75 small">Được tính khi thanh toán</span>
                         </div>
                     </div>
                     <div class="py-3 border-bottom">
                         <div class="d-flex justify-content-between align-items-center flex-column flex-sm-row">
                             <div>
-                                <p class="m-0 fs-5 fw-bold">Grand Total</p>
-                                <span class="text-white opacity-75 small">Include 10% tax</span>
+                                <p class="m-0 fs-5 fw-bold">Tổng cộng</p>
+                                <span class="text-white opacity-75 small">Bao gồm 10% thuế GTGT</span>
                             </div>
                             <p class="mt-3 m-sm-0 fs-5 fw-bold">$<?php echo $total_money * 1.1; ?></p>
                         </div>
@@ -133,18 +150,18 @@
                     <!-- /This can be add later -->
 
                     <!-- Checkout Button-->
-                    <a href="./checkout.html" class="btn btn-orange w-100 text-white fw-bold mt-3" role="button" data-dashlane-rid="913cb21ce6af3f20"><i class="ri-secure-payment-line align-bottom"></i> Proceed to checkout</a>
-                    <a href="./checkout.html" class="btn btn-orange w-100 text-white fw-bold mt-3" role="button" data-dashlane-rid="48d77dcecd2a4151"><i class="ri-paypal-line align-bottom"></i> Checkout with PayPal</a>
+                    <a href="./checkout.php" class="btn btn-orange w-100 text-white fw-bold mt-3" role="button" data-dashlane-rid="913cb21ce6af3f20"><i class="ri-secure-payment-line align-bottom"></i>  Đi đến thanh toán</a>
+                    <!-- <a href="./checkout.php" class="btn btn-orange w-100 text-white fw-bold mt-3" role="button" data-dashlane-rid="48d77dcecd2a4151"><i class="ri-paypal-line align-bottom"></i>Th</a> -->
                     <!-- Checkout Button-->
                 </div>
 
                 <!-- Payment Icons-->
-                <ul class="list-unstyled d-flex justify-content-center mt-3">
+                <!-- <ul class="list-unstyled d-flex justify-content-center mt-3">
                     <li class="mx-1 border d-flex align-items-center p-2"><i class="pi pi-paypal"></i></li>
                     <li class="mx-1 border d-flex align-items-center p-2"><i class="pi pi-mastercard"></i></li>
                     <li class="mx-1 border d-flex align-items-center p-2"><i class="pi pi-american-express"></i></li>
                     <li class="mx-1 border d-flex align-items-center p-2"><i class="pi pi-visa"></i></li>
-                </ul>
+                </ul> -->
                 <!-- / Payment Icons-->
             </div>
         </div>

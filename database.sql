@@ -75,7 +75,7 @@ INSERT INTO `user` VALUES (5, 'Dilly Blofeld', 'dblofeld4@ca.gov', 'jVFHr4OW', '
 CREATE TABLE `cart` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
-  `total_money` int(10) DEFAULT 0,
+  `total_money` float(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -84,6 +84,7 @@ CREATE TABLE `cart_item` (
   `cart_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
+  `size` varchar(3) NOT NULL,
   FOREIGN KEY (`cart_id`) REFERENCES `cart`(`id`),
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
@@ -91,7 +92,7 @@ CREATE TABLE `cart_item` (
 CREATE TABLE `order` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,
   `user_id` int(10),
-  `total_money` int(10) DEFAULT 0,
+  `total_money` float(10) DEFAULT 0,
   FOREIGN KEY (`user_id`) REFERENCES `user`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
@@ -100,6 +101,7 @@ CREATE TABLE `order_item` (
   `order_id` int(10) NOT NULL,
   `product_id` int(10) NOT NULL,
   `quantity` int(10) DEFAULT 0,
+  `size` varchar(3) NOT NULL,
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
