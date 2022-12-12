@@ -28,19 +28,18 @@
                     <nav aria-label="breadcrumb">
                         <ol class="breadcrumb">
                             <li class="breadcrumb-item">
-                                <a href="#">Home</a>
+                                <a href="./index.php">Trang chủ</a>
                             </li>
                             <li class="breadcrumb-item" aria-current="page">
-                                Library
+                                <a href="#">Sản phẩm</a>
                             </li>
                         </ol>
                     </nav>
                 </div>
-                <h2>Latest VLNH (10)</h2>
+                <h2>Mẫu mới</h2>
                 <div class="content">
-                    <p>
-                        Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum
-                        has been the industry's standard dummy text ever since the 1500s
+                    <p> 
+                      VLNH luôn nghiên cứu, phát triển mỗi ngày để mang đến những sản phẩm đa dạng về chất liệu, nhiều tính năng, đa dạng giá thành... mang lại nhiều sự lựa chọn hơn cho khách hàng.
                     </p>
                 </div>
             </div>
@@ -50,7 +49,7 @@
       <div class="container pb-4 border-bottom">
         <div class="d-flex pb-3">
             <div class="col-6">
-                <div class="products_index_main_title">New Arrivals</div>
+                <div class="products_index_main_title">Sản phẩm mới</div>
             </div>
             <?php
               if (isset($_COOKIE["user_id"])) {
@@ -74,14 +73,14 @@
               while($row = $result->fetch_assoc()) {
                 if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
                   echo '
-                    <div class="col-lg-3 col-md-4">
+                    <div class="col-lg-3 col-md-4" style="height: 580px;  ">
                       <div style="background-color: var(--white);">
                         <form action="./products_show.php" method="get">
                           <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
-                          <div class="products_index_main_image">
-                            <img src="'.$row["src"].'" alt="" class="img-fluid"/>
+                          <div class="products_index_main_image text-center" style="height: 70%;">
+                            <img src="'.$row["src"].'" alt="" class="img-fluid" style="height:448px;"/>
                           </div>
-                          <div class="px-3 pb-3 ">
+                          <div class="px-3 pb-3" style="height: 30%;">
                             <div class="text-center">
                               <div class="products_index_main_name">'.$row["name"].'</div>
                               <div class="products_index_main_price">$'.$row["price"].'</div>
