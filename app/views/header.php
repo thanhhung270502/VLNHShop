@@ -288,9 +288,20 @@
 
                 <!-- Navbar Sign In -->
                 <li class="mt-1">
-                    <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/login.php">
-                        <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng xuất</span>
-                    </a>
+                    <?php
+                        if (isset($_COOKIE['user_id'])) {
+                            echo sprintf('
+                                <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/login.php">
+                                    <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng xuất</span>
+                                </a>
+                                ');
+                        } else {
+                            echo '
+                            <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/login.php">
+                                <i class="ri-login-circle-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Đăng nhập</span>
+                            </a>';
+                        }
+                    ?>
                 </li>
                 <!-- /Navbar Sign In -->
 
