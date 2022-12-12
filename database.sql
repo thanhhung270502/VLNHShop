@@ -30,6 +30,8 @@ insert into product (id, price, name, color, description, quantity_remain) value
 insert into product (id, price, name, color, description, quantity_remain) values (3, '81.8', 'Áo Thun Cổ Trụ Y Nguyên Bản 18+ Ver62', 'black', null, 100);
 insert into product (id, price, name, color, description, quantity_remain) values (4, '82.2', 'Áo Thun Sweater Tối Giản M21', 'green', null, 33);
 insert into product (id, price, name, color, description, quantity_remain) values (5, '84.4', 'Áo Khoác Bomber Y Nguyên Bản 18- Ver28', 'green', null, 86);
+insert into product (id, price, name, color, description, quantity_remain) values (6, '90.0', 'Quần Jogger Tối Giản M10', 'black', null, 86);
+insert into product (id, price, name, color, description, quantity_remain) values (7, '75.0', 'Áo Sơ Mi Tay Dài Sợi Modal Tối Giản M11', 'w', null, 86);
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (6, '3.62', 'shirt 6', 'Goldenrod', null, 77, './app/assets/images/products/product-6.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (7, '14.30', 'shirt 7', 'Green', null, 52, './app/assets/images/products/product-7.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (8, '58.26', 'shirt 8', 'Goldenrod', null, 70, './app/assets/images/products/product-8.jpg');
@@ -57,7 +59,13 @@ insert into product_images (product_id, src) values
 (4, 'https://cdn2.yame.vn/pimg/ao-thun-sweater-toi-gian-m21-0021550/4feb593e-5bb6-3300-c91b-001999b1ad91.jpg?w=800'),
 (5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/6e89e104-dfe2-0601-6521-001941b994fa.jpg?w=800'),
 (5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/f2955876-ab16-0801-d2e6-001941b99508.jpg?w=800'),
-(5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/f4991751-42d4-0701-a5c5-001941b99503.jpg?w=800');
+(5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/f4991751-42d4-0701-a5c5-001941b99503.jpg?w=800'),
+(6, 'https://cdn2.yame.vn/pimg/quan-jogger-toi-gian-m10-0021159/c506db1a-665d-9100-1e40-00195d323464.jpg?w=800'),
+(6, 'https://cdn2.yame.vn/pimg/quan-jogger-toi-gian-m10-0021159/66cc97e8-4cbc-9200-4b1e-00195d323466.jpg?w=800'),
+(6, 'https://cdn2.yame.vn/pimg/quan-jogger-toi-gian-m10-0021159/cc42fa7c-3efa-9300-5712-00195d323468.jpg?w=800'),
+(7, 'https://cdn2.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/6370ad73-fd15-5000-ab34-0018231a50ee.jpg?w=800'),
+(7, 'https://cdn2.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/a38f35a4-0c71-5200-6fb8-0018231a50f3.jpg?w=800'),
+(7, 'https://cdn2.yame.vn/pimg/so-mi-nam-no-style-td-km18-0018246/5deebfc1-736c-0300-b54c-00195ca23fee.jpg?w=800');
 -- (1, './app/assets/images/more_products/1-2-2-1.jpg'),
 -- (1, './app/assets/images/more_products/1-2-2-2.jpg'),
 -- (1, './app/assets/images/more_products/1-2-2-3.jpg'),

@@ -12,6 +12,7 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- <link href="../assets/css/home.css" rel="stylesheet"> -->
     <link href="../assets/css/general.css" rel="stylesheet">
+    <link href="../assets/css/homepage.css" rel="stylesheet">
     <link href="../assets/css/checkout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    
     <script>

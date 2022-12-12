@@ -137,7 +137,13 @@
                 // lấy ảnh trong bảng product_images
                 $img_query = "SELECT * FROM product_images WHERE product_id=$item_id";
                 $imgs = $conn->query($img_query);
-                $img_link = '../../'.$imgs->fetch_assoc()['src'];
+                $image = $imgs->fetch_assoc();
+                if ($image["src"][0] == 'h' && $image["src"][1] == 't' && $image["src"][2] == 't' && $image["src"][3] == 'p') {
+                    $img_link = $image["src"];
+                }
+                else {
+                    $img_link = '../../'.$image['src'];
+                }
     ?>
             <div class="border-bottom p-2">
                 <div class="row">
