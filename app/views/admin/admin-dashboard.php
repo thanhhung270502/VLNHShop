@@ -64,7 +64,7 @@ CheckAdminUser($_COOKIE['user_id']);
                             <a href="manage_user.php" class="mx-2">
                                 <button type="button" class="btn btn-primary btn-rounded">Quản lý thành viên</button>
                             </a>
-                            <a href="#" class="mx-2">
+                            <a href="../products_index.php" class="mx-2">
                                 <button type="button" class="btn btn-success btn-rounded">Quản lý sản phẩm</button>
                             </a>
                         </div>

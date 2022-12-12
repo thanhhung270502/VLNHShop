@@ -14,7 +14,7 @@
     // $sql = "insert into product (id, price, name, color, description, quantity_remain, img) values (7, '13.51', 'shirt 1', 'Brown', null, 92, './app/assets/images/products/product-1.jpg');";
     
     $conn->query($sql);
-    $sql_user = "SELECT * FROM product WHERE `name` = 'shirt 1'";
+    $sql_user = "SELECT * FROM product WHERE `name` = '$name'";
     $user = $conn->query($sql_user);
     if ($user->num_rows > 0) {
         while($row = $user->fetch_assoc()) {
@@ -27,35 +27,7 @@
                 $sql = "INSERT INTO product_images (product_id, src) VALUES ('$product_id', '$image')";
                 $conn->query($sql);
             }
-            echo 'Create successfully~~~';
+            header("location:../../app/views/products_show.php?id=$product_id");
         }
     }
-
-
-
-    // $color = $_GET["color"];
-    // $sizes = $_GET["size"];
-    // // echo $sizes;
-    // foreach ($sizes as $size) {
-    //     echo $size;
-    // }
-
-    // $name = $_FILES["userfile"]["name"];
-    // $imagezz = $_FILES["userfile"][""];
-
-    // echo $color;
-    // echo $name;
-    // echo '<img src="'.$imagezz.'">';
-
-    // $tmpFile = $_FILES['userfile']['tmp_name'];
-    // $newFile = '../../app/assets/images/'.$_FILES['userfile']['name'];
-    // echo $tmpFile. ' '. $newFile;
-    // $result = move_uploaded_file($tmpFile, $newFile);
-
-    // if ($result) {
-    //     echo 'Stored';
-    // }
-    // else {
-    //     echo 'Try again';
-    // }   
 ?>
