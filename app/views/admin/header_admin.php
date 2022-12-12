@@ -31,13 +31,12 @@
                             if (preg_match('(/VLNHShop/app/views/admin)', $_SERVER['REQUEST_URI'])) {
                                 $profile_path = '../user/edit-profile.php?id=';
                                 $login_path = '../user/login.php';
+                            } else if (preg_match('(/VLNHShop/app/views/user/edit-profile.php)', $_SERVER['REQUEST_URI'])) {
+                                $profile_path = '/VLNHShop/app/views/user/edit-profile.php?id=';
+                                $login_path = 'login.php';
                             } else {
                                 $profile_path = 'user/edit-profile.php?id=';
                                 $login_path = 'user/login.php';
-                            }
-                            if (preg_match('(/VLNHShop/app/views/user/edit-profile.php)', $_SERVER['REQUEST_URI'])) {
-                                $profile_path = '/VLNHShop/app/views/user/edit-profile.php?id=';
-                                $login_path = 'login.php';
                             }
                             echo sprintf('
                                     <div class="dropdown">
