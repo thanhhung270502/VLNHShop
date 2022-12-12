@@ -19,11 +19,17 @@ CREATE TABLE `product_images` (
   FOREIGN KEY (`product_id`) REFERENCES `product`(`id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
-insert into product (id, price, name, color, description, quantity_remain, img) values (1, '13.51', 'Áo Thun Cổ Tròn Thần Cổ Đại Valknut Ver5', 'black', null, 92, './app/assets/images/products/product-1.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (2, '122.87', 'shirt 2', 'white', null, 39, './app/assets/images/products/product-2.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (3, '108.72', 'shirt 3', 'black', null, 100, './app/assets/images/products/product-3.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (4, '184.70', 'shirt 4', 'white', null, 33, './app/assets/images/products/product-4.jpg');
-insert into product (id, price, name, color, description, quantity_remain, img) values (5, '47.91', 'shirt 5', 'black', null, 86, './app/assets/images/products/product-5.jpg');
+-- insert into product (id, price, name, color, description, quantity_remain, img) values (1, '69.9', 'Áo Thun Cổ Tròn Đơn Giản Thần Cổ Đại Valknut Ver3', 'brown', null, 69, './app/assets/images/products/product-1.jpg');
+-- insert into product (id, price, name, color, description, quantity_remain, img) values (2, '78.9', 'Áo Thun Cổ Trụ Ngân Hà 4 Element Ver10', 'white', null, 39, './app/assets/images/products/product-2.jpg');
+-- insert into product (id, price, name, color, description, quantity_remain, img) values (3, '81.8', 'Áo Phông Polo Nam Màu Trắng MANDO Tay Lỡ Cotton Cao Cấp', 'black', null, 100, './app/assets/images/products/product-3.jpg');
+-- insert into product (id, price, name, color, description, quantity_remain, img) values (4, '82.2', 'Áo Thun Sweater Tối Giản M14', 'white', null, 33, './app/assets/images/products/product-4.jpg');
+-- insert into product (id, price, name, color, description, quantity_remain, img) values (5, '84.4', 'Áo Thun Sweater Ngân Hà 4 Element Ver11', 'black', null, 86, './app/assets/images/products/product-5.jpg');
+
+insert into product (id, price, name, color, description, quantity_remain) values (1, '69.9', 'Áo Thun Cổ Tròn Đơn Giản Linh Vật Rồng Ver23', 'black', null, 69);
+insert into product (id, price, name, color, description, quantity_remain) values (2, '78.9', 'Áo Thun Cổ Trụ Tối Giản M4', 'white', null, 39);
+insert into product (id, price, name, color, description, quantity_remain) values (3, '81.8', 'Áo Thun Cổ Trụ Y Nguyên Bản 18+ Ver62', 'black', null, 100);
+insert into product (id, price, name, color, description, quantity_remain) values (4, '82.2', 'Áo Thun Sweater Tối Giản M21', 'green', null, 33);
+insert into product (id, price, name, color, description, quantity_remain) values (5, '84.4', 'Áo Khoác Bomber Y Nguyên Bản 18- Ver28', 'green', null, 86);
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (6, '3.62', 'shirt 6', 'Goldenrod', null, 77, './app/assets/images/products/product-6.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (7, '14.30', 'shirt 7', 'Green', null, 52, './app/assets/images/products/product-7.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (8, '58.26', 'shirt 8', 'Goldenrod', null, 70, './app/assets/images/products/product-8.jpg');
@@ -37,21 +43,36 @@ insert into product (id, price, name, color, description, quantity_remain, img) 
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (16, '84.60', 'shirt 16', 'Goldenrod', null, 45, './app/assets/images/products/product-16.jpg');
 
 insert into product_images (product_id, src) values 
-(1, './app/assets/images/more_products/1-2-2-1.jpg'),
-(1, './app/assets/images/more_products/1-2-2-2.jpg'),
-(1, './app/assets/images/more_products/1-2-2-3.jpg'),
-(2, './app/assets/images/more_products/1-3-1-1.jpg'),
-(2, './app/assets/images/more_products/1-3-1-2.jpg'),
-(2, './app/assets/images/more_products/1-3-1-3.jpg'),
-(3, './app/assets/images/more_products/1-3-3-1.jpg'),
-(3, './app/assets/images/more_products/1-3-3-2.jpg'),
-(3, './app/assets/images/more_products/1-3-3-3.jpg'),
-(4, './app/assets/images/more_products/1-4-1-1.jpg'),
-(4, './app/assets/images/more_products/1-4-1-2.jpg'),
-(4, './app/assets/images/more_products/1-4-1-3.jpg'),
-(5, './app/assets/images/more_products/1-4-2-1.jpg'),
-(5, './app/assets/images/more_products/1-4-2-2.jpg'),
-(5, './app/assets/images/more_products/1-4-2-3.jpg');
+(1, 'https://cdn2.yame.vn/pimg/ao-thun-co-tron-on-gian-linh-vat-rong-ver23-0021771/203c4bdf-4567-3301-1938-0019a4bfdb70.jpg?w=800'),
+(1, 'https://cdn2.yame.vn/pimg/ao-thun-co-tron-on-gian-linh-vat-rong-ver23-0021771/5241a213-359c-2f01-fad7-0019a4bfdb56.jpg?w=800'),
+(1, 'https://cdn2.yame.vn/pimg/ao-thun-co-tron-on-gian-linh-vat-rong-ver23-0021771/4512710f-ade9-3101-482f-0019a4bfdb63.jpg?w=800'),
+(2, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-toi-gian-m4-0020888/00a4f0a0-af86-b600-0642-001936b43912.jpg?w=800'),
+(2, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-toi-gian-m4-0020888/f39560a0-41da-b900-83e4-001936b43918.jpg?w=800'),
+(2, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-toi-gian-m4-0020888/1be68355-6c4e-ba00-6a72-001936b43920.jpg?w=800'),
+(3, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-y-nguyen-ban-18-ver62-0021122/e2ac946a-02d0-8c00-45d6-001962b16039.jpg?w=800'),
+(3, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-y-nguyen-ban-18-ver62-0021122/2ec7cd4b-44cc-9000-abe8-001962b1604c.jpg?w=800'),
+(3, 'https://cdn2.yame.vn/pimg/ao-thun-co-tru-y-nguyen-ban-18-ver62-0021122/f538e868-3e7d-8d00-7cc1-001962b1603e.jpg?w=800'),
+(4, 'https://cdn2.yame.vn/pimg/ao-thun-sweater-toi-gian-m21-0021550/fcfaf7fa-6a4c-3700-9a97-001999b1ada9.jpg?w=800'),
+(4, 'https://cdn2.yame.vn/pimg/ao-thun-sweater-toi-gian-m21-0021550/ca59ed01-6715-3500-bb07-001999b1ad9b.jpg?w=800'),
+(4, 'https://cdn2.yame.vn/pimg/ao-thun-sweater-toi-gian-m21-0021550/4feb593e-5bb6-3300-c91b-001999b1ad91.jpg?w=800'),
+(5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/6e89e104-dfe2-0601-6521-001941b994fa.jpg?w=800'),
+(5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/f2955876-ab16-0801-d2e6-001941b99508.jpg?w=800'),
+(5, 'https://cdn2.yame.vn/pimg/ao-khoac-bomber-y-nguyen-ban-18--ver28-0020822/f4991751-42d4-0701-a5c5-001941b99503.jpg?w=800');
+-- (1, './app/assets/images/more_products/1-2-2-1.jpg'),
+-- (1, './app/assets/images/more_products/1-2-2-2.jpg'),
+-- (1, './app/assets/images/more_products/1-2-2-3.jpg'),
+-- (2, './app/assets/images/more_products/1-3-1-1.jpg'),
+-- (2, './app/assets/images/more_products/1-3-1-2.jpg'),
+-- (2, './app/assets/images/more_products/1-3-1-3.jpg'),
+-- (3, './app/assets/images/more_products/1-3-3-1.jpg'),
+-- (3, './app/assets/images/more_products/1-3-3-2.jpg'),
+-- (3, './app/assets/images/more_products/1-3-3-3.jpg'),
+-- (4, './app/assets/images/more_products/1-4-1-1.jpg'),
+-- (4, './app/assets/images/more_products/1-4-1-2.jpg'),
+-- (4, './app/assets/images/more_products/1-4-1-3.jpg'),
+-- (5, './app/assets/images/more_products/1-4-2-1.jpg'),
+-- (5, './app/assets/images/more_products/1-4-2-2.jpg'),
+-- (5, './app/assets/images/more_products/1-4-2-3.jpg');
 
 CREATE TABLE `user` (
   `id` int(10) PRIMARY KEY AUTO_INCREMENT,

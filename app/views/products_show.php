@@ -127,7 +127,7 @@
                     <div class="product__colors pb-2">Màu sắc:</div>
                     ';
                     
-                if ($product["color"] == "white") {
+                if ($product["color"] == "white" || $product["color"] == "green") {
                   echo '<div class="btn__color" style="background-color: var(--'.$product["color"].'); color: black; border: 1px solid var(--black);">'.$product["color"].'</div>';
                 }
                 else {

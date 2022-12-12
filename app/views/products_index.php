@@ -81,7 +81,7 @@
                           <div class="products_index_main_image">
                             <img src="'.$row["src"].'" alt="" class="img-fluid"/>
                           </div>
-                          <div class="p-3">
+                          <div class="px-3 pb-3 ">
                             <div class="text-center">
                               <div class="products_index_main_name">'.$row["name"].'</div>
                               <div class="products_index_main_price">$'.$row["price"].'</div>
@@ -102,7 +102,7 @@
                           <div class="products_index_main_image">
                             <img src="../../'.$row["src"].'" alt="" class="img-fluid"/>
                           </div>
-                          <div class="p-3">
+                          <div class="px-3 pb-3 ">
                             <div class="text-center">
                               <div class="products_index_main_name">'.$row["name"].'</div>
                               <div class="products_index_main_price">$'.$row["price"].'</div>
