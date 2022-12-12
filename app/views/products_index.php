@@ -12,6 +12,7 @@
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
   <link rel="stylesheet" href="../assets/css/general.css">
   <link rel="stylesheet" href="../assets/css/products_index.css">
+  <link rel="stylesheet" href="../assets/css/homepage.css">
 </head>
 <body>
   <?php 
@@ -52,32 +53,51 @@
                 <div class="products_index_main_title">New Arrivals</div>
             </div>
             <div class="col-6 text-end">
-                <div class="btn btn-secondary">
-                    Sort By <i class="fa-solid fa-chevron-down"></i>
-                </div>
+                <a class="btn btn-secondary" href="./products_new.php">Add new product</a>
             </div>
         </div>
         <div class="row">
           <?php
             if ($result->num_rows > 0) {
               while($row = $result->fetch_assoc()) {
-                echo '
-                  <div class="col-lg-3 col-md-4">
-                    <form action="./products_show.php" method="get">
-                      <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
-                      <div class="p-2 pointer">   
-                        <div class="products_index_main_image">
-                          <img src="../../'.$row["src"].'" alt="" class="img-fluid"></img>
+                if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
+                  echo '
+                    <div class="col-lg-3 col-md-4">
+                      <form action="./products_show.php" method="get">
+                        <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
+                        <div class="p-2 pointer">   
+                          <div class="products_index_main_image">
+                            <img src="'.$row["src"].'" alt="" class="img-fluid"/>
+                          </div>
+                          <div class="text-center">
+                            <div class="products_index_main_name">'.$row["name"].'</div>
+                            <div class="products_index_main_price">$'.$row["price"].'</div>
+                          </div>
+                          <input type="submit" name="submit" class="btn btn-primary"/>
                         </div>
-                        <div class="text-center">
-                          <div class="products_index_main_name">'.$row["name"].'</div>
-                          <div class="products_index_main_price">$'.$row["price"].'</div>
+                      </form>
+                    </div>
+                  ';
+                }
+                else {
+                  echo '
+                    <div class="col-lg-3 col-md-4">
+                      <form action="./products_show.php" method="get">
+                        <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
+                        <div class="p-2 pointer">   
+                          <div class="products_index_main_image">
+                            <img src="../../'.$row["src"].'" alt="" class="img-fluid"/>
+                          </div>
+                          <div class="text-center">
+                            <div class="products_index_main_name">'.$row["name"].'</div>
+                            <div class="products_index_main_price">$'.$row["price"].'</div>
+                          </div>
+                          <input type="submit" name="submit" class="btn btn-primary"/>
                         </div>
-                        <input type="submit" name="submit" class="btn btn-primary"/>
-                      </div>
-                    </form>
-                  </div>
-                ';
+                      </form>
+                    </div>
+                  ';
+                }
               }
             }
           ?>

@@ -68,12 +68,12 @@
                     <li class="ms-1 d-none d-lg-inline-block">
                         <?php
                         require_once __DIR__.'/../../controllers/user.php';
-                        if (isset($_COOKIE['user-id'])) {
+                        if (isset($_COOKIE['user_id'])) {
                             echo sprintf('
                                     <a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=%d">
                                         <i class="ri-user-line ri-lg align-middle text-white"></i>
                                     </a>
-                                ', GetName($_COOKIE['user-id']));
+                                ', GetName($_COOKIE['user_id']));
                         } else {
                             echo '<a class="btn btn-link px-2 text-decoration-none d-flex align-items-center" href="#">
                                     <i class="ri-user-line ri-lg align-middle text-white"></i>
@@ -86,7 +86,7 @@
                     <!-- Navbar Sign In -->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <?php
-                            if (isset($_COOKIE['user-id'])) {
+                            if (isset($_COOKIE['user_id'])) {
                                 echo sprintf('
                                     <div class="dropdown">
                                         <a class="btn text-white text-decoration-none fw-bold dropdown-toggle" type="button" data-bs-toggle="dropdown">
@@ -96,7 +96,7 @@
                                             <li><a class="dropdown-item py-1" href="user/login.php">Đăng xuất</a></li>
                                         </ul>
                                     </div>
-                                ', GetName($_COOKIE['user-id']));
+                                ', GetName($_COOKIE['user_id']));
                             } else {
                                 echo '
                                 <a class="text-white text-decoration-none fw-bold" href="user/login.php">
@@ -118,7 +118,7 @@
 
 <!-- Modal -->
 <div class="modal fade" id="cartModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-  <div class="modal-dialog modal-dialog-scrollable">
+  <div class="modal-dialog modal-dialog-scrollable cart_modal" style="width: 500px;">
     <div class="modal-content">
       <div class="modal-header d-flex align-items-center">
         <h5 class="modal-title">Giỏ hàng</h5>
@@ -259,11 +259,11 @@
             <!-- Navbar Login-->
             <li class="mt-1 d-inline-block position-relative">
                 <?php
-                if (isset($_COOKIE['user-id'])) {
+                if (isset($_COOKIE['user_id'])) {
                     echo sprintf('
                                     <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="user/edit-profile.php?id=">
                                         <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">%s</span>
-                                    </a>', GetName($_COOKIE['user-id']));
+                                    </a>', GetName($_COOKIE['user_id']));
                 } else {
                     echo '<a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
                               <i class="ri-user-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Tài khoản</span>
@@ -287,4 +287,3 @@
   </div>
 </div>
 <!-- /Offcanvas -->
-

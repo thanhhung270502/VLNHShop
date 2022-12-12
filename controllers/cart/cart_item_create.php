@@ -39,7 +39,7 @@
     }
     else {
         // thêm record mới vào cart_item
-        $add_to_cart_query = "INSERT INTO cart_item(cart_id, product_id, quantity, size) VALUES ($cart_id, $product_id, $quantity, $size_id)";
+        $add_to_cart_query = "INSERT INTO cart_item(cart_id, product_id, quantity, size) VALUES ('$cart_id', '$product_id', '$quantity', '$size_id')";
         $add_to_cart_result = $conn->query($add_to_cart_query);
     }
     

@@ -1,7 +1,7 @@
 <?php
 require_once __DIR__ . '/../../../controllers/user.php';
 
-CheckAdminUser($_COOKIE['user-id']);
+CheckAdminUser($_COOKIE['user_id']);
 
 $user = [
     'id' => '',
