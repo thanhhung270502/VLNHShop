@@ -55,7 +55,7 @@ CheckAdminUser($_COOKIE['user_id']);
     <div class="h-100 gradient-custom-2">
         <div class="container py-5 h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
-                <div class="col-xl-10">
+                <div class="col-xl-11">
                     <div class="card rounded-3 text-black p-5">
                         <div class="text-center d-flex position-relative justify-content-center align-items-center my-3">
                             <a href="admin-dashboard.php" class="position-absolute start-0 col-2 d-flex justify-content-start">
