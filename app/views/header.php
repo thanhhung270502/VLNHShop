@@ -253,7 +253,7 @@
                 <!-- Navbar Wishlist-->
                 <li class="mt-3">
                     <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" href="#">
-                        <i class="ri-heart-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Wish List</span>
+                        <i class="ri-heart-line ri-lg align-middle text-dark"></i><span class="fs-5 fw-bold ms-2">Yêu thích</span>
                     </a>
                 </li>
                 <!-- /Navbar Wishlist-->
@@ -264,7 +264,7 @@
                 <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-dark"></i>
                 </a> -->
                     <a class="text-dark btn btn-link px-0 text-decoration-none d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#cartModal" aria-controls="cartModal">
-                        <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-dark"></i><span class="fs-5 fw-bold ms-2">Shopping Cart</span>
+                        <i class="ri-shopping-cart-2-line ri-lg align-middle position-relative z-index-10 text-dark"></i><span class="fs-5 fw-bold ms-2">Giỏ hàng</span>
                     </a>
                 </li>
                 <!-- /Navbar Cart-->
