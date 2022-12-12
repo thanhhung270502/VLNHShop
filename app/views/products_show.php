@@ -45,11 +45,19 @@
             if ($images->num_rows > 0) {
               while($row = $images->fetch_assoc()) {
                 array_push($array, $row["src"]);
-                echo '
-                  <div class="product_sub_image">
-                      <img src="../../'. $row["src"] .'" class="img-fluid image__small"></img>
-                  </div>
-                ';
+                if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
+                  echo '
+                    <div class="product_sub_image">
+                        <img src="'. $row["src"] .'" class="img-fluid image__small"></img>
+                    </div>
+                  ';
+                } else {
+                  echo '
+                    <div class="product_sub_image">
+                        <img src="../../'. $row["src"] .'" class="img-fluid image__small"></img>
+                    </div>
+                  ';
+                }
               }
             }
           ?>
@@ -58,22 +66,42 @@
       <div class="col-lg-5">
         <?php
           for ($i = 0; $i < 3; $i++) {
-            echo '
-              <div class="product_image image__large">
-                  <img src="../../'. $array[$i] .'" class="img-fluid"></img>
-              </div>
-            ';
+            if ($array[$i][0] == 'h' && $array[$i][1] == 't' && $array[$i][2] == 't' && $array[$i][3] == 'p') {
+              echo '
+                <div class="product_image image__large">
+                  <img src="'. $array[$i] .'" class="img-fluid"></img>
+                </div>
+              ';
+            } else {
+              echo '
+                <div class="product_image image__large">
+                    <img src="../../'. $array[$i] .'" class="img-fluid"></img>
+                </div>
+              ';
+            }
           }
         ?>
       </div>
       <div class="col-lg-6">
         <div class="d-flex align-items-center justify-content-between">
           <div class="product_collection_name">NVLH</div>
-          <?php
-            echo '
-              <a href="./products_edit_quantity.php?id='.$id.'" class="btn btn-secondary">Edit quantity</a>
-            ';
-          ?>
+          <div class="btn-group">
+            <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px;">
+              Edit
+            </button>
+            <?php
+              echo '
+                <ul class="dropdown-menu dropdown-menu-end">
+                  <li>
+                    <a href="./products_edit.php?id='.$id.'" class="dropdown-item">Edit product</a>
+                  </li>
+                  <li>
+                    <a href="./products_edit_quantity.php?id='.$id.'" class="dropdown-item">Edit quantity</a>
+                  </li>
+                </ul>
+              ';
+            ?>
+          </div>
         </div>
         <form action="../../controllers/cart/cart_item_create.php" method="GET">
           <?php

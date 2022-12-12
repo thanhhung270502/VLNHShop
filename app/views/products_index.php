@@ -52,9 +52,21 @@
             <div class="col-6">
                 <div class="products_index_main_title">New Arrivals</div>
             </div>
-            <div class="col-6 text-end">
-                <a class="btn btn-secondary" href="./products_new.php">Add new product</a>
-            </div>
+            <?php
+              if (isset($_COOKIE["user_id"])) {
+                $user_id = $_COOKIE["user_id"];
+                $sql = "SELECT * FROM user WHERE id = $user_id";
+                $result_user = $conn->query($sql);
+                $user = $result_user->fetch_assoc();
+                if ($user && $user["role"] == 0) {
+                  echo '
+                    <div class="col-6 text-end">
+                        <a class="btn btn-secondary" href="./products_new.php">Add new product</a>
+                    </div>
+                  ';
+                }
+              }
+            ?>
         </div>
         <div class="row">
           <?php
@@ -63,38 +75,42 @@
                 if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
                   echo '
                     <div class="col-lg-3 col-md-4">
-                      <form action="./products_show.php" method="get">
-                        <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
-                        <div class="p-2 pointer">   
+                      <div style="background-color: var(--white);">
+                        <form action="./products_show.php" method="get">
+                          <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
                           <div class="products_index_main_image">
                             <img src="'.$row["src"].'" alt="" class="img-fluid"/>
                           </div>
-                          <div class="text-center">
-                            <div class="products_index_main_name">'.$row["name"].'</div>
-                            <div class="products_index_main_price">$'.$row["price"].'</div>
+                          <div class="p-3">
+                            <div class="text-center">
+                              <div class="products_index_main_name">'.$row["name"].'</div>
+                              <div class="products_index_main_price">$'.$row["price"].'</div>
+                            </div>
+                            <div class="text-center mt-3"><input type="submit" value="Xem ngay" name="submit" class="btn__add_to_cart"/></div>
                           </div>
-                          <input type="submit" name="submit" class="btn btn-primary"/>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   ';
                 }
                 else {
                   echo '
-                    <div class="col-lg-3 col-md-4">
-                      <form action="./products_show.php" method="get">
-                        <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
-                        <div class="p-2 pointer">   
+                    <div class="col-lg-3 col-md-4 mb-3">
+                      <div style="background-color: var(--white);">
+                        <form action="./products_show.php" method="get">
+                          <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
                           <div class="products_index_main_image">
                             <img src="../../'.$row["src"].'" alt="" class="img-fluid"/>
                           </div>
-                          <div class="text-center">
-                            <div class="products_index_main_name">'.$row["name"].'</div>
-                            <div class="products_index_main_price">$'.$row["price"].'</div>
+                          <div class="p-3">
+                            <div class="text-center">
+                              <div class="products_index_main_name">'.$row["name"].'</div>
+                              <div class="products_index_main_price">$'.$row["price"].'</div>
+                            </div>
+                            <div class="text-center mt-3"><input type="submit" value="Xem ngay" name="submit" class="btn__add_to_cart"/></div>
                           </div>
-                          <input type="submit" name="submit" class="btn btn-primary"/>
-                        </div>
-                      </form>
+                        </form>
+                      </div>
                     </div>
                   ';
                 }
@@ -106,23 +122,6 @@
       </div>
     </div>
     <div class="container">
-        <div class="products_index_pagination pb-5 border-bottom">
-            <div class="d-flex align-items-center">
-                <div class="col-3 text-end">
-                    <FontAwesomeIcon icon={faArrowLeft} class="pe-2" />
-                    Prev
-                </div>
-                <div class="col-6 text-center">
-                    <div class="btn_pagin btn_active">1</div>
-                    <div class="btn_pagin">2</div>
-                    <div class="btn_pagin">3</div>
-                </div>
-                <div class="col-3 text-start">
-                    Next
-                    <FontAwesomeIcon icon={faArrowRight} class="ps-2" />
-                </div>
-            </div>
-        </div>
         <div class="products_index_categories">
             <div class="title">Related Categories</div>
             <div class="field_categories">
