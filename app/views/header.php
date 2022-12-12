@@ -43,7 +43,9 @@
                         </a>
                     </li>
                     <!-- Navigation Toggle Icon -->
-
+                    <?php
+                        if (isset($_COOKIE['user_id'])) {
+                    ?>
                     <!-- Navbar Wishlist-->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <a class="btn btn-link px-2 py-0 text-decoration-none d-flex align-items-center" href="#">
@@ -63,7 +65,9 @@
                         </button>
                     </li>
                     <!-- /Navbar Cart-->
-
+                    <?php
+                        }
+                    ?>
                     <!-- Navbar Login-->
                     <li class="ms-1 d-none d-lg-inline-block">
                         <?php

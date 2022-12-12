@@ -40,7 +40,7 @@
         </nav>
       </div>
       <div class="row">
-        <div class="col-lg-1">
+        <div class="col-lg-1 col-md-3">
           <div class="product_sub_images p-0">
             <?php
               $array = array();
@@ -65,7 +65,7 @@
             ?>
           </div>
         </div>
-        <div class="col-lg-5">
+        <div class="col-lg-5 col-md-9">
           <?php
             for ($i = 0; $i < 3; $i++) {
               if ($array[$i][0] == 'h' && $array[$i][1] == 't' && $array[$i][2] == 't' && $array[$i][3] == 'p') {
@@ -84,7 +84,7 @@
             }
           ?>
         </div>
-        <div class="col-lg-6">
+        <div class="col-lg-6 col-md-12">
           <div class="d-flex align-items-center justify-content-between">
             <div class="product_collection_name">NVLH</div>
             <?php
@@ -218,7 +218,7 @@
                         </div>
                       </div>
                       <div class="price">
-                        $19.99
+                        $1.99
                       </div>
                     </div>
                   </div>
@@ -233,7 +233,7 @@
                         </div>
                       </div>
                       <div class="price">
-                        $9.99
+                        $0.99
                       </div>
                     </div>
                   </div>
@@ -252,18 +252,6 @@
                         </div>
                         <div class="content">
                           Để trả lại các mặt hàng của bạn miễn phí thông qua hệ thống bưu chính, vui lòng điền vào biểu mẫu trả lại đi kèm với đơn đặt hàng của bạn. Bạn sẽ tìm thấy một nhãn ở cuối biểu mẫu. Đơn giản chỉ cần bóc nhãn và đi đến bưu điện gần nhất của bạn.
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                  <div class="py-3 border-top">
-                    <div class="d-flex align-items-center justify-content-between">
-                      <div>
-                        <div class="name">
-                          Return in person
-                        </div>
-                        <div class="content">
-                          To return your items for free in person, simply stop into any one of our locations and speak to a member of our in-store team.
                         </div>
                       </div>
                     </div>

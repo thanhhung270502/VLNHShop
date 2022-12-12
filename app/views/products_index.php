@@ -73,12 +73,12 @@
               while($row = $result->fetch_assoc()) {
                 if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
                   echo '
-                    <div class="col-lg-3 col-md-4" style="height: 580px;  ">
+                    <div class="col-lg-3 col-md-4" style="height: 540px;  ">
                       <div style="background-color: var(--white);">
                         <form action="./products_show.php" method="get">
                           <input type="text" value="' . $row["product_id"] . '" name="id" style="display: none;">   
                           <div class="products_index_main_image text-center" style="height: 70%;">
-                            <img src="'.$row["src"].'" alt="" class="img-fluid" style="height:448px;"/>
+                            <img src="'.$row["src"].'" alt="" class="img-fluid" style="height: 400px;"/>
                           </div>
                           <div class="px-3 pb-3" style="height: 30%;">
                             <div class="text-center">
@@ -132,7 +132,9 @@
         </div>
     </div>
   </div>
-
+  <?php
+    include('./footer.php')
+  ?>
   <script src="../assets/js/vendor.bundle.js"></script>
   
   <!-- Theme JS -->

@@ -12,7 +12,6 @@
     <link href="https://cdn.jsdelivr.net/npm/remixicon@2.5.0/fonts/remixicon.css" rel="stylesheet">
     <!-- <link href="../assets/css/home.css" rel="stylesheet"> -->
     <link href="../assets/css/general.css" rel="stylesheet">
-    <link href="../assets/css/homepage.css" rel="stylesheet">
     <link href="../assets/css/checkout.css" rel="stylesheet">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>    
     <script>
@@ -40,7 +39,6 @@
         include("../../models/checkout.php");
 
         $user_id = $_COOKIE['user_id'];
-        echo $user_id;
         $user_result = $conn->query("SELECT * from user where id=$user_id");
         $user = $user_result->fetch_assoc();
     ?>
@@ -51,11 +49,6 @@
         <h1 class="mb-4 display-5 fw-bold text-center">
             Xác thực thông tin thanh toán
         </h1>
-
-        <p class="text-center mx-auto">
-            Hãy điền thông tin vào đơn sau. Đã đăng ký?
-            <a class="link-primary" href="login.php">Đăng nhập ở đây!</a>
-        </p>
         <!-- /Checkout Title -->
 
         <?php
@@ -187,14 +180,14 @@
                     <!-- Shipping Option-->
                     <div class="form-check form-group form-check-custom form-radio-custom mb-3">
                         <input class="form-check-input" type="radio" name="checkoutShippingMethod"
-                            id="checkoutShippingMethodTwo" value="19.99">
+                            id="checkoutShippingMethodTwo" value="1.99">
                         <label class="form-check-label" for="checkoutShippingMethodTwo">
                             <span class="d-flex justify-content-between align-items-start">
                                 <span>
                                     <span class="mb-0 fw-bolder d-block">Vận chuyển siêu tốc</span>
                                     <small class="">Vận chuyển hàng trong 24 giờ</small>
                                 </span>
-                                <span class="small fw-bolder text-uppercase">$19.99</span>
+                                <span class="small fw-bolder text-uppercase">$1.99</span>
                             </span>
                         </label>
                     </div>
@@ -202,14 +195,14 @@
                     <!-- Shipping Option-->
                     <div class="form-check form-group form-check-custom form-radio-custom mb-3">
                         <input class="form-check-input" type="radio" name="checkoutShippingMethod"
-                            id="checkoutShippingMethodThree" value="9.99">
+                            id="checkoutShippingMethodThree" value="0.99">
                         <label class="form-check-label" for="checkoutShippingMethodThree">
                             <span class="d-flex justify-content-between align-items-start">
                                 <span>
                                     <span class="mb-0 fw-bolder d-block">Vận chuyển tiêu chuẩn</span>
                                     <small class="">Vận chuyển trong 36 - 48 giờ</small>
                                 </span>
-                                <span class="small fw-bolder text-uppercase">$9.99</span>
+                                <span class="small fw-bolder text-uppercase">$0.99</span>
                             </span>
                         </label>
                     </div>

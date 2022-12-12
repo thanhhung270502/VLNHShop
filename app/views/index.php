@@ -97,7 +97,7 @@
             <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">Chất lượng đỉnh cao</p>
             <h2 class="display-5 fw-bold mb-3">YAME</h2>
             <p class="lead d-none d-lg-block">Các sản phẩm thời trang tại YaMe rất đa dạng, có thể phục vụ nhiều nhu cầu trang phục ở nhiều lứa tuổi khác nhau. Dù bạn thuộc Gu thời trang nào, YaMe tự tin có thể mang đến sản phẩm thời trang phù hợp với phong cách.</p>
-            <a class="text-decoration-none fw-bolder text-dark" href="#">Mua hàng từ YAME &rarr;</a>
+            <a class="text-decoration-none fw-bolder text-dark" href="./products_index.php">Mua hàng từ YAME &rarr;</a>
           </div>
         </div>
       </div>
@@ -155,7 +155,7 @@
                               </div>
                               <div class="card-body px-0 text-center">
                                 <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center" href="./product.html">Rocky Red Hoodie</a>
-                                <p class="fw-bolder m-0 mt-2">$1699.87</p>
+                                <p class="fw-bolder m-0 mt-2">$'.$products[$i]["price"].'</p>
                               </div>
                             </div>
                             <!--/ Card Product-->
@@ -216,7 +216,7 @@
                                 </div>
                                 <div class="card-body px-0 text-center">
                                   <a class="mb-0 mx-2 mx-md-4 fs-p link-cover text-decoration-none d-block text-center" href="./products_show.php?id='.$products[$i]["id"].'">'.$products[$i]["name"].'</a>
-                                  <p class="fw-bolder m-0 mt-2">$1699.87</p>
+                                  <p class="fw-bolder m-0 mt-2">$'.$products[$i]["price"].'</p>
                                 </div>
                               </div>
                               <!--/ Card Product-->
