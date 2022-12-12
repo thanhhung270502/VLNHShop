@@ -23,7 +23,7 @@
   <div class="form-container">
     <div class="col-lg-8 form-inner"> 
       <div class="form__title">
-        Edit Product
+        Chỉnh sửa sản phẩm
       </div>
       <form enctype="multipart/form-data" action="../../controllers/products/products_update.php" action="GET">
       <div class="form__content">
@@ -126,7 +126,7 @@
             echo '
               <div class="col-12 mb-3">
                 <label for="inputDescription" class="form-label">Mô tả chi tiết</label>
-                <textarea type="text" class="form-control" name="description" rows="3" value="'.$product["description"].'"></textarea>
+                <input type="text" class="form-control" name="description" rows="3" value="'.$product["description"].'"></input>
               </div>
             ';
           ?>

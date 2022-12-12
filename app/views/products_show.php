@@ -97,19 +97,19 @@
                   echo '
                     <div class="btn-group">
                       <button type="button" class="btn btn-secondary" data-bs-toggle="dropdown" aria-expanded="false" style="border-radius: 10px;">
-                        Edit
+                        Chỉnh sửa
                       </button>
                       <ul class="dropdown-menu dropdown-menu-end">
                         <li>
-                          <a href="./products_edit.php?id='.$id.'" class="dropdown-item">Edit product</a>
+                          <a href="./products_edit.php?id='.$id.'" class="dropdown-item">Chỉnh sửa sản phẩm</a>
                         </li>
                         <li>
-                          <a href="./products_edit_quantity.php?id='.$id.'" class="dropdown-item">Edit quantity</a>
+                          <a href="./products_edit_quantity.php?id='.$id.'" class="dropdown-item">Chỉnh sửa số lượng</a>
                         </li>
                         <li>
                           <form action="../../controllers/products/product_destroy.php" method="GET">
                             <input type="hidden" name="product_id" value="'.$id.'">
-                            <input type="submit" class="dropdown-item" value="Destroy">
+                            <input type="submit" class="dropdown-item" value="Xóa sản phẩm">
                           </form>
                         </li>
                       </ul>

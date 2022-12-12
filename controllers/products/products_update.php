@@ -11,7 +11,7 @@
     $images = $_GET["images"];
     $sizes = $_GET["size"];
 
-    $sql1 = "UPDATE product SET `name` = '$name' and price = '$price' and color = '$color' and `description` = '$description' WHERE id = $product_id";
+    $sql1 = "UPDATE product SET `name` = '$name', price = '$price', color = '$color', `description` = '$description' WHERE id = $product_id";
     $insert_data = $conn->query($sql1);
     if ($insert_data) {
         $sql2 = "SELECT * FROM product_sizes WHERE product_id = $product_id";
@@ -54,5 +54,6 @@
             $conn->query($sql4);
             $index++;
         }
+        header("location:../../app/views/products_show.php?id=$product_id");
     }
 ?>

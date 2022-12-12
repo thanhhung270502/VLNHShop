@@ -84,105 +84,6 @@
             </div>
           </div>
 
-          <!-- Button trigger modal -->
-          <div class="col-12">
-            <button type="button" class="btn btn-primary mb-3" data-bs-toggle="modal" data-bs-target="#exampleModal">
-              Xem trước
-            </button>
-  
-            <!-- Modal -->
-            <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-              <div class="modal-dialog" style="max-width: none;">
-                <div class="modal-content">
-                  <div class="modal-header">
-                    <h1 class="modal-title fs-5" id="exampleModalLabel">Sản phẩm</h1>
-                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-                  </div>
-                  <div class="modal-body">
-                    <div class="container">
-                        <div class="row">
-                          <div class="col-lg-1">
-                            <div class="product_sub_images p-0">
-                              <div class="product_sub_image">
-                                <img src="../assets/images/more_products/1-2-2-1.jpg" class="img-fluid image__small"></img>
-                              </div>
-                              <div class="product_sub_image">
-                                <img src="../assets/images/more_products/1-2-2-2.jpg" class="img-fluid image__small"></img>
-                              </div>
-                              <div class="product_sub_image">
-                                <img src="../assets/images/more_products/1-2-2-3.jpg" class="img-fluid image__small"></img>
-                              </div>
-                            </div>
-                          </div>
-                          <div class="col-lg-5">
-                            <div class="product_image image__large image-large__active">
-                                <img src="../assets/images/more_products/1-2-2-1.jpg" class="img-fluid"></img>
-                            </div>
-                          </div>
-                          <div class="col-lg-6">
-                            <div class="d-flex">
-                                <div class="col-6">
-                                    <div class="product_collection_name">VLNH Shop</div>
-                                </div>
-                                <div class="col-6 text-end">
-                                    <FontAwesomeIcon icon={faStar} />
-                                    <FontAwesomeIcon icon={faStar} />
-                                    <FontAwesomeIcon icon={faStar} />
-                                    <FontAwesomeIcon icon={faStar} />
-                                    <FontAwesomeIcon icon={faStar} />
-                                    (50)
-                                </div>
-                            </div>
-                            <div class="product__content">
-                              <div class="product__name">-- Tên sản phẩm --</div>
-                              <div class="product__price border-bottom">
-                                <div class="product__price_new">$xx.xx</div>
-                              </div>
-                              <div class="py-3">
-                                <div class="product__colors pb-2">Màu:</div>
-                                <div class="btn__color">Nâu</div>
-                              </div>
-                              <div class="pb-3">
-                                <div class="product__sizes">
-                                  <div class="product__sizes_title pb-3">Size:</div>
-                                  <select class="form-select form__select" aria-label="Default select example">
-                                    <option selected>Chọn size:</option>
-                                    <option value="1">M</option>
-                                    <option value="2">L</option>
-                                    <option value="3">XL</option>
-                                    <option value="4">XXL</option>
-                                  </select>
-                                </div>
-                              </div>
-                              <div class='pb-3'>
-                                <div class="pb-3">Số lượng</div>
-                                <div class='d-flex'>
-                                  <input type="button" value="-" class="btn_quantity"></input>
-                                  <input type="text" value="1" class="btn_quantity"></input>
-                                  <input type="button" value="+" class="btn_quantity"></input>
-                                </div>
-                              </div>
-                              <div class="d-flex pb-3">
-                                <div class="btn__add_to_cart me-3">
-                                  Thêm vào giỏ hàng
-                                </div>
-                                <div class="btn__buy_now">
-                                  Mua ngay
-                                </div>
-                              </div>
-                            </div>
-                          </div>
-                        </div>
-                    </div>
-                  </div>
-                  <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Đóng</button>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
           <div class="col-12">
             <label for="inputDescription" class="form-label">Sizes</label>
             <div class="">
@@ -209,7 +110,7 @@
 
           <div class="col-12 mb-3">
             <label for="inputDescription" class="form-label">Mô tả chi tiết</label>
-            <textarea type="text" class="form-control" name="description" rows="3"></textarea>
+            <input type="text" class="form-control" name="description" rows="3"></input>
           </div>
           <div class="col-12">
             <input type="submit" class="btn btn-primary w-100">

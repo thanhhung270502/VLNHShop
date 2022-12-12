@@ -60,7 +60,7 @@
                 if ($user && $user["role"] == 0) {
                   echo '
                     <div class="col-6 text-end">
-                        <a class="btn btn-secondary" href="./products_new.php">Add new product</a>
+                        <a class="btn btn-success" href="./products_new.php">Add new product</a>
                     </div>
                   ';
                 }
