@@ -106,6 +106,12 @@
                         <li>
                           <a href="./products_edit_quantity.php?id='.$id.'" class="dropdown-item">Edit quantity</a>
                         </li>
+                        <li>
+                          <form action="../../controllers/products/product_destroy.php" method="GET">
+                            <input type="hidden" name="product_id" value="'.$id.'">
+                            <input type="submit" class="dropdown-item" value="Destroy">
+                          </form>
+                        </li>
                       </ul>
                     </div>
                   ';

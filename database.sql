@@ -31,7 +31,7 @@ insert into product (id, price, name, color, description, quantity_remain) value
 insert into product (id, price, name, color, description, quantity_remain) values (4, '82.2', 'Áo Thun Sweater Tối Giản M21', 'green', null, 33);
 insert into product (id, price, name, color, description, quantity_remain) values (5, '84.4', 'Áo Khoác Bomber Y Nguyên Bản 18- Ver28', 'green', null, 86);
 insert into product (id, price, name, color, description, quantity_remain) values (6, '90.0', 'Quần Jogger Tối Giản M10', 'black', null, 86);
-insert into product (id, price, name, color, description, quantity_remain) values (7, '75.0', 'Áo Sơ Mi Tay Dài Sợi Modal Tối Giản M11', 'w', null, 86);
+insert into product (id, price, name, color, description, quantity_remain) values (7, '75.0', 'Áo Sơ Mi Tay Dài Sợi Modal Tối Giản M11', 'white', null, 86);
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (6, '3.62', 'shirt 6', 'Goldenrod', null, 77, './app/assets/images/products/product-6.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (7, '14.30', 'shirt 7', 'Green', null, 52, './app/assets/images/products/product-7.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (8, '58.26', 'shirt 8', 'Goldenrod', null, 70, './app/assets/images/products/product-8.jpg');
@@ -170,4 +170,10 @@ INSERT INTO `product_sizes` (product_id, size_id, quantity_remain) VALUES
 (4, 4, 10),
 (5, 2, 10), 
 (5, 3, 10), 
-(5, 4, 10);
+(5, 4, 10),
+(6, 2, 10), 
+(6, 3, 10), 
+(6, 4, 10),
+(7, 2, 10), 
+(7, 3, 10), 
+(7, 4, 10);
