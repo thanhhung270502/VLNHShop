@@ -21,10 +21,18 @@
                 <nav class="col-3 col-md mb-4 mb-md-0">
                     <h6 class="mb-4 fw-bolder fs-6">Các trang</h6>
                     <ul class="list-unstyled">
-                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="#">Đăng ký</a></li>
-                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="#">Giỏ hàng</a></li>
-                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="#">Thanh toán</a></li>
-                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="#">Tài khoản</a></li>
+                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="./user/register.php">Đăng ký</a></li>
+                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="./cart.php">Giỏ hàng</a></li>
+                        <li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="./checkout.php">Thanh toán</a></li>
+                        
+                        <?php
+                        require_once __DIR__.'/../../controllers/user.php';
+                        if (isset($_COOKIE['user_id'])) {
+                            echo '<li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="./user/edit-profile.php?id=%d">Tài khoản</a></li>';}
+                        else{
+                            echo '<li class="mb-2"><a class="text-decoration-none text-white opacity-75 opacity-25-hover transition-all" href="./user/register.php">Tài khoản</a></li>';
+                        }
+                        ?>
                     </ul>
                 </nav>
                 <!-- /Footer Nav-->
@@ -49,8 +57,8 @@
                     <p class="small opacity-75 text-white mt-3">&copy; 2022 All Rights Reserved. Designed by VLNH</p>
                 </div>
                 <div class="col-6">
-                    <div class="container d-flex justify-content-end align-items-center mt-3    ">
-                        <p class="lead fw-bolder mb-0 lh-1 text-white">Find us online</p>
+                    <div class="container d-flex justify-content-end align-items-center mt-3">
+                        <p class="lead d-none d-md-flex fw-bolder mb-0 lh-1 text-white">Find us online</p>
                         <ul class="list-unstyled d-flex justify-content-start align-items-center mb-0 ms-3 lh-1">
                             <li class="mx-1 mb-0 lh-1"><a class="text-muted text-decoration-none opacity-75-hover transition-all lh-1" href="#"><i class="ri-instagram-fill ri-xl lh-1"></i></a></li>
                             <li class="mx-1 mb-0 lh-1"><a class="text-muted text-decoration-none opacity-75-hover transition-all lh-1" href="#"><i class="ri-facebook-fill ri-xl lh-1"></i></a></li>

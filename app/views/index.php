@@ -89,14 +89,14 @@
 
         <!-- Image Hotspot Banner -->
         <!-- !!!Didn't add any Hotspot on the Banner!!! -->
-        <section class="my-10 position-relative">
-            <div class="w-100 vh-100 bg-img-contain bg-pos-center-center hotspot-container py-5 py-md-7 py-lg-10" style="background-image: url(https://images.unsplash.com/photo-1508746829417-e6f548d8d6ed?ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80);">
+        <section class="my-10 vh-100 position-relative bg-hotspot">
+            <div class="h-100 py-5 py-md-7 py-lg-10">
                 <div class="container h-100 py-lg-8 position-relative z-index-10 d-flex align-items-center" data-aos="fade-left">
-                    <div class="py-8 d-flex justify-content-end align-items-start align-items-lg-end flex-column col-lg-4 text-lg-end">
+                    <div class="py-8 d-flex justify-content-end align-items-start align-items-lg-end flex-column col-lg-4 text-lg-end text-dark">
                         <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">Chất lượng đỉnh cao</p>
                         <h2 class="display-5 fw-bold mb-3">YAME</h2>
                         <p class="lead d-none d-lg-block">Các sản phẩm thời trang tại YaMe rất đa dạng, có thể phục vụ nhiều nhu cầu trang phục ở nhiều lứa tuổi khác nhau. Dù bạn thuộc Gu thời trang nào, YaMe tự tin có thể mang đến sản phẩm thời trang phù hợp với phong cách.</p>
-                        <a class="text-decoration-none fw-bolder" href="#">Mua hàng từ YAME &rarr;</a>
+                        <a class="text-decoration-none fw-bolder text-dark" href="#">Mua hàng từ YAME &rarr;</a>
                     </div>
                 </div>
             </div>
@@ -111,7 +111,7 @@
                         <div class="m-0">
                             <p class="small fw-bolder text-uppercase tracking-wider mb-2 text-muted">VLHN SHOP</p>
                             <h2 class="display-4 fw-bold mb-6">Những sản phẩm mới nhất của chúng tôi</h2>
-                            <div class="px-8 position-relative">
+                            <div class="mt-5 px-8 position-relative d-flex align-items-center justify-content-center">
 
                                 <!-- Start Linked Carousel -->
                                 <div id="LinkedCarousel" class="carousel carousel-dark slide d-flex justify-content-center" data-bs-ride="true" style="height: 90%; width: 90%">
