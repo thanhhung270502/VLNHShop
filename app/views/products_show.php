@@ -40,7 +40,7 @@
         </nav>
       </div>
       <div class="row">
-        <div class="col-lg-1 col-md-3">
+        <div class="col-lg-1 col-md-3 col-sm-3">
           <div class="product_sub_images p-0">
             <?php
               $array = array();
@@ -65,7 +65,7 @@
             ?>
           </div>
         </div>
-        <div class="col-lg-5 col-md-9">
+        <div class="col-lg-5 col-md-9 col-sm-9">
           <?php
             for ($i = 0; $i < 3; $i++) {
               if ($array[$i][0] == 'h' && $array[$i][1] == 't' && $array[$i][2] == 't' && $array[$i][3] == 'p') {
@@ -85,7 +85,7 @@
           ?>
         </div>
         <div class="col-lg-6 col-md-12">
-          <div class="d-flex align-items-center justify-content-between">
+          <div class="d-flex align-items-center justify-content-between pt-3">
             <div class="product_collection_name">NVLH</div>
             <?php
               if (isset($_COOKIE["user_id"])) {
