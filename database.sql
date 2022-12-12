@@ -25,13 +25,13 @@ CREATE TABLE `product_images` (
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (4, '82.2', 'Áo Thun Sweater Tối Giản M14', 'white', null, 33, './app/assets/images/products/product-4.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (5, '84.4', 'Áo Thun Sweater Ngân Hà 4 Element Ver11', 'black', null, 86, './app/assets/images/products/product-5.jpg');
 
-insert into product (id, price, name, color, description, quantity_remain) values (1, '69.9', 'Áo Thun Cổ Tròn Đơn Giản Linh Vật Rồng Ver23', 'black', null, 69);
-insert into product (id, price, name, color, description, quantity_remain) values (2, '78.9', 'Áo Thun Cổ Trụ Tối Giản M4', 'white', null, 39);
-insert into product (id, price, name, color, description, quantity_remain) values (3, '81.8', 'Áo Thun Cổ Trụ Y Nguyên Bản 18+ Ver62', 'black', null, 100);
-insert into product (id, price, name, color, description, quantity_remain) values (4, '82.2', 'Áo Thun Sweater Tối Giản M21', 'green', null, 33);
-insert into product (id, price, name, color, description, quantity_remain) values (5, '84.4', 'Áo Khoác Bomber Y Nguyên Bản 18- Ver28', 'green', null, 86);
-insert into product (id, price, name, color, description, quantity_remain) values (6, '90.0', 'Quần Jogger Tối Giản M10', 'black', null, 86);
-insert into product (id, price, name, color, description, quantity_remain) values (7, '75.0', 'Áo Sơ Mi Tay Dài Sợi Modal Tối Giản M11', 'white', null, 86);
+insert into product (id, price, name, color, description, quantity_remain) values (1, '69.9', 'Áo Thun Cổ Tròn Đơn Giản Linh Vật Rồng Ver23', 'black', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (2, '78.9', 'Áo Thun Cổ Trụ Tối Giản M4', 'white', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (3, '81.8', 'Áo Thun Cổ Trụ Y Nguyên Bản 18+ Ver62', 'black', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (4, '82.2', 'Áo Thun Sweater Tối Giản M21', 'green', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (5, '84.4', 'Áo Khoác Bomber Y Nguyên Bản 18- Ver28', 'green', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (6, '90.0', 'Quần Jogger Tối Giản M10', 'black', null, 30);
+insert into product (id, price, name, color, description, quantity_remain) values (7, '75.0', 'Áo Sơ Mi Tay Dài Sợi Modal Tối Giản M11', 'white', null, 30);
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (6, '3.62', 'shirt 6', 'Goldenrod', null, 77, './app/assets/images/products/product-6.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (7, '14.30', 'shirt 7', 'Green', null, 52, './app/assets/images/products/product-7.jpg');
 -- insert into product (id, price, name, color, description, quantity_remain, img) values (8, '58.26', 'shirt 8', 'Goldenrod', null, 70, './app/assets/images/products/product-8.jpg');
