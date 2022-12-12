@@ -40,7 +40,7 @@
         </nav>
       </div>
       <div class="row">
-        <div class="col-lg-1 col-md-3 col-sm-3">
+        <div class="col-lg-1 col-md-3 col-sm-12">
           <div class="product_sub_images p-0">
             <?php
               $array = array();
@@ -49,13 +49,13 @@
                   array_push($array, $row["src"]);
                   if ($row["src"][0] == 'h' && $row["src"][1] == 't' && $row["src"][2] == 't' && $row["src"][3] == 'p') {
                     echo '
-                      <div class="product_sub_image">
+                      <div class="product_sub_image" style="width: unset;">
                           <img src="'. $row["src"] .'" class="img-fluid image__small"></img>
                       </div>
                     ';
                   } else {
                     echo '
-                      <div class="product_sub_image">
+                      <div class="product_sub_image" style="width: unset;">
                           <img src="../../'. $row["src"] .'" class="img-fluid image__small"></img>
                       </div>
                     ';
@@ -65,7 +65,7 @@
             ?>
           </div>
         </div>
-        <div class="col-lg-5 col-md-9 col-sm-9">
+        <div class="col-lg-5 col-md-9 col-sm-12 d-sm-none d-md-block">
           <?php
             for ($i = 0; $i < 3; $i++) {
               if ($array[$i][0] == 'h' && $array[$i][1] == 't' && $array[$i][2] == 't' && $array[$i][3] == 'p') {
@@ -189,9 +189,9 @@
           <div class="product__footer_content pt-4">
             <div class="d-flex justify-content-center">
               <div class="col-lg-8 product__footer_item">
-                1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptatum modi quia numquam facere aliquam quaerat laboriosam repellat dolorum enim, quis, laborum fugiat. Nobis asperiores rem ab voluptate nihil culpa.
-                1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptatum modi quia numquam facere aliquam quaerat laboriosam repellat dolorum enim, quis, laborum fugiat. Nobis asperiores rem ab voluptate nihil culpa.
-                1Lorem ipsum dolor sit amet consectetur, adipisicing elit. Natus voluptatum modi quia numquam facere aliquam quaerat laboriosam repellat dolorum enim, quis, laborum fugiat. Nobis asperiores rem ab voluptate nihil culpa.
+                <?php
+                  echo $product["description"];
+                ?>
               </div>
               <div class="col-lg-8 product__footer_item">
                 <div class="title pb-4">
